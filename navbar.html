@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>
+   Laboratório de Navbar
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <link href="labs.css" rel="stylesheet"/>
+<meta content="Laboratório visual Interface Kits com preview em tempo real e código copiável." name="description"/></head>
+<body class="lab-page">
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="logo" href="index.html">
+     Interface
+     <span>
+      Kits
+     </span>
+</a>
+<nav class="nav">
+<a href="index.html">
+      Início
+     </a>
+<a href="kits.html">
+      Kits
+     </a>
+<a href="botoes.html">
+      Botões
+     </a>
+<a class="active" href="navbar.html">
+      Navbar
+     </a>
+<a href="hero.html">
+      Hero
+     </a>
+<a href="cards.html">
+      Cards
+     </a>
+<a href="inputs.html">
+      Inputs
+     </a>
+<a href="login-cadastro.html">
+      Login
+     </a>
+<a href="footer.html">
+      Footer
+     </a>
+<a href="sidebar.html">
+      Sidebar
+     </a>
+<a href="form.html">
+      Form
+     </a>
+<a href="dashboard.html">
+      Dashboard
+     </a>
+<a href="sites-prontos.html">
+      Sites
+     </a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" type="button">☰</button></div>
+</header>
+<main class="container">
+<a class="back" href="index.html">
+    ← Voltar
+   </a>
+<section class="page-title">
+<span class="pill">
+     Laboratório
+    </span>
+<h1>
+     Navbar
+    </h1>
+<p>
+     Edite logo, links, submenus, busca, carrinho, login, blur, mobile, hover e animação.
+    </p>
+<div class="lab-highlights"><span>Preview ao vivo</span><span>Código copiável</span><span>Layout responsivo</span></div></section>
+<section class="lab">
+<aside class="panel">
+<div class="group">
+<h3>
+       Aleatório
+      </h3>
+<button class="btn primary" id="randomNavbar">
+       Criar aleatório
+      </button>
+</div>
+<div class="group">
+<h3>
+       Conteúdo
+      </h3>
+<div class="control">
+<label>
+        Logo
+       </label>
+<input id="nLogo" value="Interface Kits"/>
+</div>
+<div class="control">
+<label>
+        Links
+       </label>
+<input id="nLinks" value="Início, Produtos, Kits, Sobre, Contato"/>
+</div>
+<div class="control">
+<label>
+        Submenus
+       </label>
+<textarea id="nSubs">Produtos: Botões, Navbars, Heroes, Cards
+Kits: Apple, Neon, Glass, SaaS</textarea>
+</div>
+<div class="control">
+<label>
+        CTA
+       </label>
+<input id="nCta" value="Entrar"/>
+</div>
+</div>
+<div class="group">
+<h3>
+       Recursos
+      </h3>
+<div class="control">
+<label>
+        Busca
+       </label>
+<select id="nSearch">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Carrinho
+       </label>
+<select id="nCart">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Login
+       </label>
+<select id="nLogin">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Posição fixa
+       </label>
+<select id="nFixed">
+<option value="no">
+         Não
+        </option>
+<option value="yes">
+         Sim
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Mobile
+       </label>
+<select id="nMobile">
+<option value="hamburger">
+         Hambúrguer
+        </option>
+<option value="links">
+         Links quebrando linha
+        </option>
+</select>
+</div>
+</div>
+<div class="group">
+<h3>
+       Aparência
+      </h3>
+<div class="control">
+<label>
+        Fundo
+       </label>
+<input id="nBg" type="color" value="#111827"/>
+</div>
+<div class="control">
+<label>
+        Texto
+       </label>
+<input id="nColor" type="color" value="#ffffff"/>
+</div>
+<div class="control">
+<label>
+        Destaque
+       </label>
+<input id="nAccent" type="color" value="#06b6d4"/>
+</div>
+<div class="control">
+<label>
+        Blur
+       </label>
+<input id="nBlur" max="30" min="0" type="range" value="14"/>
+</div>
+<div class="control">
+<label>
+        Transparência
+       </label>
+<input id="nOpacity" max="1" min="0.2" step="0.05" type="range" value="0.85"/>
+</div>
+<div class="control">
+<label>
+        Altura
+       </label>
+<input id="nHeight" max="120" min="54" type="range" value="76"/>
+</div>
+<div class="control">
+<label>
+        Radius
+       </label>
+<input id="nRadius" max="40" min="0" type="range" value="22"/>
+</div>
+<div class="control">
+<label>
+        Hover
+       </label>
+<select id="nHover">
+<option value="underline">
+         Linha
+        </option>
+<option value="pill">
+         Pílula
+        </option>
+<option value="lift">
+         Subir
+        </option>
+<option value="glow">
+         Glow
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Animação
+       </label>
+<select id="nAnim">
+<option value="none">
+         Nenhuma
+        </option>
+<option value="fade">
+         Fade
+        </option>
+<option value="slide">
+         Slide
+        </option>
+<option value="scale">
+         Scale
+        </option>
+</select>
+</div>
+</div>
+</aside>
+<section>
+<div class="preview">
+<h2>
+       Preview
+      </h2>
+<br/>
+<div class="stage" id="navPreview">
+</div>
+</div>
+<div class="codebox">
+<button class="copy" onclick="copyCode('nCode',this)">
+       Copiar código
+      </button>
+<pre id="nCode"></pre>
+</div>
+</section>
+</section>
+</main>
+<script src="main.js">
+</script>
+<script src="lab-navbar.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,699 @@
+/* ==========================
+   FRIEREN / ANCIENT RUNE UI
+   Sem alterar o index.html
+========================== */
+
+:root {
+    --frieren-blue: #60A5FA;
+    --frieren-purple: #C4B5FD;
+    --frieren-gold: #F5C542;
+    --frieren-night: #08111F;
+    --frieren-paper: #F7E7BD;
+    --frieren-green: #86EFAC;
+}
+
+.frieren-page {
+    background:
+        radial-gradient(circle at 20% 8%, rgba(96,165,250,.22), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(196,181,253,.18), transparent 28%),
+        var(--frieren-night);
+    color: white;
+    transition: background .7s ease, color .7s ease;
+}
+
+.frieren-page.day-mode {
+    background:
+        radial-gradient(circle at 20% 8%, rgba(96,165,250,.22), transparent 28%),
+        linear-gradient(135deg, #dbeafe, #f8fafc);
+    color: #111827;
+}
+
+.frieren-hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 72% 45%, rgba(196,181,253,.28), transparent 28%),
+        linear-gradient(135deg, rgba(8,17,31,.94), rgba(15,23,42,.92));
+}
+
+.day-mode .frieren-hero {
+    background:
+        radial-gradient(circle at 72% 45%, rgba(96,165,250,.24), transparent 28%),
+        linear-gradient(135deg, #bfdbfe, #f8fafc);
+}
+
+.sky-stars {
+    position: absolute;
+    inset: 0;
+    opacity: .36;
+    background:
+        radial-gradient(circle at 20% 20%, white 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 40%, var(--frieren-purple) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 80%, var(--frieren-blue) 0 2px, transparent 3px);
+    background-size: 90px 90px;
+    animation: starDrift 12s linear infinite;
+}
+
+.day-mode .sky-stars {
+    opacity: .08;
+}
+
+.magic-runes {
+    position: absolute;
+    inset: 0;
+    opacity: .18;
+    background:
+        radial-gradient(circle, rgba(255,255,255,.32) 1px, transparent 2px),
+        conic-gradient(from 0deg, transparent, rgba(196,181,253,.34), transparent);
+    animation: runeSpin 18s linear infinite;
+}
+
+.moon {
+    position: absolute;
+    right: 10%;
+    top: 16%;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #f8fafc;
+    box-shadow: 0 0 60px rgba(248,250,252,.45);
+    cursor: pointer;
+}
+
+.day-mode .moon {
+    background: var(--frieren-gold);
+    box-shadow: 0 0 60px rgba(245,197,66,.45);
+}
+
+.frieren-hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr .72fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.frieren-label {
+    display: inline-flex;
+    padding: 10px 15px;
+    border-radius: 999px;
+    background: rgba(96,165,250,.16);
+    border: 1px solid rgba(96,165,250,.42);
+    color: #dbeafe;
+    font-weight: 950;
+}
+
+.frieren-copy h1 {
+    margin: 20px 0;
+    max-width: 850px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(54px, 8vw, 110px);
+    line-height: .92;
+    color: white;
+    text-shadow:
+        4px 4px 0 rgba(96,165,250,.35),
+        8px 8px 0 rgba(196,181,253,.22);
+}
+
+.day-mode .frieren-copy h1,
+.day-mode .frieren-copy p {
+    color: #111827;
+}
+
+.frieren-copy p {
+    max-width: 700px;
+    color: #dbeafe;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.frieren-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.spell-btn,
+.time-btn,
+.stars-btn {
+    min-height: 52px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.spell-btn {
+    background: linear-gradient(135deg, var(--frieren-blue), var(--frieren-purple));
+    box-shadow: 0 0 34px rgba(96,165,250,.40);
+}
+
+.spell-btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 0 12px rgba(96,165,250,.10),
+        0 0 70px rgba(196,181,253,.40);
+}
+
+.time-btn,
+.stars-btn {
+    border: 1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+}
+
+.grimoire-stage {
+    position: relative;
+    min-height: 360px;
+    display: grid;
+    place-items: center;
+}
+
+.magic-circle {
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    border: 2px dashed rgba(196,181,253,.55);
+    animation: runeSpin 8s linear infinite;
+}
+
+.magic-circle::before,
+.magic-circle::after {
+    content: "";
+    position: absolute;
+    inset: 45px;
+    border-radius: 50%;
+    border: 2px solid rgba(96,165,250,.30);
+}
+
+.magic-circle::after {
+    inset: 82px;
+    border-color: rgba(255,255,255,.24);
+}
+
+.grimoire-book {
+    position: relative;
+    width: min(330px, 90%);
+    height: 230px;
+    perspective: 1000px;
+}
+
+.book-cover,
+.book-page {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    border: 2px solid rgba(245,197,66,.55);
+    background:
+        radial-gradient(circle at 80% 0, rgba(245,197,66,.18), transparent 28%),
+        #3b2f1f;
+    color: var(--frieren-gold);
+    box-shadow: 0 25px 80px rgba(0,0,0,.30);
+    transform-origin: left;
+    animation: bookOpen 4s ease-in-out infinite;
+}
+
+.book-cover strong {
+    font-family: 'Cinzel', serif;
+}
+
+.book-cover span {
+    font-size: 48px;
+}
+
+.book-page {
+    width: 48%;
+    background: var(--frieren-paper);
+    color: #111827;
+    animation: none;
+}
+
+.page-left {
+    left: 0;
+    right: auto;
+}
+
+.page-right {
+    left: 52%;
+    right: auto;
+}
+
+.book-page span {
+    font-size: 32px;
+    color: #6d28d9;
+}
+
+.frieren-section {
+    padding: 70px 0;
+}
+
+.frieren-title {
+    margin-bottom: 24px;
+}
+
+.frieren-title span {
+    color: var(--frieren-purple);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 13px;
+}
+
+.frieren-title h2 {
+    margin-top: 10px;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: .9;
+    letter-spacing: -0.06em;
+}
+
+.mana-navbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 26px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(18px);
+}
+
+.mana-navbar strong {
+    margin-right: auto;
+    color: var(--frieren-purple);
+}
+
+.mana-navbar a {
+    position: relative;
+    color: white;
+    font-weight: 900;
+}
+
+.day-mode .mana-navbar a {
+    color: #111827;
+}
+
+.mana-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--frieren-blue), var(--frieren-purple), transparent);
+    transition: .45s;
+    box-shadow: 0 0 20px rgba(196,181,253,.45);
+}
+
+.mana-navbar a:hover::after {
+    width: 120%;
+}
+
+.mana-navbar button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, var(--frieren-blue), var(--frieren-purple));
+    color: white;
+    font-weight: 950;
+}
+
+.frieren-card-grid,
+.frieren-login-area,
+.frieren-dashboard-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.frieren-card,
+.frieren-login,
+.ancient-tree,
+.frieren-dashboard {
+    position: relative;
+    padding: 28px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 80px rgba(0,0,0,.28);
+    overflow: hidden;
+}
+
+.day-mode .frieren-card,
+.day-mode .frieren-login,
+.day-mode .ancient-tree,
+.day-mode .frieren-dashboard,
+.day-mode .mana-navbar {
+    background: rgba(255,255,255,.65);
+    color: #111827;
+}
+
+.frieren-card span {
+    color: var(--frieren-purple);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.frieren-card h3 {
+    margin: 14px 0 10px;
+    font-size: 30px;
+}
+
+.frieren-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.day-mode .frieren-card p,
+.day-mode .frieren-muted,
+.day-mode .frieren-login p,
+.day-mode .ancient-tree p {
+    color: #334155;
+}
+
+.frieren-card button {
+    margin-top: 18px;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, var(--frieren-blue), var(--frieren-purple));
+    color: white;
+    font-weight: 950;
+}
+
+.grimoire-card {
+    transform-style: preserve-3d;
+    transition: .55s;
+}
+
+.grimoire-card:hover {
+    transform: rotateY(14deg);
+}
+
+.star-card:hover::after {
+    content: "✦ ✧ ✩ ✦ ✧";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--frieren-gold);
+    font-size: 28px;
+    animation: starRise 1.2s ease infinite;
+}
+
+.mimic-card.opened {
+    background: radial-gradient(circle at center, rgba(245,197,66,.35), transparent 32%), rgba(255,255,255,.12);
+}
+
+.mimic-card.eaten {
+    background: radial-gradient(circle at center, rgba(127,29,29,.75), transparent 40%), #1f0202;
+    transform: scale(.94) rotate(2deg);
+}
+
+.mimic-card.eaten::after {
+    content: "MIMIC!";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,.55);
+    color: #fecaca;
+    font-size: 48px;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+}
+
+.frieren-dashboard-area {
+    grid-template-columns: .8fr 1.2fr;
+    align-items: center;
+}
+
+.frieren-muted {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+.dash-top,
+.dash-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.dash-top strong {
+    color: var(--frieren-purple);
+    font-size: 24px;
+}
+
+.dash-top span {
+    color: #dbeafe;
+    font-weight: 900;
+}
+
+.day-mode .dash-top span {
+    color: #2563eb;
+}
+
+.dash-stats {
+    margin: 24px 0;
+}
+
+.dash-stats div {
+    flex: 1;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.08);
+}
+
+.day-mode .dash-stats div {
+    background: rgba(96,165,250,.10);
+}
+
+.dash-stats strong {
+    display: block;
+    color: var(--frieren-purple);
+    font-size: 30px;
+}
+
+.mana-bars {
+    height: 150px;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 20px;
+    background: rgba(96,165,250,.10);
+}
+
+.mana-bars span {
+    flex: 1;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(180deg, var(--frieren-purple), var(--frieren-blue), transparent);
+}
+
+.mana-bars span:nth-child(1) { height: 42%; }
+.mana-bars span:nth-child(2) { height: 82%; }
+.mana-bars span:nth-child(3) { height: 58%; }
+.mana-bars span:nth-child(4) { height: 94%; }
+.mana-bars span:nth-child(5) { height: 72%; }
+
+.frieren-login-area {
+    grid-template-columns: 1fr 1fr;
+}
+
+.frieren-login h2 {
+    font-size: 36px;
+}
+
+.frieren-login p,
+.ancient-tree p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.frieren-login input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    background: rgba(255,255,255,.08);
+    color: white;
+}
+
+.day-mode .frieren-login input {
+    color: #111827;
+    background: rgba(255,255,255,.72);
+}
+
+.frieren-login button,
+.ancient-tree button {
+    width: 100%;
+    margin-top: 14px;
+    border: 0;
+    border-radius: 14px;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--frieren-blue), var(--frieren-purple));
+    color: white;
+    font-weight: 950;
+}
+
+.ancient-tree {
+    text-align: center;
+}
+
+.tree-symbol {
+    font-size: 72px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.tree-symbol:hover {
+    transform: translateY(-6px) rotate(-3deg);
+}
+
+.frieren-footer {
+    margin-top: 60px;
+    padding: 46px 0;
+    background: #020617;
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.frieren-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(2, 1fr);
+    gap: 30px;
+}
+
+.frieren-footer h3,
+.frieren-footer h4 {
+    color: var(--frieren-purple);
+}
+
+.frieren-footer p,
+.frieren-footer a {
+    display: block;
+    margin-top: 10px;
+    color: #cbd5e1;
+}
+
+.zoltraak-beam {
+    position: fixed;
+    left: -20%;
+    top: 45%;
+    z-index: 9999;
+    width: 0;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, var(--frieren-blue), white, var(--frieren-purple), transparent);
+    box-shadow: 0 0 45px rgba(96,165,250,.85);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.zoltraak-beam.active {
+    animation: zoltraak 1s ease;
+}
+
+.star-rain {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.falling-star,
+.falling-leaf {
+    position: fixed;
+    top: -30px;
+    font-size: 24px;
+    animation: fall 2.4s linear forwards;
+}
+
+.secret-message {
+    position: fixed;
+    left: 50%;
+    top: 110px;
+    z-index: 9999;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: rgba(96,165,250,.18);
+    border: 1px solid rgba(196,181,253,.45);
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    transform: translateX(-50%) translateY(-40px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .35s;
+}
+
+.secret-message.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@keyframes starDrift {
+    from { background-position: 0 0; }
+    to { background-position: 180px 130px; }
+}
+
+@keyframes runeSpin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bookOpen {
+    0%, 100% { transform: rotateY(0); }
+    50% { transform: rotateY(-24deg); }
+}
+
+@keyframes starRise {
+    from { transform: translateY(20px); opacity: .2; }
+    to { transform: translateY(-20px); opacity: 1; }
+}
+
+@keyframes zoltraak {
+    0% { opacity: 0; width: 0; left: -20%; }
+    20% { opacity: 1; }
+    100% { opacity: 0; width: 140vw; left: -20%; }
+}
+
+@keyframes fall {
+    from { transform: translateY(-30px) rotate(0); opacity: 1; }
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@media(max-width: 900px) {
+    .frieren-hero-grid,
+    .frieren-card-grid,
+    .frieren-dashboard-area,
+    .frieren-login-area,
+    .frieren-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mana-navbar,
+    .dash-top,
+    .dash-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mana-navbar strong {
+        margin-right: 0;
+    }
+}

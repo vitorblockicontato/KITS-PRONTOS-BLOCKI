@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Central Perk UI | Interface Kits</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Pacifico&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="friends-kit.css">
+</head>
+
+<body class="friends-page">
+    <div class="screen-effect" id="screenEffect"></div>
+    <div class="secret-banner" id="secretBanner">HOW YOU DOIN?</div>
+    <div class="floating-sofa" id="floatingSofa">🛋️</div>
+
+    <header class="friends-topbar">
+        <a class="friends-logo" href="index.html" id="friendsLogo">
+            <span>☕</span>
+            <strong>Central Perk UI</strong>
+        </a>
+
+        <nav class="friends-navbar">
+            <a href="#" data-nav="coffee">Café</a>
+            <a href="#" data-nav="sofa">Sofá</a>
+            <a href="#" data-nav="pivot">Pivot</a>
+            <a href="#" data-nav="apartment">Apartamento</a>
+            <a href="#" data-nav="joey">Joey</a>
+            <button id="navCoffeeBtn">Central Perk</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="friends-hero">
+            <div class="coffee-bg"></div>
+            <div class="lamp-glow"></div>
+            <div class="dots-wall"></div>
+
+            <div class="friends-hero-content">
+                <div>
+                    <span class="friends-label">☕ Sitcom • Coffee • Apartment • Sofa</span>
+
+                    <h1>The One With The UI Kit.</h1>
+
+                    <p>
+                        Kit inspirado em Friends com Central Perk, sofá laranja, xícaras de café,
+                        moldura amarela, cards clicáveis e easter eggs como PIVOT e HOWYOUDOIN.
+                    </p>
+
+                    <div class="friends-actions">
+                        <button class="coffee-btn" id="coffeeBtn">Serve Coffee</button>
+                        <button class="pivot-btn" id="pivotBtn">Pivot!</button>
+                        <button class="sofa-btn" id="sofaBtn">Orange Sofa</button>
+                    </div>
+                </div>
+
+                <div class="perk-stage">
+                    <div class="yellow-frame">
+                        <span>☕</span>
+                    </div>
+
+                    <div class="orange-sofa" id="orangeSofa">
+                        <span>🛋️</span>
+                    </div>
+
+                    <div class="perk-sign">
+                        <strong>CENTRAL PERK</strong>
+                        <small>OPEN</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="friends-section">
+            <div class="friends-title">
+                <span>Navbar</span>
+                <h2>Menu com café, sofá e easter eggs</h2>
+            </div>
+
+            <nav class="perk-navbar">
+                <strong>☕ Central Perk</strong>
+                <a href="#" data-perk="coffee">Coffee</a>
+                <a href="#" data-perk="sofa">Orange Sofa</a>
+                <a href="#" data-perk="frame">Yellow Frame</a>
+                <a href="#" data-perk="pivot">Pivot</a>
+                <button id="perkBtn">How you doin?</button>
+            </nav>
+        </section>
+
+        <section class="friends-section">
+            <div class="friends-title">
+                <span>Cards</span>
+                <h2>Café, sofá e apartamento</h2>
+            </div>
+
+            <div class="friends-card-grid">
+                <article class="friends-card coffee-card" id="coffeeCard">
+                    <span>Coffee</span>
+                    <h3>Central Perk Cup</h3>
+                    <p>Clique para encher a xícara e ativar aroma de café.</p>
+                    <button>Servir café</button>
+                </article>
+
+                <article class="friends-card sofa-card" id="sofaCard">
+                    <span>Sofa</span>
+                    <h3>Orange Sofa</h3>
+                    <p>Clique para fazer o sofá aparecer e destacar o card.</p>
+                    <button>Trazer sofá</button>
+                </article>
+
+                <article class="friends-card apartment-card" id="apartmentCard">
+                    <span>Apartment</span>
+                    <h3>Yellow Frame</h3>
+                    <p>Clique para ativar a moldura amarela clássica na interface.</p>
+                    <button>Ativar moldura</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="friends-section friends-dashboard-area">
+            <div>
+                <div class="friends-title">
+                    <span>Dashboard</span>
+                    <h2>Painel Central Perk</h2>
+                </div>
+
+                <p class="friends-muted">
+                    Métricas de cafés servidos, episódios, piadas internas e encontros no sofá.
+                </p>
+            </div>
+
+            <div class="friends-dashboard">
+                <div class="dash-top">
+                    <strong>Friends Monitor</strong>
+                    <span id="dashStatus">COZY</span>
+                </div>
+
+                <div class="dash-stats">
+                    <div><strong id="coffeeMetric">06</strong><span>Cafés</span></div>
+                    <div><strong id="jokeMetric">24</strong><span>Piadas</span></div>
+                    <div><strong id="pivotMetric">00</strong><span>Pivots</span></div>
+                </div>
+
+                <div class="coffee-bars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="friends-section friends-login-area">
+            <form class="friends-login" onsubmit="event.preventDefault()">
+                <h2>Entrar no Central Perk</h2>
+                <p>Login com visual acolhedor de cafeteria e apartamento.</p>
+
+                <input placeholder="Nome do amigo">
+                <input placeholder="Senha do sofá" type="password">
+
+                <button>Entrar no grupo</button>
+            </form>
+
+            <aside class="friends-easter-box">
+                <h3>Easter eggs</h3>
+                <p>Digite <strong>PIVOT</strong> para girar os cards.</p>
+                <p>Digite <strong>HOWYOUDOIN</strong> para ativar Joey Mode.</p>
+                <p>Digite <strong>CENTRALPERK</strong> para modo café.</p>
+                <p>Clique nos itens da navbar para ativar efeitos do kit.</p>
+            </aside>
+        </section>
+
+        <footer class="friends-footer">
+            <div>
+                <h3>Central Perk UI</h3>
+                <p>Kit Friends com café, sofá, moldura amarela, cards clicáveis e easter eggs.</p>
+            </div>
+
+            <div>
+                <h4>Componentes</h4>
+                <a href="#">Navbar</a>
+                <a href="#">Hero</a>
+                <a href="#">Cards</a>
+            </div>
+
+            <div>
+                <h4>Segredos</h4>
+                <a href="#">Pivot</a>
+                <a href="#">Joey</a>
+                <a href="#">Central Perk</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="friends-kit.js"></script>
+</body>
+</html>

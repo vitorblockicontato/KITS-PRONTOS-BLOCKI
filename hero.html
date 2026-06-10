@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>
+   Laboratório de Hero
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <link href="labs.css" rel="stylesheet"/>
+<meta content="Laboratório visual Interface Kits com preview em tempo real e código copiável." name="description"/></head>
+<body class="lab-page">
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="logo" href="index.html">
+     Interface
+     <span>
+      Kits
+     </span>
+</a>
+<nav class="nav">
+<a href="index.html">
+      Início
+     </a>
+<a href="kits.html">
+      Kits
+     </a>
+<a href="botoes.html">
+      Botões
+     </a>
+<a href="navbar.html">
+      Navbar
+     </a>
+<a class="active" href="hero.html">
+      Hero
+     </a>
+<a href="cards.html">
+      Cards
+     </a>
+<a href="inputs.html">
+      Inputs
+     </a>
+<a href="login-cadastro.html">
+      Login
+     </a>
+<a href="footer.html">
+      Footer
+     </a>
+<a href="sidebar.html">
+      Sidebar
+     </a>
+<a href="form.html">
+      Form
+     </a>
+<a href="dashboard.html">
+      Dashboard
+     </a>
+<a href="sites-prontos.html">
+      Sites
+     </a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" type="button">☰</button></div>
+</header>
+<main class="container">
+<a class="back" href="index.html">
+    ← Voltar
+   </a>
+<section class="page-title">
+<span class="pill">
+     Laboratório
+    </span>
+<h1>
+     Hero
+    </h1>
+<p>
+     Controle título, CTA, imagem, vídeo, fundo, textura, cards flutuantes e layout.
+    </p>
+<div class="lab-highlights"><span>Preview ao vivo</span><span>Código copiável</span><span>Layout responsivo</span></div></section>
+<section class="lab">
+<aside class="panel">
+<div class="group">
+<h3>
+       Aleatório
+      </h3>
+<button class="btn primary" id="randomHero">
+       Criar aleatório
+      </button>
+</div>
+<div class="group">
+<h3>
+       Textos
+      </h3>
+<div class="control">
+<label>
+        Tag
+       </label>
+<input id="hTag" value="Novo projeto"/>
+</div>
+<div class="control">
+<label>
+        Título
+       </label>
+<textarea id="hTitle">Crie interfaces modernas sem começar do zero</textarea>
+</div>
+<div class="control">
+<label>
+        Subtítulo
+       </label>
+<textarea id="hSub">Monte uma seção principal profissional com layout responsivo e código copiável.</textarea>
+</div>
+<div class="control">
+<label>
+        Botão 1
+       </label>
+<input id="hBtn1" value="Começar agora"/>
+</div>
+<div class="control">
+<label>
+        Botão 2
+       </label>
+<input id="hBtn2" value="Ver exemplos"/>
+</div>
+</div>
+<div class="group">
+<h3>
+       Visual
+      </h3>
+<div class="control">
+<label>
+        Imagem/visual
+       </label>
+<select id="hVisual">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Vídeo
+       </label>
+<select id="hVideo">
+<option value="no">
+         Não
+        </option>
+<option value="yes">
+         Sim
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Cards flutuantes
+       </label>
+<select id="hCards">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Alinhamento
+       </label>
+<select id="hAlign">
+<option value="left">
+         Esquerda
+        </option>
+<option value="center">
+         Centro
+        </option>
+</select>
+</div>
+</div>
+<div class="group">
+<h3>
+       Aparência
+      </h3>
+<div class="control">
+<label>
+        Fundo 1
+       </label>
+<input id="hBg" type="color" value="#111827"/>
+</div>
+<div class="control">
+<label>
+        Fundo 2
+       </label>
+<input id="hBg2" type="color" value="#4f46e5"/>
+</div>
+<div class="control">
+<label>
+        Texto
+       </label>
+<input id="hText" type="color" value="#ffffff"/>
+</div>
+<div class="control">
+<label>
+        Destaque
+       </label>
+<input id="hAccent" type="color" value="#06b6d4"/>
+</div>
+<div class="control">
+<label>
+        Textura
+       </label>
+<select id="hTexture">
+<option value="none">
+         Nenhuma
+        </option>
+<option value="grid">
+         Grid
+        </option>
+<option value="dots">
+         Pontos
+        </option>
+<option value="lines">
+         Linhas
+        </option>
+<option value="tech">
+         Tech
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Altura
+       </label>
+<input id="hHeight" max="760" min="360" type="range" value="520"/>
+</div>
+<div class="control">
+<label>
+        Radius
+       </label>
+<input id="hRadius" max="50" min="0" type="range" value="28"/>
+</div>
+<div class="control">
+<label>
+        Animação
+       </label>
+<select id="hAnim">
+<option value="none">
+         Nenhuma
+        </option>
+<option value="fade">
+         Fade
+        </option>
+<option value="float">
+         Float visual
+        </option>
+<option value="zoom">
+         Zoom
+        </option>
+</select>
+</div>
+</div>
+</aside>
+<section>
+<div class="preview">
+<h2>
+       Preview
+      </h2>
+<br/>
+<div class="stage full" id="heroPreview">
+</div>
+</div>
+<div class="codebox">
+<button class="copy" onclick="copyCode('hCode',this)">
+       Copiar código
+      </button>
+<pre id="hCode"></pre>
+</div>
+</section>
+</section>
+</main>
+<script src="main.js">
+</script>
+<script src="lab-hero.js">
+</script>
+</body>
+</html>

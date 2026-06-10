@@ -1,0 +1,800 @@
+/* ==========================
+   GAME OF THRONES / IRON THRONE UI
+========================== */
+
+:root {
+    --got-fire: #f97316;
+    --got-gold: #facc15;
+    --got-ice: #93c5fd;
+    --got-red: #991b1b;
+    --got-dark: #050505;
+    --got-steel: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: var(--got-dark);
+    color: white;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Topbar */
+.got-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 86px;
+    padding: 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+
+    background:
+        radial-gradient(circle at 15% 0, rgba(249,115,22,.22), transparent 34%),
+        radial-gradient(circle at 90% 0, rgba(147,197,253,.16), transparent 34%),
+        rgba(5,5,5,.92);
+
+    border-bottom: 1px solid rgba(250,204,21,.22);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.got-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 950;
+}
+
+.got-logo span {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid rgba(250,204,21,.70);
+    background: rgba(250,204,21,.10);
+    color: var(--got-gold);
+
+    font-size: 26px;
+    box-shadow: 0 0 24px rgba(250,204,21,.30);
+}
+
+.got-navbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.got-navbar a {
+    position: relative;
+    font-weight: 850;
+    color: #fef3c7;
+    transition: .25s;
+}
+
+.got-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -9px;
+
+    width: 0;
+    height: 3px;
+
+    background: linear-gradient(90deg, var(--got-fire), var(--got-gold), var(--got-ice));
+    border-radius: 999px;
+
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.got-navbar a:hover::after {
+    width: 120%;
+}
+
+.got-navbar a:hover {
+    color: var(--got-gold);
+    text-shadow: 0 0 18px var(--got-fire);
+}
+
+.got-navbar button,
+.kingdom-navbar button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+
+    background: linear-gradient(135deg, var(--got-fire), var(--got-red));
+    color: white;
+
+    font-weight: 950;
+    cursor: pointer;
+}
+
+/* Hero */
+.got-hero {
+    position: relative;
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 25% 25%, rgba(249,115,22,.22), transparent 28%),
+        radial-gradient(circle at 80% 35%, rgba(147,197,253,.16), transparent 30%),
+        linear-gradient(135deg, #070707, #111827 55%, #020617);
+}
+
+.castle-bg {
+    position: absolute;
+    inset: 0;
+    opacity: .20;
+
+    background:
+        linear-gradient(90deg, transparent 0 7%, rgba(0,0,0,.70) 7% 9%, transparent 9% 18%),
+        repeating-linear-gradient(90deg, transparent 0 55px, rgba(255,255,255,.06) 56px 57px, transparent 58px 95px);
+}
+
+.fire-glow {
+    position: absolute;
+    left: -10%;
+    bottom: -20%;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(249,115,22,.42), transparent 65%);
+    filter: blur(18px);
+    animation: fireGlow 4s ease-in-out infinite;
+}
+
+.snow-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.got-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr .72fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.got-label {
+    display: inline-flex;
+    padding: 10px 15px;
+    border-radius: 999px;
+
+    background: rgba(250,204,21,.12);
+    border: 1px solid rgba(250,204,21,.30);
+    color: #fef3c7;
+
+    font-weight: 950;
+}
+
+.got-hero h1 {
+    margin: 20px 0;
+    max-width: 850px;
+
+    font-family: 'Cinzel', serif;
+    font-size: clamp(58px, 9vw, 120px);
+    line-height: .92;
+
+    color: white;
+    text-shadow:
+        4px 4px 0 #7f1d1d,
+        8px 8px 0 rgba(147,197,253,.20);
+}
+
+.got-hero p {
+    max-width: 700px;
+    color: #dbeafe;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.got-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.dracarys-btn,
+.winter-btn,
+.throne-btn {
+    min-height: 52px;
+    padding: 0 22px;
+
+    border: 0;
+    border-radius: 999px;
+
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.dracarys-btn {
+    background: linear-gradient(135deg, var(--got-fire), var(--got-red));
+    box-shadow: 0 0 34px rgba(249,115,22,.32);
+}
+
+.dracarys-btn:hover {
+    transform: scale(1.06);
+    box-shadow:
+        0 0 0 12px rgba(249,115,22,.10),
+        0 0 70px rgba(249,115,22,.40);
+}
+
+.winter-btn,
+.throne-btn {
+    border: 1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+}
+
+/* Throne */
+.throne-stage {
+    position: relative;
+    min-height: 430px;
+
+    display: grid;
+    place-items: center;
+}
+
+.iron-throne {
+    position: relative;
+
+    width: min(310px, 90%);
+    height: 370px;
+
+    display: grid;
+    place-items: center;
+
+    clip-path: polygon(50% 0, 62% 18%, 80% 10%, 74% 35%, 100% 26%, 80% 55%, 90% 100%, 10% 100%, 20% 55%, 0 26%, 26% 35%, 20% 10%, 38% 18%);
+    background:
+        linear-gradient(135deg, #e5e7eb, #475569 35%, #111827 70%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.18) 0 4px, transparent 4px 12px);
+
+    box-shadow:
+        0 0 80px rgba(148,163,184,.22),
+        inset 0 0 80px rgba(0,0,0,.65);
+
+    animation: throneFloat 4s ease-in-out infinite;
+}
+
+.iron-throne span {
+    color: var(--got-gold);
+    font-size: 92px;
+    filter: drop-shadow(0 0 16px var(--got-gold));
+}
+
+.iron-throne.claimed {
+    box-shadow:
+        0 0 100px rgba(250,204,21,.35),
+        inset 0 0 80px rgba(0,0,0,.65);
+}
+
+.house-badges {
+    position: absolute;
+    bottom: 18px;
+
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.house-badges span {
+    padding: 10px 14px;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+/* Sections */
+.got-section {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.got-title {
+    margin-bottom: 24px;
+}
+
+.got-title span {
+    color: var(--got-gold);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 13px;
+}
+
+.got-title h2 {
+    margin: 10px 0 0;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: .9;
+}
+
+/* Navbar do kit */
+.kingdom-navbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    padding: 20px 26px;
+    border-radius: 24px;
+
+    background:
+        radial-gradient(circle at left, rgba(249,115,22,.18), transparent 30%),
+        radial-gradient(circle at right, rgba(147,197,253,.16), transparent 30%),
+        rgba(255,255,255,.08);
+
+    border: 1px solid rgba(250,204,21,.28);
+    backdrop-filter: blur(18px);
+}
+
+.kingdom-navbar strong {
+    margin-right: auto;
+    color: var(--got-gold);
+    font-family: Cinzel, serif;
+}
+
+.kingdom-navbar a {
+    position: relative;
+    color: white;
+    font-weight: 900;
+}
+
+.kingdom-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 3px;
+
+    background: linear-gradient(90deg, var(--got-fire), var(--got-gold), var(--got-ice));
+    border-radius: 999px;
+
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.kingdom-navbar a:hover::after {
+    width: 120%;
+}
+
+.kingdom-navbar a:hover {
+    color: var(--got-gold);
+}
+
+/* Cards */
+.got-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.got-card {
+    position: relative;
+    min-height: 280px;
+
+    padding: 28px;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 25px 80px rgba(0,0,0,.28);
+
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.got-card:hover {
+    transform: translateY(-6px);
+}
+
+.got-card span {
+    color: var(--got-gold);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.got-card h3 {
+    margin: 14px 0 10px;
+    font-size: 30px;
+}
+
+.got-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.got-card button {
+    margin-top: 18px;
+
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+
+    background: linear-gradient(135deg, var(--got-fire), var(--got-red));
+    color: white;
+
+    font-weight: 950;
+    cursor: pointer;
+}
+
+.dragon-card.active {
+    background:
+        radial-gradient(circle at 30% 80%, rgba(249,115,22,.42), transparent 36%),
+        rgba(255,255,255,.09);
+    box-shadow: 0 0 70px rgba(249,115,22,.35);
+}
+
+.dragon-card.active::after {
+    content: "DRACARYS";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+
+    background: linear-gradient(90deg, transparent, rgba(249,115,22,.70), rgba(153,27,27,.70));
+    color: white;
+    font-family: Cinzel, serif;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.wall-card.active {
+    background:
+        radial-gradient(circle, rgba(147,197,253,.30), transparent 38%),
+        rgba(255,255,255,.09);
+    box-shadow: 0 0 70px rgba(147,197,253,.28);
+}
+
+.wall-card.active::after {
+    content: "WINTER";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+
+    background: rgba(147,197,253,.16);
+    color: #dbeafe;
+    font-family: Cinzel, serif;
+    font-size: 42px;
+    font-weight: 900;
+}
+
+.throne-card.active::after {
+    content: "♛";
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    background:
+        repeating-linear-gradient(45deg, rgba(255,255,255,.18) 0 4px, transparent 4px 14px),
+        rgba(0,0,0,.55);
+
+    color: var(--got-gold);
+    font-size: 92px;
+}
+
+/* Dashboard */
+.got-dashboard-area {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 18px;
+    align-items: center;
+}
+
+.got-muted {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+.got-dashboard,
+.got-login,
+.got-easter-box {
+    padding: 28px;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 25px 80px rgba(0,0,0,.28);
+}
+
+.dash-top,
+.dash-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.dash-top strong {
+    color: var(--got-gold);
+    font-size: 24px;
+}
+
+.dash-top span {
+    color: var(--got-fire);
+    font-weight: 900;
+}
+
+.dash-stats {
+    margin: 24px 0;
+}
+
+.dash-stats div {
+    flex: 1;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.08);
+}
+
+.dash-stats strong {
+    display: block;
+    color: var(--got-gold);
+    font-size: 30px;
+}
+
+.kingdom-bars {
+    height: 150px;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+
+    padding: 16px;
+    border-radius: 20px;
+
+    background: rgba(250,204,21,.08);
+}
+
+.kingdom-bars span {
+    flex: 1;
+    border-radius: 999px 999px 0 0;
+
+    background: linear-gradient(180deg, var(--got-gold), var(--got-fire), transparent);
+    animation: kingdomBar .9s ease-in-out infinite alternate;
+}
+
+.kingdom-bars span:nth-child(2) { animation-delay: .2s; }
+.kingdom-bars span:nth-child(3) { animation-delay: .4s; }
+.kingdom-bars span:nth-child(4) { animation-delay: .1s; }
+.kingdom-bars span:nth-child(5) { animation-delay: .3s; }
+
+/* Login */
+.got-login-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.got-login h2 {
+    font-size: 36px;
+}
+
+.got-login p,
+.got-easter-box p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.got-login input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px;
+
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.08);
+    color: white;
+}
+
+.got-login button {
+    width: 100%;
+    margin-top: 14px;
+
+    border: 0;
+    border-radius: 14px;
+    padding: 14px;
+
+    background: linear-gradient(135deg, var(--got-fire), var(--got-red));
+    color: white;
+
+    font-weight: 950;
+}
+
+.got-easter-box h3 {
+    color: var(--got-gold);
+}
+
+.got-easter-box strong {
+    color: var(--got-fire);
+}
+
+/* Footer */
+.got-footer {
+    width: min(1180px, calc(100% - 40px));
+    margin: 60px auto 0;
+    padding: 46px 0;
+
+    display: grid;
+    grid-template-columns: 1.4fr repeat(2, 1fr);
+    gap: 30px;
+
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.got-footer h3,
+.got-footer h4 {
+    color: var(--got-gold);
+}
+
+.got-footer p,
+.got-footer a {
+    display: block;
+    margin-top: 10px;
+    color: #cbd5e1;
+}
+
+/* Effects */
+.screen-effect {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+
+    background: rgba(249,115,22,.45);
+}
+
+.screen-effect.active {
+    animation: flash .45s ease;
+}
+
+.secret-banner {
+    position: fixed;
+    left: 50%;
+    top: 110px;
+    z-index: 9999;
+
+    padding: 14px 22px;
+    border-radius: 999px;
+
+    background: rgba(249,115,22,.18);
+    border: 1px solid rgba(250,204,21,.45);
+
+    color: white;
+    font-family: Cinzel, serif;
+    font-weight: 900;
+
+    transform: translateX(-50%) translateY(-40px);
+    opacity: 0;
+
+    transition: .35s;
+}
+
+.secret-banner.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.got-page.winter-mode {
+    background:
+        radial-gradient(circle at center, rgba(147,197,253,.22), transparent 32%),
+        #020617;
+}
+
+.got-page.targaryen-mode {
+    background:
+        radial-gradient(circle at center, rgba(249,115,22,.26), transparent 32%),
+        #120505;
+}
+
+.got-page.stark-mode .got-logo span {
+    border-color: var(--got-ice);
+    color: var(--got-ice);
+}
+
+.snowflake {
+    position: fixed;
+    top: -20px;
+    z-index: 9998;
+    color: #dbeafe;
+    pointer-events: none;
+    animation: snowFall 2.8s linear forwards;
+}
+
+/* Animations */
+@keyframes fireGlow {
+    0%, 100% { transform: scale(1); opacity: .45; }
+    50% { transform: scale(1.18); opacity: .85; }
+}
+
+@keyframes throneFloat {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-14px) rotate(1deg); }
+}
+
+@keyframes kingdomBar {
+    from { height: 35%; }
+    to { height: 95%; }
+}
+
+@keyframes flash {
+    0% { opacity: 0; }
+    20% { opacity: .95; }
+    100% { opacity: 0; }
+}
+
+@keyframes snowFall {
+    from { transform: translateY(-20px) rotate(0); opacity: 1; }
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@media(max-width: 900px) {
+    .got-topbar,
+    .got-navbar,
+    .kingdom-navbar,
+    .dash-top,
+    .dash-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .got-hero-content,
+    .got-card-grid,
+    .got-dashboard-area,
+    .got-login-area,
+    .got-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .kingdom-navbar strong {
+        margin-right: 0;
+    }
+}

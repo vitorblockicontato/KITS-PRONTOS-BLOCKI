@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>
+   Laboratório de Inputs
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <link href="labs.css" rel="stylesheet"/>
+<meta content="Laboratório visual Interface Kits com preview em tempo real e código copiável." name="description"/></head>
+<body class="lab-page">
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="logo" href="index.html">
+     Interface
+     <span>
+      Kits
+     </span>
+</a>
+<nav class="nav">
+<a href="index.html">
+      Início
+     </a>
+<a href="kits.html">
+      Kits
+     </a>
+<a href="botoes.html">
+      Botões
+     </a>
+<a href="navbar.html">
+      Navbar
+     </a>
+<a href="hero.html">
+      Hero
+     </a>
+<a href="cards.html">
+      Cards
+     </a>
+<a class="active" href="inputs.html">
+      Inputs
+     </a>
+<a href="login-cadastro.html">
+      Login
+     </a>
+<a href="footer.html">
+      Footer
+     </a>
+<a href="sidebar.html">
+      Sidebar
+     </a>
+<a href="form.html">
+      Form
+     </a>
+<a href="dashboard.html">
+      Dashboard
+     </a>
+<a href="sites-prontos.html">
+      Sites
+     </a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" type="button">☰</button></div>
+</header>
+<main class="container">
+<a class="back" href="index.html">
+    ← Voltar
+   </a>
+<section class="page-title">
+<span class="pill">
+     Laboratório
+    </span>
+<h1>
+     Inputs
+    </h1>
+<p>
+     Edite label, placeholder, tipo, ícone, borda, radius, sombra, validação, foco e mensagem de ajuda.
+    </p>
+<div class="lab-highlights"><span>Preview ao vivo</span><span>Código copiável</span><span>Layout responsivo</span></div></section>
+<section class="lab">
+<aside class="panel">
+<div class="group">
+<h3>
+       Aleatório
+      </h3>
+<button class="btn primary" id="randomInput">
+       Criar aleatório
+      </button>
+</div>
+<div class="group">
+<h3>
+       Conteúdo
+      </h3>
+<div class="control">
+<label>
+        Label
+       </label>
+<input id="iLabel" value="E-mail"/>
+</div>
+<div class="control">
+<label>
+        Placeholder
+       </label>
+<input id="iPlaceholder" value="seuemail@exemplo.com"/>
+</div>
+<div class="control">
+<label>
+        Tipo
+       </label>
+<select id="iType">
+<option value="email">
+         E-mail
+        </option>
+<option value="text">
+         Texto
+        </option>
+<option value="password">
+         Senha
+        </option>
+<option value="search">
+         Busca
+        </option>
+<option value="tel">
+         Telefone
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Ícone
+       </label>
+<input id="iIcon" value="✉️"/>
+</div>
+<div class="control">
+<label>
+        Mensagem
+       </label>
+<input id="iHelp" value="Digite um e-mail válido."/>
+</div>
+</div>
+<div class="group">
+<h3>
+       Aparência
+      </h3>
+<div class="control">
+<label>
+        Fundo
+       </label>
+<input id="iBg" type="color" value="#111827"/>
+</div>
+<div class="control">
+<label>
+        Texto
+       </label>
+<input id="iText" type="color" value="#ffffff"/>
+</div>
+<div class="control">
+<label>
+        Destaque
+       </label>
+<input id="iAccent" type="color" value="#7c3aed"/>
+</div>
+<div class="control">
+<label>
+        Borda
+       </label>
+<input id="iBorder" max="6" min="0" type="range" value="1"/>
+</div>
+<div class="control">
+<label>
+        Radius
+       </label>
+<input id="iRadius" max="40" min="0" type="range" value="16"/>
+</div>
+<div class="control">
+<label>
+        Sombra
+       </label>
+<input id="iShadow" max="90" min="0" type="range" value="30"/>
+</div>
+</div>
+<div class="group">
+<h3>
+       Comportamento
+      </h3>
+<div class="control">
+<label>
+        Estado
+       </label>
+<select id="iState">
+<option value="normal">
+         Normal
+        </option>
+<option value="success">
+         Sucesso
+        </option>
+<option value="error">
+         Erro
+        </option>
+<option value="disabled">
+         Desabilitado
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Estilo
+       </label>
+<select id="iStyle">
+<option value="solid">
+         Sólido
+        </option>
+<option value="glass">
+         Glass
+        </option>
+<option value="underline">
+         Linha inferior
+        </option>
+<option value="floating">
+         Label flutuante
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Focus
+       </label>
+<select id="iFocus">
+<option value="glow">
+         Glow
+        </option>
+<option value="border">
+         Borda
+        </option>
+<option value="scale">
+         Aumentar
+        </option>
+</select>
+</div>
+</div>
+</aside>
+<section>
+<div class="preview">
+<h2>
+       Preview
+      </h2>
+<br/>
+<div class="stage" id="inputPreview">
+</div>
+</div>
+<div class="codebox">
+<button class="copy" onclick="copyCode('iCode',this)">
+       Copiar código
+      </button>
+<pre id="iCode"></pre>
+</div>
+</section>
+</section>
+</main>
+<script src="main.js">
+</script>
+<script src="lab-inputs.js">
+</script>
+</body>
+</html>

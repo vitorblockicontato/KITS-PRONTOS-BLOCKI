@@ -1,0 +1,683 @@
+/* ==========================
+   OSHI NO KO / STAR IDOL UI
+========================== */
+
+:root {
+    --idol-pink: #EC4899;
+    --idol-ruby: #A855F7;
+    --idol-aqua: #2563EB;
+    --idol-gold: #FACC15;
+    --idol-white: #F8FAFC;
+    --idol-black: #0F172A;
+}
+
+.oshi-page {
+    background:
+        radial-gradient(circle at 20% 8%, rgba(236,72,153,.22), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(37,99,235,.18), transparent 28%),
+        #070714;
+    color: white;
+}
+
+.oshi-page.ai-mode {
+    background:
+        radial-gradient(circle at 20% 8%, rgba(250,204,21,.34), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(236,72,153,.24), transparent 28%),
+        #120812;
+}
+
+.oshi-page.ruby-mode {
+    background:
+        radial-gradient(circle at 20% 8%, rgba(236,72,153,.36), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(168,85,247,.26), transparent 28%),
+        #12071a;
+}
+
+.oshi-page.aqua-mode {
+    background:
+        radial-gradient(circle at 20% 8%, rgba(37,99,235,.34), transparent 28%),
+        radial-gradient(circle at 82% 10%, rgba(15,23,42,.60), transparent 28%),
+        #020617;
+}
+
+.oshi-hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 70% 48%, rgba(236,72,153,.30), transparent 26%),
+        linear-gradient(135deg, #10051a, #070714);
+}
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 8px, transparent 8px 22px),
+        linear-gradient(135deg, #7f1d1d, #3b0764);
+    z-index: 4;
+    animation: openCurtain 2s ease forwards;
+}
+
+.curtain-left {
+    left: 0;
+}
+
+.curtain-right {
+    right: 0;
+}
+
+.spotlight {
+    position: absolute;
+    top: -20%;
+    width: 280px;
+    height: 120%;
+    background: linear-gradient(180deg, rgba(255,255,255,.20), transparent 70%);
+    filter: blur(10px);
+    transform-origin: top;
+    opacity: .75;
+    animation: spotlightMove 4s ease-in-out infinite;
+}
+
+.spot-one {
+    left: 16%;
+    transform: rotate(24deg);
+}
+
+.spot-two {
+    right: 16%;
+    transform: rotate(-24deg);
+    animation-delay: 1.2s;
+}
+
+.stage-particles {
+    position: absolute;
+    inset: 0;
+    opacity: .35;
+    background:
+        radial-gradient(circle at 20% 20%, white 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 40%, var(--idol-aqua) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 80%, var(--idol-pink) 0 2px, transparent 3px);
+    background-size: 90px 90px;
+    animation: sparkleMove 10s linear infinite;
+}
+
+.oshi-hero-grid {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr .72fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.oshi-label {
+    display: inline-flex;
+    padding: 10px 15px;
+    border-radius: 999px;
+    background: rgba(236,72,153,.16);
+    border: 1px solid rgba(236,72,153,.42);
+    color: #fbcfe8;
+    font-weight: 950;
+}
+
+.oshi-copy h1 {
+    margin: 20px 0;
+    max-width: 850px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 11vw, 148px);
+    line-height: .82;
+    letter-spacing: .03em;
+    color: white;
+    text-shadow:
+        4px 4px 0 var(--idol-pink),
+        8px 8px 0 rgba(37,99,235,.34);
+}
+
+.oshi-copy p {
+    max-width: 700px;
+    color: #dbeafe;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.oshi-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.star-eye-btn,
+.clapper-btn,
+.flash-btn {
+    min-height: 52px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.star-eye-btn {
+    background: linear-gradient(135deg, var(--idol-pink), var(--idol-ruby));
+    box-shadow: 0 0 34px rgba(236,72,153,.40);
+}
+
+.star-eye-btn:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 0 12px rgba(236,72,153,.10),
+        0 0 70px rgba(236,72,153,.55);
+}
+
+.clapper-btn {
+    background:
+        repeating-linear-gradient(135deg, #111827 0 12px, #f8fafc 12px 20px);
+    color: var(--idol-black);
+    border: 2px solid white;
+}
+
+.clapper-btn:hover {
+    transform: rotate(-3deg) translateY(-3px);
+}
+
+.flash-btn {
+    background: linear-gradient(135deg, var(--idol-aqua), var(--idol-gold));
+    color: #111827;
+}
+
+.idol-stage-card {
+    position: relative;
+    min-height: 410px;
+    display: grid;
+    place-items: center;
+    border-radius: 36px;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(250,204,21,.25), transparent 25%),
+        rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 30px 90px rgba(0,0,0,.35);
+}
+
+.idol-face {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 42%, #ffe7bf 0 42%, transparent 43%),
+        linear-gradient(135deg, var(--idol-pink), var(--idol-aqua));
+    box-shadow:
+        0 0 55px rgba(236,72,153,.40),
+        0 0 110px rgba(37,99,235,.22);
+    animation: idolFloat 3s ease-in-out infinite;
+}
+
+.eye {
+    position: absolute;
+    top: 74px;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    color: var(--idol-gold);
+    font-size: 26px;
+    filter: drop-shadow(0 0 12px var(--idol-gold));
+    animation: starSpin 3s linear infinite;
+}
+
+.eye.left {
+    left: 58px;
+}
+
+.eye.right {
+    right: 58px;
+}
+
+.popularity-meter {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    width: 80%;
+    transform: translateX(-50%);
+}
+
+.popularity-meter strong {
+    color: var(--idol-gold);
+}
+
+.meter {
+    height: 12px;
+    margin: 8px 0;
+    border-radius: 999px;
+    background: rgba(255,255,255,.15);
+    overflow: hidden;
+}
+
+.meter span {
+    display: block;
+    width: 82%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--idol-pink), var(--idol-gold));
+    animation: meterRise 2.5s ease-in-out infinite;
+}
+
+.oshi-section {
+    padding: 70px 0;
+}
+
+.oshi-title {
+    margin-bottom: 24px;
+}
+
+.oshi-title span {
+    color: var(--idol-pink);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 13px;
+}
+
+.oshi-title h2 {
+    margin-top: 10px;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: .9;
+    letter-spacing: -0.06em;
+}
+
+.idol-navbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 26px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(18px);
+}
+
+.idol-navbar strong {
+    margin-right: auto;
+    color: var(--idol-gold);
+}
+
+.idol-navbar a {
+    position: relative;
+    color: white;
+    font-weight: 900;
+}
+
+.idol-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--idol-pink), var(--idol-aqua), var(--idol-gold));
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.idol-navbar a:hover::after {
+    width: 120%;
+}
+
+.idol-navbar button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, var(--idol-pink), var(--idol-ruby));
+    color: white;
+    font-weight: 950;
+}
+
+.oshi-card-grid,
+.oshi-login-area,
+.oshi-dashboard-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.oshi-card,
+.oshi-login,
+.oshi-easter-panel,
+.fame-dashboard {
+    position: relative;
+    padding: 28px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 80px rgba(0,0,0,.28);
+    overflow: hidden;
+}
+
+.oshi-card span {
+    color: var(--idol-gold);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.oshi-card h3 {
+    margin: 14px 0 10px;
+    font-size: 30px;
+}
+
+.oshi-card p,
+.oshi-muted,
+.oshi-login p,
+.oshi-easter-panel p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.oshi-card button {
+    margin-top: 18px;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, var(--idol-pink), var(--idol-aqua));
+    color: white;
+    font-weight: 950;
+}
+
+.idol-card:hover {
+    box-shadow:
+        0 0 0 12px rgba(236,72,153,.08),
+        0 0 70px rgba(236,72,153,.35);
+}
+
+.idol-card:hover::after {
+    content: "♪ ♫ ♪";
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--idol-gold);
+    font-size: 28px;
+    animation: notesFloat 1.2s ease infinite;
+}
+
+.movie-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%);
+    background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,.18) 0 8px, transparent 8px 22px);
+    transition: .6s;
+}
+
+.movie-card:hover::after {
+    transform: translateX(120%);
+}
+
+.influencer-card:hover::after {
+    content: "❤ ❤ ❤";
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #fb7185;
+    font-size: 28px;
+    animation: notesFloat 1.2s ease infinite;
+}
+
+.oshi-dashboard-area {
+    grid-template-columns: .8fr 1.2fr;
+    align-items: center;
+}
+
+.dash-top,
+.dash-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.dash-top strong {
+    color: var(--idol-gold);
+    font-size: 24px;
+}
+
+.dash-top span {
+    color: #fbcfe8;
+    font-weight: 900;
+}
+
+.dash-stats {
+    margin: 24px 0;
+}
+
+.dash-stats div {
+    flex: 1;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.08);
+}
+
+.dash-stats strong {
+    display: block;
+    color: var(--idol-gold);
+    font-size: 30px;
+}
+
+.music-bars {
+    height: 150px;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 20px;
+    background: rgba(236,72,153,.10);
+}
+
+.music-bars span {
+    flex: 1;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(180deg, var(--idol-gold), var(--idol-pink), transparent);
+    animation: musicMove .9s ease-in-out infinite alternate;
+}
+
+.music-bars span:nth-child(2) { animation-delay: .2s; }
+.music-bars span:nth-child(3) { animation-delay: .4s; }
+.music-bars span:nth-child(4) { animation-delay: .1s; }
+.music-bars span:nth-child(5) { animation-delay: .3s; }
+
+.oshi-login-area {
+    grid-template-columns: 1fr 1fr;
+}
+
+.oshi-login h2 {
+    font-size: 36px;
+}
+
+.oshi-login input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    background: rgba(255,255,255,.08);
+    color: white;
+}
+
+.oshi-login button {
+    width: 100%;
+    margin-top: 14px;
+    border: 0;
+    border-radius: 14px;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--idol-pink), var(--idol-aqua));
+    color: white;
+    font-weight: 950;
+}
+
+.oshi-easter-panel h3 {
+    color: var(--idol-gold);
+}
+
+.oshi-easter-panel strong {
+    color: var(--idol-pink);
+}
+
+.oshi-footer {
+    margin-top: 60px;
+    padding: 46px 0;
+    background: #020617;
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.oshi-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(2, 1fr);
+    gap: 30px;
+}
+
+.oshi-footer h3,
+.oshi-footer h4 {
+    color: var(--idol-gold);
+}
+
+.oshi-footer p,
+.oshi-footer a {
+    display: block;
+    margin-top: 10px;
+    color: #cbd5e1;
+}
+
+.camera-flash {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background: white;
+    opacity: 0;
+}
+
+.camera-flash.active {
+    animation: cameraFlash .35s ease;
+}
+
+.live-banner {
+    position: fixed;
+    left: 50%;
+    top: 110px;
+    z-index: 9999;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: rgba(236,72,153,.18);
+    border: 1px solid rgba(250,204,21,.45);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    transform: translateX(-50%) translateY(-40px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .35s;
+}
+
+.live-banner.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.star-rain {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.falling-star {
+    position: fixed;
+    top: -30px;
+    font-size: 24px;
+    animation: starFall 2.4s linear forwards;
+}
+
+@keyframes openCurtain {
+    to { transform: translateX(var(--move)); }
+}
+
+.curtain-left { --move: -100%; }
+.curtain-right { --move: 100%; }
+
+@keyframes spotlightMove {
+    0%, 100% { opacity: .45; }
+    50% { opacity: .9; }
+}
+
+@keyframes sparkleMove {
+    from { background-position: 0 0; }
+    to { background-position: 180px 130px; }
+}
+
+@keyframes idolFloat {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-16px) rotate(2deg); }
+}
+
+@keyframes starSpin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes meterRise {
+    0%, 100% { width: 72%; }
+    50% { width: 96%; }
+}
+
+@keyframes notesFloat {
+    from { transform: translateY(15px); opacity: .2; }
+    to { transform: translateY(-15px); opacity: 1; }
+}
+
+@keyframes musicMove {
+    from { height: 35%; }
+    to { height: 95%; }
+}
+
+@keyframes cameraFlash {
+    0% { opacity: 0; }
+    20% { opacity: .95; }
+    100% { opacity: 0; }
+}
+
+@keyframes starFall {
+    from { transform: translateY(-30px) rotate(0); opacity: 1; }
+    to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@media(max-width: 900px) {
+    .oshi-hero-grid,
+    .oshi-card-grid,
+    .oshi-dashboard-area,
+    .oshi-login-area,
+    .oshi-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .idol-navbar,
+    .dash-top,
+    .dash-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .idol-navbar strong {
+        margin-right: 0;
+    }
+}

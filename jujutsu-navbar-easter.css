@@ -1,0 +1,44 @@
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,sans-serif;color:white;background:#020617;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+.kit-hero{position:relative;min-height:720px;display:flex;align-items:center;overflow:hidden}
+.hero-texture,.hero-symbol{position:absolute;inset:0;pointer-events:none}
+.kit-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr .72fr;gap:44px;align-items:center}
+.kit-label{display:inline-flex;padding:10px 15px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);font-weight:950}
+.kit-copy h1{margin:20px 0;max-width:850px;font-family:'Bebas Neue',sans-serif;font-size:clamp(66px,10vw,136px);line-height:.82;letter-spacing:.03em}
+.kit-copy p{max-width:700px;color:#dbeafe;font-size:19px;line-height:1.7}
+.kit-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.main-btn,.second-btn,.third-btn{min-height:52px;padding:0 22px;border:0;border-radius:999px;color:white;font-weight:950;cursor:pointer;transition:.3s}
+.second-btn,.third-btn{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);backdrop-filter:blur(14px)}
+.kit-visual{position:relative;min-height:370px;display:grid;place-items:center}
+.main-orb{position:relative;z-index:2;width:min(280px,90%);aspect-ratio:1;border-radius:50%;animation:floatOrb 3s ease-in-out infinite}
+.ring-one,.ring-two{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.25);animation:spin 8s linear infinite}
+.ring-one{inset:18px}.ring-two{inset:70px;animation-direction:reverse}
+.visual-label{position:absolute;bottom:18px;font-family:Orbitron,sans-serif;color:rgba(255,255,255,.7)}
+.kit-section{padding:70px 0}.kit-title{margin-bottom:24px}.kit-title span{font-weight:950;text-transform:uppercase;letter-spacing:.14em}
+.kit-title h2{font-size:clamp(34px,5vw,64px);line-height:.9;margin:10px 0 0}
+.kit-navbar{display:flex;align-items:center;gap:22px;padding:20px 26px;border-radius:24px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(18px)}
+.kit-navbar strong{margin-right:auto}.kit-navbar a{position:relative;color:white;font-weight:900;cursor:pointer}.kit-navbar a::after{content:"";position:absolute;left:50%;bottom:-8px;width:0;height:3px;border-radius:999px;transform:translateX(-50%);transition:.3s}.kit-navbar a:hover::after{width:120%}
+.kit-navbar button{border:0;border-radius:999px;padding:12px 16px;color:white;font-weight:950;cursor:pointer}
+.kit-card-grid,.login-area{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kit-card,.kit-login,.easter-box,.kit-dashboard{position:relative;overflow:hidden;padding:28px;border-radius:30px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px);box-shadow:0 25px 80px rgba(0,0,0,.28)}
+.kit-card{cursor:pointer;transition:.3s}.kit-card span{font-weight:950;text-transform:uppercase;letter-spacing:.12em}.kit-card h3{font-size:30px;margin:14px 0 10px}.kit-card p,.muted-text,.kit-login p,.easter-box p{color:#cbd5e1;line-height:1.6}
+.kit-card button,.kit-login button{margin-top:18px;border:0;border-radius:999px;padding:12px 16px;color:white;font-weight:950;cursor:pointer}
+.dashboard-area{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px;align-items:center}.dash-top,.dash-stats{display:flex;justify-content:space-between;gap:14px}.dash-stats{margin:24px 0}.dash-stats div{flex:1;padding:18px;border-radius:18px;background:rgba(255,255,255,.08)}.dash-stats strong{display:block;font-size:30px}
+.dash-chart{height:150px;display:flex;align-items:end;gap:10px;padding:16px;border-radius:20px;background:rgba(255,255,255,.06)}.dash-chart span{flex:1;border-radius:999px 999px 0 0;animation:barMove .9s ease-in-out infinite alternate}.dash-chart span:nth-child(1){height:42%}.dash-chart span:nth-child(2){height:82%;animation-delay:.1s}.dash-chart span:nth-child(3){height:58%;animation-delay:.3s}.dash-chart span:nth-child(4){height:94%;animation-delay:.2s}.dash-chart span:nth-child(5){height:72%;animation-delay:.4s}
+.login-area{grid-template-columns:1fr 1fr}.kit-login input{width:100%;margin:8px 0;padding:14px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:rgba(255,255,255,.08);color:white}
+.kit-footer{margin-top:60px;padding:46px 0;background:#020617;border-top:1px solid rgba(255,255,255,.10)}.footer-grid{display:grid;grid-template-columns:1.4fr repeat(2,1fr);gap:30px}.kit-footer a,.kit-footer p{display:block;margin-top:10px;color:#cbd5e1}
+.screen-effect{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0}.screen-effect.active{animation:flash .45s ease}.secret-banner{position:fixed;left:50%;top:110px;z-index:9999;padding:14px 22px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);transform:translateX(-50%) translateY(-40px);opacity:0;transition:.35s;font-weight:950}.secret-banner.active{opacity:1;transform:translateX(-50%) translateY(0)}
+@keyframes floatOrb{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-18px) rotate(2deg)}}@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@keyframes barMove{from{filter:brightness(.8)}to{filter:brightness(1.4)}}@keyframes flash{0%{opacity:0}20%{opacity:.9}100%{opacity:0}}
+@media(max-width:900px){.kit-hero-grid,.kit-card-grid,.dashboard-area,.login-area,.footer-grid{grid-template-columns:1fr}.kit-navbar,.dash-top,.dash-stats{flex-direction:column;text-align:center}.kit-navbar strong{margin-right:0}}
+
+.jujutsu-page{background:#070714}.jujutsu-page .kit-hero{background:radial-gradient(circle at 70% 45%,rgba(124,58,237,.32),transparent 28%),linear-gradient(135deg,#070714,#05030A)}
+.jujutsu-page .hero-texture{opacity:.25;background:linear-gradient(35deg,transparent 48%,rgba(255,255,255,.20) 49%,transparent 51%),linear-gradient(120deg,transparent 48%,rgba(34,211,238,.18) 49%,transparent 51%),radial-gradient(circle,rgba(124,58,237,.40) 1px,transparent 2px);background-size:90px 90px,120px 120px,24px 24px}
+.jujutsu-page .main-btn,.jujutsu-page .kit-navbar button,.jujutsu-page .kit-card button,.jujutsu-page .kit-login button{background:linear-gradient(135deg,#7C3AED,#22D3EE)}
+.jujutsu-page .main-orb{background:radial-gradient(circle at 35% 30%,white,transparent 12%),radial-gradient(circle,#22D3EE,#7C3AED,transparent 70%);box-shadow:0 0 70px rgba(124,58,237,.55)}
+.jujutsu-page .kit-title span,.jujutsu-page .kit-card span,.jujutsu-page .dash-stats strong,.jujutsu-page .kit-navbar strong{color:#22D3EE}.jujutsu-page .kit-navbar a::after,.jujutsu-page .dash-chart span{background:linear-gradient(180deg,#22D3EE,#7C3AED,transparent)}
+.jujutsu-page .special-navbar{background:radial-gradient(circle at center,rgba(124,58,237,.25),transparent 40%),rgba(255,255,255,.08);border-color:rgba(124,58,237,.4)}.jujutsu-page .special-navbar a:hover{letter-spacing:.08em;color:#22D3EE}
+.jujutsu-page.domain .screen-effect{background:radial-gradient(circle,rgba(124,58,237,.55),rgba(0,0,0,.88))}.jujutsu-page .card-one.infinity{filter:blur(.2px);box-shadow:0 0 0 12px rgba(34,211,238,.08),0 0 80px rgba(34,211,238,.26)}
+.jujutsu-page .card-two.sukuna::before{content:"";position:absolute;inset:0;background:linear-gradient(35deg,transparent 45%,rgba(239,68,68,.38) 46%,transparent 48%),linear-gradient(120deg,transparent 55%,rgba(239,68,68,.30) 56%,transparent 58%);background-size:90px 90px}.jujutsu-page .card-three.purple{background:radial-gradient(circle at 35% 50%,#22D3EE,transparent 28%),radial-gradient(circle at 65% 50%,#EF4444,transparent 28%),#7C3AED}

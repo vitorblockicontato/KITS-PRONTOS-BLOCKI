@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sic Mundus Timeline UI | Interface Kits</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cinzel:wght@500;700;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dark-kit.css">
+</head>
+
+<body class="dark-page">
+    <div class="time-overlay" id="timeOverlay"></div>
+    <div class="screen-effect" id="screenEffect"></div>
+    <div class="secret-banner" id="secretBanner">SIC MUNDUS CREATUS EST</div>
+
+    <header class="dark-topbar">
+        <a class="dark-logo" href="index.html" id="clockLogo">
+            <span>∞</span>
+            <strong>Sic Mundus UI</strong>
+        </a>
+
+        <nav class="dark-navbar">
+            <a href="#" data-nav="cave">Caverna</a>
+            <a href="#" data-nav="portal">Portal</a>
+            <a href="#" data-nav="loop">Loop</a>
+            <a href="#" data-nav="timeline">Timeline</a>
+            <a href="#" data-nav="sicmundus">Sic Mundus</a>
+            <button id="navLoopBtn">Travel</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dark-hero">
+            <div class="clock-bg"></div>
+            <div class="fog-time"></div>
+            <div class="wormhole-lines"></div>
+
+            <div class="dark-hero-content">
+                <div>
+                    <span class="dark-label">⏳ Time Loop • Winden • Sic Mundus</span>
+
+                    <h1>Everything Is Connected.</h1>
+
+                    <p>
+                        Kit inspirado em Dark com portal temporal, relógio infinito, linhas do tempo,
+                        caverna de Winden, bootstrap paradox e easter eggs como SICMUNDUS e JONAS.
+                    </p>
+
+                    <div class="dark-actions">
+                        <button class="travel-btn" id="travelBtn">Time Travel</button>
+                        <button class="loop-btn" id="loopBtn">Create Loop</button>
+                        <button class="reset-btn" id="resetBtn">Reset Timeline</button>
+                    </div>
+                </div>
+
+                <div class="time-stage">
+                    <div class="wormhole" id="wormhole">
+                        <span>∞</span>
+                    </div>
+
+                    <div class="clock-card">
+                        <strong id="yearDisplay">1986</strong>
+                        <span>WINDEN</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dark-section">
+            <div class="dark-title">
+                <span>Navbar</span>
+                <h2>Menu com portal, ciclo e easter eggs</h2>
+            </div>
+
+            <nav class="sic-navbar">
+                <strong>∞ Sic Mundus</strong>
+                <a href="#" data-sic="past">Passado</a>
+                <a href="#" data-sic="present">Presente</a>
+                <a href="#" data-sic="future">Futuro</a>
+                <a href="#" data-sic="knot">Nó</a>
+                <button id="sicBtn">Abrir portal</button>
+            </nav>
+        </section>
+
+        <section class="dark-section">
+            <div class="dark-title">
+                <span>Cards</span>
+                <h2>Portal, paradoxo e linhas do tempo</h2>
+            </div>
+
+            <div class="dark-card-grid">
+                <article class="dark-card portal-card" id="portalCard">
+                    <span>Portal</span>
+                    <h3>Cave Passage</h3>
+                    <p>Clique para abrir o portal e mudar o ano do dashboard.</p>
+                    <button>Abrir portal</button>
+                </article>
+
+                <article class="dark-card paradox-card" id="paradoxCard">
+                    <span>Paradox</span>
+                    <h3>Bootstrap Knot</h3>
+                    <p>Clique para criar um nó temporal e duplicar linhas.</p>
+                    <button>Criar paradoxo</button>
+                </article>
+
+                <article class="dark-card timeline-card" id="timelineCard">
+                    <span>Timeline</span>
+                    <h3>Split Reality</h3>
+                    <p>Clique para dividir a tela em realidades paralelas.</p>
+                    <button>Dividir linha</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="dark-section dark-dashboard-area">
+            <div>
+                <div class="dark-title">
+                    <span>Dashboard</span>
+                    <h2>Painel temporal de Winden</h2>
+                </div>
+
+                <p class="dark-muted">
+                    Controle ciclos, anos, paradoxos, estabilidade temporal e status do portal.
+                </p>
+            </div>
+
+            <div class="dark-dashboard">
+                <div class="dash-top">
+                    <strong>Timeline Monitor</strong>
+                    <span id="dashStatus">STABLE</span>
+                </div>
+
+                <div class="dash-stats">
+                    <div><strong id="cycleMetric">01</strong><span>Ciclos</span></div>
+                    <div><strong id="yearMetric">1986</strong><span>Ano</span></div>
+                    <div><strong id="paradoxMetric">00</strong><span>Paradoxos</span></div>
+                </div>
+
+                <div class="timeline-bars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="dark-section dark-login-area">
+            <form class="dark-login" onsubmit="event.preventDefault()">
+                <h2>Acesso Sic Mundus</h2>
+                <p>Login com visual de sociedade secreta e arquivos temporais.</p>
+
+                <input placeholder="Nome do viajante">
+                <input placeholder="Código da máquina do tempo" type="password">
+
+                <button>Entrar no ciclo</button>
+            </form>
+
+            <aside class="dark-easter-box">
+                <h3>Easter eggs</h3>
+                <p>Digite <strong>SICMUNDUS</strong> para ativar o portal.</p>
+                <p>Digite <strong>JONAS</strong> para viajar no tempo.</p>
+                <p>Digite <strong>WINDEN</strong> para abrir a caverna.</p>
+                <p>Digite <strong>33</strong> para avançar 33 anos.</p>
+            </aside>
+        </section>
+
+        <footer class="dark-footer">
+            <div>
+                <h3>Sic Mundus Timeline UI</h3>
+                <p>Kit Dark com portal temporal, ciclos, paradoxos, caverna e linhas do tempo.</p>
+            </div>
+
+            <div>
+                <h4>Componentes</h4>
+                <a href="#">Navbar</a>
+                <a href="#">Hero</a>
+                <a href="#">Cards</a>
+            </div>
+
+            <div>
+                <h4>Segredos</h4>
+                <a href="#">Sic Mundus</a>
+                <a href="#">Jonas</a>
+                <a href="#">Winden</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="dark-kit.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+const body=document.body,banner=document.getElementById('secretBanner'),fx=document.getElementById('screenEffect'),main=document.getElementById('mainBtn'),second=document.getElementById('secondBtn'),third=document.getElementById('thirdBtn'),navBtn=document.getElementById('navSecretBtn');
+function show(t){banner.textContent=t;banner.classList.add('active');setTimeout(()=>banner.classList.remove('active'),1800)}
+main.onclick=()=>{show('GOMU GOMU NO BUTTON');main.style.transform='scaleX(1.6) scaleY(.75)';setTimeout(()=>main.style.transform='',500)}
+second.onclick=()=>{body.classList.toggle('gear-second');show('GEAR SECOND')};third.onclick=()=>{document.querySelector('.card-three').classList.toggle('route');show('ROUTE DRAWN')};navBtn.onclick=()=>{document.querySelector('.card-two').classList.toggle('wanted');show('BOUNTY REVEALED')};
+document.querySelectorAll('[data-nav-egg]').forEach(a=>a.onclick=e=>{e.preventDefault();show('COMPASS ROUTE UPDATED');a.style.transform='rotate(-4deg) translateY(-4px)';setTimeout(()=>a.style.transform='',600)});
+document.querySelector('.card-one').onclick=()=>{document.querySelector('.card-one').classList.toggle('haki');show('ARMAMENT HAKI')};document.querySelector('.card-two').onclick=()=>{document.querySelector('.card-two').classList.toggle('wanted');show('WANTED POSTER')};document.querySelector('.card-three').onclick=()=>{document.querySelector('.card-three').classList.toggle('route');show('NEW ISLAND FOUND')};
+let typed='';document.addEventListener('keydown',e=>{typed=(typed+e.key.toLowerCase()).slice(-12);if(typed.includes('gear5')){body.classList.add('gear-second');show('LEGENDARY GEAR')}})

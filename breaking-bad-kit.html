@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Chemical Lab UI | Interface Kits</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Bebas+Neue&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="breaking-bad-kit.css">
+</head>
+
+<body class="bb-page">
+    <div class="screen-effect" id="screenEffect"></div>
+    <div class="secret-banner" id="secretBanner">SECRET MODE ACTIVATED</div>
+
+    <header class="bb-topbar">
+        <a class="bb-logo" href="index.html" id="bbLogo">
+            <span>Br</span>
+            <strong>Chemical Lab UI</strong>
+            <span>Ba</span>
+        </a>
+
+        <nav class="bb-navbar">
+            <a href="#" data-nav="lab">Laboratório</a>
+            <a href="#" data-nav="formula">Fórmula</a>
+            <a href="#" data-nav="purity">Pureza</a>
+            <a href="#" data-nav="empire">Império</a>
+            <button id="navSecretBtn">Heisenberg</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bb-hero">
+            <div class="chemical-bg"></div>
+            <div class="smoke smoke-one"></div>
+            <div class="smoke smoke-two"></div>
+
+            <div class="bb-hero-content">
+                <div>
+                    <span class="bb-label">🧪 Chemistry • Formula • Lab System</span>
+
+                    <h1>Say My UI.</h1>
+
+                    <p>
+                        Kit inspirado em Breaking Bad com laboratório químico, fumaça,
+                        elementos da tabela periódica, cards de pureza, dashboard de produção
+                        e easter eggs como HEISENBERG e JESSE.
+                    </p>
+
+                    <div class="bb-actions">
+                        <button class="cook-btn" id="cookBtn">COOK</button>
+                        <button class="heisenberg-btn" id="heisenbergBtn">Heisenberg Mode</button>
+                        <button class="smoke-btn" id="smokeBtn">Chemical Smoke</button>
+                    </div>
+                </div>
+
+                <div class="lab-visual">
+                    <div class="flask">
+                        <div class="liquid"></div>
+                        <div class="bubbles">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+
+                    <div class="purity-box">
+                        <strong>95.8%</strong>
+                        <span>PURE UI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bb-section">
+            <div class="bb-title">
+                <span>Navbar</span>
+                <h2>Menu com easter eggs químicos</h2>
+            </div>
+
+            <nav class="lab-navbar">
+                <strong><span>Br</span> Lab System</strong>
+                <a href="#" data-lab-nav="smoke">Fumaça</a>
+                <a href="#" data-lab-nav="formula">Fórmula</a>
+                <a href="#" data-lab-nav="crystal">Cristal</a>
+                <a href="#" data-lab-nav="empire">Império</a>
+                <button id="labNavbarBtn">Say my name</button>
+            </nav>
+        </section>
+
+        <section class="bb-section">
+            <div class="bb-title">
+                <span>Cards</span>
+                <h2>Componentes clicáveis do laboratório</h2>
+            </div>
+
+            <div class="bb-card-grid">
+                <article class="bb-card crystal-card" id="crystalCard">
+                    <span>Crystal</span>
+                    <h3>Blue Product</h3>
+                    <p>Clique para encher o card com líquido azul e cristais.</p>
+                    <button>Ativar cristal</button>
+                </article>
+
+                <article class="bb-card formula-card" id="formulaCard">
+                    <span>Formula</span>
+                    <h3>95.8% Pure</h3>
+                    <p>Clique para revelar fórmula química e pureza no card.</p>
+                    <button>Revelar fórmula</button>
+                </article>
+
+                <article class="bb-card rv-card" id="rvCard">
+                    <span>RV Lab</span>
+                    <h3>Mobile Lab</h3>
+                    <p>Clique para ativar fumaça e modo laboratório móvel.</p>
+                    <button>Ligar laboratório</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="bb-section bb-dashboard-area">
+            <div>
+                <div class="bb-title">
+                    <span>Dashboard</span>
+                    <h2>Painel de produção</h2>
+                </div>
+
+                <p class="bb-muted">
+                    Métricas de pureza, reações, lotes químicos e status do laboratório.
+                </p>
+            </div>
+
+            <div class="bb-dashboard">
+                <div class="dash-top">
+                    <strong>Lab Analytics</strong>
+                    <span id="dashStatus">STABLE</span>
+                </div>
+
+                <div class="dash-stats">
+                    <div><strong id="purityMetric">95.8%</strong><span>Pureza</span></div>
+                    <div><strong id="batchMetric">12</strong><span>Lotes</span></div>
+                    <div><strong id="reactionMetric">42</strong><span>Reações</span></div>
+                </div>
+
+                <div class="chemical-bars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="bb-section bb-login-area">
+            <form class="bb-login" onsubmit="event.preventDefault()">
+                <h2>Acesso ao laboratório</h2>
+                <p>Login com visual de sistema químico secreto.</p>
+
+                <input placeholder="ID do químico">
+                <input placeholder="Código da fórmula" type="password">
+
+                <button>Entrar no laboratório</button>
+            </form>
+
+            <aside class="bb-easter-box">
+                <h3>Easter eggs</h3>
+                <p>Digite <strong>HEISENBERG</strong> para ativar modo verde.</p>
+                <p>Digite <strong>JESSE</strong> para explosão química azul.</p>
+                <p>Clique na navbar, nos cards e nos botões para ativar efeitos.</p>
+            </aside>
+        </section>
+
+        <footer class="bb-footer">
+            <div>
+                <h3>Chemical Lab UI</h3>
+                <p>Kit Breaking Bad com laboratório, pureza, fumaça, fórmula e easter eggs.</p>
+            </div>
+
+            <div>
+                <h4>Componentes</h4>
+                <a href="#">Navbar</a>
+                <a href="#">Hero</a>
+                <a href="#">Cards</a>
+            </div>
+
+            <div>
+                <h4>Segredos</h4>
+                <a href="#">Heisenberg</a>
+                <a href="#">Jesse</a>
+                <a href="#">Cook</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="breaking-bad-kit.js"></script>
+</body>
+</html>

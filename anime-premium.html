@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sites Anime Prontos | Interface Kits</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Bangers&family=Orbitron:wght@500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="anime-premium.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="logo" href="index.html">Interface <span>Kits</span></a>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <a href="kits.html">Kits</a>
+      <a href="anime-kits.html">Anime</a>
+      <a class="active" href="anime-premium.html">Sites Anime</a>
+      <a href="sites-prontos.html">Sites</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="anime-sites-hero">
+    <div class="container">
+      <span class="pill">Sites prontos por anime</span>
+      <h1>Estruturas diferentes para cada universo.</h1>
+      <p>Agora cada preview tem layout próprio: mapa, HUD, arena, domínio, missão, palco, grimório e muito mais.</p>
+      <div class="actions">
+        <a class="btn primary" href="#animeSitesGrid">Ver sites</a>
+        <button class="btn" data-copy-css>Copiar CSS da página</button>
+      </div>
+    </div>
+  </section>
+  <section class="container anime-sites-toolbar">
+    <button class="anime-site-filter active" data-filter="all">Todos</button>
+    <button class="anime-site-filter" data-filter="aventura">Aventura</button>
+    <button class="anime-site-filter" data-filter="acao">Ação</button>
+    <button class="anime-site-filter" data-filter="esporte">Esporte</button>
+    <button class="anime-site-filter" data-filter="magia">Magia</button>
+    <button class="anime-site-filter" data-filter="cyber">Cyber</button>
+  </section>
+  <section class="container anime-sites-grid" id="animeSitesGrid"></section>
+</main>
+<script src="anime-premium.js"></script>
+</body>
+</html>

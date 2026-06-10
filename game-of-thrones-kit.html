@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Iron Throne UI | Interface Kits</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cinzel:wght@500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game-of-thrones-kit.css">
+</head>
+
+<body class="got-page">
+    <div class="screen-effect" id="screenEffect"></div>
+    <div class="secret-banner" id="secretBanner">SECRET MODE ACTIVATED</div>
+
+    <header class="got-topbar">
+        <a class="got-logo" href="index.html" id="gotLogo">
+            <span>♛</span>
+            <strong>Iron Throne UI</strong>
+        </a>
+
+        <nav class="got-navbar">
+            <a href="#" data-nav="houses">Casas</a>
+            <a href="#" data-nav="dragons">Dragões</a>
+            <a href="#" data-nav="winter">Winter</a>
+            <a href="#" data-nav="throne">Trono</a>
+            <a href="#" data-nav="wall">Muralha</a>
+            <button id="navSecretBtn">Dracarys</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="got-hero">
+            <div class="castle-bg"></div>
+            <div class="snow-layer" id="snowLayer"></div>
+            <div class="fire-glow"></div>
+
+            <div class="got-hero-content">
+                <div>
+                    <span class="got-label">🐉 Fire • Ice • Houses • Throne</span>
+
+                    <h1>Claim The Throne.</h1>
+
+                    <p>
+                        Kit inspirado em Game of Thrones com fogo de dragão, neve,
+                        casas nobres, muralha, trono de ferro e easter eggs como DRACARYS e WINTER.
+                    </p>
+
+                    <div class="got-actions">
+                        <button class="dracarys-btn" id="dracarysBtn">Dracarys</button>
+                        <button class="winter-btn" id="winterBtn">Winter Is Coming</button>
+                        <button class="throne-btn" id="throneBtn">Claim Throne</button>
+                    </div>
+                </div>
+
+                <div class="throne-stage">
+                    <div class="iron-throne" id="ironThrone">
+                        <span>♛</span>
+                    </div>
+
+                    <div class="house-badges">
+                        <span>Wolf</span>
+                        <span>Dragon</span>
+                        <span>Lion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="got-section">
+            <div class="got-title">
+                <span>Navbar</span>
+                <h2>Menu com fogo, gelo e casas nobres</h2>
+            </div>
+
+            <nav class="kingdom-navbar">
+                <strong>♛ Seven Kingdoms</strong>
+                <a href="#" data-kingdom="stark">Stark</a>
+                <a href="#" data-kingdom="targaryen">Targaryen</a>
+                <a href="#" data-kingdom="lannister">Lannister</a>
+                <a href="#" data-kingdom="wall">The Wall</a>
+                <button id="kingdomBtn">Bend the Knee</button>
+            </nav>
+        </section>
+
+        <section class="got-section">
+            <div class="got-title">
+                <span>Cards</span>
+                <h2>Dragão, Muralha e Trono de Ferro</h2>
+            </div>
+
+            <div class="got-card-grid">
+                <article class="got-card dragon-card" id="dragonCard">
+                    <span>Dragon</span>
+                    <h3>Fire Breath</h3>
+                    <p>Clique para soltar fogo de dragão no card e ativar modo Targaryen.</p>
+                    <button>Soltar fogo</button>
+                </article>
+
+                <article class="got-card wall-card" id="wallCard">
+                    <span>The Wall</span>
+                    <h3>Winter Defense</h3>
+                    <p>Clique para congelar o card e fazer neve cair na tela.</p>
+                    <button>Ativar inverno</button>
+                </article>
+
+                <article class="got-card throne-card" id="throneCard">
+                    <span>Iron Throne</span>
+                    <h3>Kingdom Claim</h3>
+                    <p>Clique para revelar espadas e conquistar o trono.</p>
+                    <button>Reivindicar</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="got-section got-dashboard-area">
+            <div>
+                <div class="got-title">
+                    <span>Dashboard</span>
+                    <h2>Painel dos Sete Reinos</h2>
+                </div>
+
+                <p class="got-muted">
+                    Métricas de casas aliadas, dragões ativos, força da muralha e controle do reino.
+                </p>
+            </div>
+
+            <div class="got-dashboard">
+                <div class="dash-top">
+                    <strong>Kingdom Control</strong>
+                    <span id="dashStatus">NEUTRAL</span>
+                </div>
+
+                <div class="dash-stats">
+                    <div><strong id="houseMetric">07</strong><span>Casas</span></div>
+                    <div><strong id="dragonMetric">03</strong><span>Dragões</span></div>
+                    <div><strong id="wallMetric">92%</strong><span>Muralha</span></div>
+                </div>
+
+                <div class="kingdom-bars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="got-section got-login-area">
+            <form class="got-login" onsubmit="event.preventDefault()">
+                <h2>Acesso Real</h2>
+                <p>Login com estética medieval, casas nobres e conselho do rei.</p>
+
+                <input placeholder="Nome da casa">
+                <input placeholder="Juramento secreto" type="password">
+
+                <button>Entrar no conselho</button>
+            </form>
+
+            <aside class="got-easter-box">
+                <h3>Easter eggs</h3>
+                <p>Digite <strong>DRACARYS</strong> para fogo de dragão.</p>
+                <p>Digite <strong>WINTER</strong> para neve e modo Stark.</p>
+                <p>Digite <strong>STARK</strong>, <strong>TARGARYEN</strong> ou <strong>LANNISTER</strong>.</p>
+            </aside>
+        </section>
+
+        <footer class="got-footer">
+            <div>
+                <h3>Iron Throne UI</h3>
+                <p>Kit Game of Thrones com dragões, casas, neve, muralha e trono.</p>
+            </div>
+
+            <div>
+                <h4>Componentes</h4>
+                <a href="#">Navbar</a>
+                <a href="#">Hero</a>
+                <a href="#">Cards</a>
+            </div>
+
+            <div>
+                <h4>Segredos</h4>
+                <a href="#">Dracarys</a>
+                <a href="#">Winter</a>
+                <a href="#">Iron Throne</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="game-of-thrones-kit.js"></script>
+</body>
+</html>

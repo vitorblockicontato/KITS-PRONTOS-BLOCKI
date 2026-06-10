@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Kaiju Alert UI | Interface Kits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kaiju-no-8-kit.css">
+</head>
+
+<body class="kaiju-page">
+    <div class="screen-effect" id="screenEffect"></div>
+    <div class="secret-banner" id="secretBanner">SECRET MODE ACTIVATED</div>
+
+    <header class="topbar anime-topbar">
+        <div class="container topbar-inner">
+            <a class="logo anime-logo" href="index.html" id="animeLogo">Interface <span>Kits</span></a>
+
+            <nav class="nav kit-main-nav">
+                <a href="index.html">Início</a>
+                <a href="anime-list-kits.html">Animes</a>
+                <a class="active" href="kaiju-no-8-kit.html">Kaiju No. 8</a>
+                <a href="kits.html">Kits</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="kit-hero">
+            <div class="hero-texture"></div>
+            <div class="hero-symbol" id="heroSymbol"></div>
+
+            <div class="container kit-hero-grid">
+                <div class="kit-copy">
+                    <span class="kit-label">🧬 Defense Force • Threat System</span>
+                    <h1>Kaiju Alert System</h1>
+                    <p>Kit inspirado em Kaiju No. 8 com radar militar, alerta vermelho, transformação Kaiju, scanner, HUD e sistema de contenção.</p>
+
+                    <div class="kit-actions">
+                        <button class="main-btn" id="mainBtn">Transformar</button>
+                        <button class="second-btn" id="secondBtn">Ativar alerta</button>
+                        <button class="third-btn" id="thirdBtn">Scanner</button>
+                    </div>
+                </div>
+
+                <div class="kit-visual">
+                    <div class="main-orb"></div>
+                    <div class="ring-one"></div>
+                    <div class="ring-two"></div>
+                    <div class="visual-label">SYSTEM</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container kit-section">
+            <div class="kit-title">
+                <span>Navbar especial</span>
+                <h2>Menu com easter eggs do anime</h2>
+            </div>
+
+            <nav class="kit-navbar special-navbar">
+                <strong>🧬 DEFENSE FORCE</strong>
+                <a href="#" data-nav-egg="one">Radar</a>
+                <a href="#" data-nav-egg="two">Ameaças</a>
+                <a href="#" data-nav-egg="three">Divisões</a>
+                <a href="#" data-nav-egg="four">Kaijus</a>
+                <button id="navSecretBtn">Alerta</button>
+            </nav>
+        </section>
+
+        <section class="container kit-section">
+            <div class="kit-title">
+                <span>Cards</span>
+                <h2>Componentes clicáveis do tema</h2>
+            </div>
+
+            <div class="kit-card-grid">
+                <article class="kit-card card-one" data-card="one">
+                    <span>Threat Level</span>
+                    <h3>Kaiju Detectado</h3>
+                    <p>Clique para abrir um olho Kaiju e gerar rachaduras.</p>
+                    <button type="button">Ativar</button>
+                </article>
+
+                <article class="kit-card card-two" data-card="two">
+                    <span>Defense Force</span>
+                    <h3>HUD Militar</h3>
+                    <p>Clique para ativar o HUD da força de defesa.</p>
+                    <button type="button">Ver efeito</button>
+                </article>
+
+                <article class="kit-card card-three" data-card="three">
+                    <span>Transformation</span>
+                    <h3>Modo Kaiju</h3>
+                    <p>Clique para transformar a interface.</p>
+                    <button type="button">Executar</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="container kit-section dashboard-area">
+            <div>
+                <div class="kit-title">
+                    <span>Dashboard</span>
+                    <h2>Painel temático</h2>
+                </div>
+
+                <p class="muted-text">Digite KAFKA, MINA ou HOSHINA. Também clique nos cards e nos itens da navbar.</p>
+            </div>
+
+            <div class="kit-dashboard">
+                <div class="dash-top">
+                    <strong>Kaiju Alert UI</strong>
+                    <span id="dashStatus">ONLINE</span>
+                </div>
+
+                <div class="dash-stats">
+                    <div><strong id="metricOne">87%</strong><span>Poder</span></div>
+                    <div><strong id="metricTwo">A8</strong><span>Ameaça</span></div>
+                    <div><strong id="metricThree">42</strong><span>Kaijus</span></div>
+                </div>
+
+                <div class="dash-chart"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+        </section>
+
+        <section class="container kit-section login-area">
+            <form class="kit-login" onsubmit="event.preventDefault()">
+                <h2>Acesso</h2>
+                <p>Login adaptado ao universo do kit.</p>
+                <input placeholder="ID do soldado">
+                <input placeholder="Código da divisão" type="password">
+                <button>Entrar</button>
+            </form>
+
+            <aside class="easter-box">
+                <h3>Easter eggs</h3>
+                <p>Digite KAFKA, MINA ou HOSHINA. Também clique nos cards e nos itens da navbar.</p>
+                <p>Os cards agora são clicáveis e a navbar também ativa efeitos.</p>
+            </aside>
+        </section>
+
+        <footer class="kit-footer">
+            <div class="container footer-grid">
+                <div>
+                    <h3>Kaiju Alert UI</h3>
+                    <p>Kit inspirado em Kaiju No. 8 com radar militar, alerta vermelho, transformação Kaiju, scanner, HUD e sistema de contenção.</p>
+                </div>
+                <div>
+                    <h4>Componentes</h4>
+                    <a href="#">Navbar</a>
+                    <a href="#">Hero</a>
+                    <a href="#">Cards</a>
+                </div>
+                <div>
+                    <h4>Segredos</h4>
+                    <a href="#">Modo secreto</a>
+                    <a href="#">Easter egg</a>
+                    <a href="#">Dashboard</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="kaiju-no-8-kit.js"></script>
+</body>
+</html>

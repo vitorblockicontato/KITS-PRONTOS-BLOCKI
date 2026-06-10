@@ -1,0 +1,857 @@
+/* ==========================
+   THE LAST OF US / INFECTION ZONE UI
+========================== */
+
+:root {
+    --tlou-green: #65a30d;
+    --tlou-neon: #a3e635;
+    --tlou-yellow: #facc15;
+    --tlou-rust: #92400e;
+    --tlou-red: #991b1b;
+    --tlou-dark: #050705;
+    --tlou-paper: #d6c3a1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: var(--tlou-dark);
+    color: white;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Camada especial de infecção */
+.infection-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 9997;
+    pointer-events: none;
+    opacity: 0;
+
+    background:
+        radial-gradient(circle at 10% 90%, rgba(101,163,13,.45), transparent 16%),
+        radial-gradient(circle at 86% 18%, rgba(163,230,53,.35), transparent 18%),
+        radial-gradient(circle at 48% 48%, rgba(146,64,14,.30), transparent 20%),
+        repeating-linear-gradient(35deg, transparent 0 38px, rgba(101,163,13,.22) 39px 44px, transparent 45px 90px);
+
+    filter: blur(.2px);
+    transition: opacity .8s ease;
+}
+
+.infection-layer.level-1 { opacity: .22; }
+.infection-layer.level-2 { opacity: .42; }
+.infection-layer.level-3 { opacity: .66; }
+.infection-layer.level-4 { opacity: .88; }
+
+.infection-layer::before,
+.infection-layer::after {
+    content: "";
+    position: absolute;
+    inset: -20%;
+
+    background:
+        radial-gradient(circle, rgba(163,230,53,.30) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(214,195,161,.20) 0 1px, transparent 2px);
+
+    background-size: 54px 54px, 22px 22px;
+    animation: sporeMove 14s linear infinite;
+}
+
+.infection-layer::after {
+    filter: blur(6px);
+    opacity: .6;
+    animation-direction: reverse;
+}
+
+/* Topbar */
+.tlou-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 86px;
+    padding: 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+
+    background:
+        radial-gradient(circle at 12% 0, rgba(101,163,13,.24), transparent 34%),
+        linear-gradient(90deg, rgba(5,7,5,.96), rgba(20,18,12,.93));
+
+    border-bottom: 1px solid rgba(163,230,53,.20);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.tlou-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 950;
+}
+
+.tlou-logo span {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid rgba(163,230,53,.65);
+    background: rgba(101,163,13,.18);
+    color: var(--tlou-neon);
+
+    font-size: 23px;
+    box-shadow: 0 0 24px rgba(163,230,53,.28);
+}
+
+.tlou-logo strong {
+    font-family: Special Elite, monospace;
+    color: var(--tlou-paper);
+}
+
+.tlou-navbar,
+.survival-navbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.tlou-navbar a,
+.survival-navbar a {
+    position: relative;
+    font-weight: 850;
+    color: #d9f99d;
+    transition: .25s;
+}
+
+.tlou-navbar a::after,
+.survival-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -9px;
+
+    width: 0;
+    height: 3px;
+
+    background: linear-gradient(90deg, var(--tlou-green), var(--tlou-neon), var(--tlou-rust));
+    border-radius: 999px;
+
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.tlou-navbar a:hover::after,
+.survival-navbar a:hover::after {
+    width: 120%;
+}
+
+.tlou-navbar a:hover,
+.survival-navbar a:hover {
+    color: var(--tlou-neon);
+    text-shadow: 0 0 18px var(--tlou-green);
+}
+
+.tlou-navbar a:hover::before,
+.survival-navbar a:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -24px;
+
+    width: 70px;
+    height: 24px;
+
+    background: radial-gradient(circle, rgba(163,230,53,.32), transparent 70%);
+    filter: blur(6px);
+
+    transform: translateX(-50%);
+}
+
+.tlou-navbar button,
+.survival-navbar button,
+.tlou-card button,
+.tlou-login button,
+.tlou-actions button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+
+    background: linear-gradient(135deg, var(--tlou-green), var(--tlou-neon));
+    color: #132006;
+
+    font-weight: 950;
+    cursor: pointer;
+}
+
+/* Hero */
+.tlou-hero {
+    position: relative;
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 74% 42%, rgba(101,163,13,.20), transparent 28%),
+        radial-gradient(circle at 20% 25%, rgba(146,64,14,.16), transparent 24%),
+        linear-gradient(135deg, #050705, #18150d 58%, #020617);
+}
+
+.abandoned-bg {
+    position: absolute;
+    inset: 0;
+    opacity: .22;
+
+    background:
+        repeating-linear-gradient(90deg, transparent 0 56px, rgba(255,255,255,.08) 57px 59px),
+        repeating-linear-gradient(0deg, transparent 0 42px, rgba(255,255,255,.04) 43px 44px);
+}
+
+.spore-fog {
+    position: absolute;
+    inset: -20%;
+
+    background:
+        radial-gradient(circle at 20% 80%, rgba(101,163,13,.34), transparent 28%),
+        radial-gradient(circle at 80% 65%, rgba(146,64,14,.20), transparent 30%),
+        radial-gradient(circle at 55% 20%, rgba(163,230,53,.12), transparent 26%);
+
+    filter: blur(24px);
+    animation: fogMove 9s ease-in-out infinite;
+}
+
+.fungus-roots {
+    position: absolute;
+    inset: 0;
+    opacity: .22;
+
+    background:
+        repeating-linear-gradient(45deg, transparent 0 34px, rgba(101,163,13,.28) 35px 38px, transparent 39px 88px),
+        radial-gradient(circle, rgba(163,230,53,.18) 1px, transparent 2px);
+
+    background-size: auto, 34px 34px;
+    animation: rootsMove 18s linear infinite;
+}
+
+.tlou-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr .72fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.tlou-label {
+    display: inline-flex;
+    padding: 10px 15px;
+    border-radius: 999px;
+
+    background: rgba(101,163,13,.13);
+    border: 1px solid rgba(163,230,53,.30);
+    color: #d9f99d;
+
+    font-weight: 950;
+}
+
+.tlou-hero h1 {
+    margin: 20px 0;
+    max-width: 850px;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(72px, 11vw, 148px);
+    line-height: .82;
+    letter-spacing: .03em;
+
+    color: white;
+    text-shadow:
+        4px 4px 0 var(--tlou-green),
+        8px 8px 0 rgba(146,64,14,.24);
+}
+
+.tlou-hero p {
+    max-width: 700px;
+    color: #d6c3a1;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.tlou-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.infect-btn {
+    box-shadow: 0 0 34px rgba(163,230,53,.25);
+}
+
+.infect-btn:hover {
+    transform: scale(1.06);
+    box-shadow:
+        0 0 0 12px rgba(163,230,53,.10),
+        0 0 70px rgba(163,230,53,.35);
+}
+
+.firefly-btn,
+.cure-btn {
+    border: 1px solid rgba(255,255,255,.18) !important;
+    background: rgba(255,255,255,.08) !important;
+    color: white !important;
+    backdrop-filter: blur(14px);
+}
+
+/* Stage */
+.infection-stage {
+    position: relative;
+    min-height: 430px;
+
+    display: grid;
+    place-items: center;
+}
+
+.spore-core {
+    position: relative;
+
+    width: min(300px, 90%);
+    aspect-ratio: 1;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 48% 52% 42% 58%;
+    background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,.52), transparent 10%),
+        radial-gradient(circle, var(--tlou-neon), var(--tlou-green), var(--tlou-rust), transparent 72%);
+
+    box-shadow:
+        0 0 80px rgba(163,230,53,.28),
+        inset 0 0 60px rgba(0,0,0,.42);
+
+    animation: sporePulse 4s ease-in-out infinite;
+}
+
+.spore-core span {
+    color: #132006;
+    font-family: Orbitron, sans-serif;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.gas-mask {
+    position: absolute;
+    left: 20px;
+    bottom: 36px;
+
+    padding: 18px;
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(163,230,53,.25);
+    backdrop-filter: blur(14px);
+
+    text-align: center;
+}
+
+.gas-mask span {
+    display: block;
+    color: var(--tlou-neon);
+    font-size: 46px;
+}
+
+.gas-mask strong {
+    color: var(--tlou-paper);
+    font-family: Orbitron, sans-serif;
+}
+
+.infection-meter {
+    position: absolute;
+    right: 22px;
+    top: 34px;
+
+    padding: 18px;
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(163,230,53,.25);
+    backdrop-filter: blur(14px);
+
+    text-align: center;
+}
+
+.infection-meter strong {
+    display: block;
+    color: var(--tlou-neon);
+    font-size: 38px;
+}
+
+/* Sections */
+.tlou-section {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+.tlou-title {
+    margin-bottom: 24px;
+}
+
+.tlou-title span {
+    color: var(--tlou-neon);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 13px;
+}
+
+.tlou-title h2 {
+    margin: 10px 0 0;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: .9;
+}
+
+/* Navbar Kit */
+.survival-navbar {
+    padding: 20px 26px;
+    border-radius: 24px;
+
+    background:
+        radial-gradient(circle at left, rgba(101,163,13,.16), transparent 30%),
+        radial-gradient(circle at right, rgba(146,64,14,.16), transparent 30%),
+        rgba(255,255,255,.06);
+
+    border: 1px solid rgba(163,230,53,.22);
+    backdrop-filter: blur(18px);
+}
+
+.survival-navbar strong {
+    margin-right: auto;
+    color: var(--tlou-neon);
+    font-family: Special Elite, monospace;
+}
+
+/* Cards */
+.tlou-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.tlou-card {
+    position: relative;
+    min-height: 280px;
+
+    padding: 28px;
+    border-radius: 30px;
+
+    background:
+        radial-gradient(circle at top left, rgba(101,163,13,.12), transparent 38%),
+        rgba(255,255,255,.07);
+
+    border: 1px solid rgba(163,230,53,.16);
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 25px 80px rgba(0,0,0,.32);
+
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.tlou-card:hover {
+    transform: translateY(-6px);
+}
+
+.tlou-card span {
+    color: var(--tlou-neon);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.tlou-card h3 {
+    margin: 14px 0 10px;
+    font-size: 30px;
+}
+
+.tlou-card p {
+    color: var(--tlou-paper);
+    line-height: 1.6;
+}
+
+.clicker-card.active {
+    background:
+        radial-gradient(circle, rgba(153,27,27,.34), transparent 36%),
+        rgba(255,255,255,.07);
+    animation: clickerShake .18s infinite;
+}
+
+.clicker-card.active::after {
+    content: "CLICKER ALERT";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+
+    background:
+        repeating-linear-gradient(45deg, rgba(101,163,13,.22) 0 10px, rgba(0,0,0,.22) 10px 20px),
+        rgba(0,0,0,.58);
+
+    color: white;
+    font-family: Orbitron, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.firefly-card.active {
+    box-shadow: 0 0 70px rgba(250,204,21,.25);
+}
+
+.firefly-card.active::after {
+    content: "LOOK FOR THE LIGHT";
+    position: absolute;
+    inset: 18px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid rgba(250,204,21,.44);
+    color: var(--tlou-yellow);
+    font-family: Special Elite, monospace;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.supplies-card.active {
+    background:
+        radial-gradient(circle at 30% 80%, rgba(214,195,161,.25), transparent 36%),
+        rgba(255,255,255,.07);
+}
+
+.supplies-card.active::after {
+    content: "+ SUPPLIES";
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    color: var(--tlou-paper);
+    font-family: Orbitron, sans-serif;
+    font-weight: 900;
+}
+
+/* Dashboard */
+.tlou-dashboard-area {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 18px;
+    align-items: center;
+}
+
+.tlou-muted {
+    color: var(--tlou-paper);
+    line-height: 1.7;
+}
+
+.tlou-dashboard,
+.tlou-login,
+.tlou-easter-box {
+    padding: 28px;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(163,230,53,.16);
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 25px 80px rgba(0,0,0,.32);
+}
+
+.dash-top,
+.dash-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.dash-top strong {
+    color: var(--tlou-neon);
+    font-size: 24px;
+    font-family: Orbitron, sans-serif;
+}
+
+.dash-top span {
+    color: var(--tlou-paper);
+    font-weight: 900;
+}
+
+.dash-stats {
+    margin: 24px 0;
+}
+
+.dash-stats div {
+    flex: 1;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.06);
+}
+
+.dash-stats strong {
+    display: block;
+    color: var(--tlou-neon);
+    font-size: 30px;
+}
+
+.infection-bars {
+    height: 150px;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+
+    padding: 16px;
+    border-radius: 20px;
+
+    background: rgba(101,163,13,.08);
+}
+
+.infection-bars span {
+    flex: 1;
+    border-radius: 999px 999px 0 0;
+
+    background: linear-gradient(180deg, var(--tlou-neon), var(--tlou-green), transparent);
+    animation: infectionBar .9s ease-in-out infinite alternate;
+}
+
+.infection-bars span:nth-child(2) { animation-delay: .2s; }
+.infection-bars span:nth-child(3) { animation-delay: .4s; }
+.infection-bars span:nth-child(4) { animation-delay: .1s; }
+.infection-bars span:nth-child(5) { animation-delay: .3s; }
+
+/* Login */
+.tlou-login-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.tlou-login h2 {
+    font-size: 36px;
+    font-family: Special Elite, monospace;
+}
+
+.tlou-login p,
+.tlou-easter-box p {
+    color: var(--tlou-paper);
+    line-height: 1.6;
+}
+
+.tlou-login input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px;
+
+    border: 1px solid rgba(163,230,53,.18);
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.06);
+    color: white;
+}
+
+.tlou-login button {
+    width: 100%;
+    margin-top: 14px;
+    border-radius: 14px;
+}
+
+.tlou-easter-box h3 {
+    color: var(--tlou-neon);
+    font-family: Special Elite, monospace;
+}
+
+.tlou-easter-box strong {
+    color: var(--tlou-yellow);
+}
+
+/* Footer */
+.tlou-footer {
+    width: min(1180px, calc(100% - 40px));
+    margin: 60px auto 0;
+    padding: 46px 0;
+
+    display: grid;
+    grid-template-columns: 1.4fr repeat(2, 1fr);
+    gap: 30px;
+
+    border-top: 1px solid rgba(163,230,53,.16);
+}
+
+.tlou-footer h3,
+.tlou-footer h4 {
+    color: var(--tlou-neon);
+    font-family: Special Elite, monospace;
+}
+
+.tlou-footer p,
+.tlou-footer a {
+    display: block;
+    margin-top: 10px;
+    color: var(--tlou-paper);
+}
+
+/* Effects */
+.screen-effect {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    pointer-events: none;
+    opacity: 0;
+    background: rgba(101,163,13,.45);
+}
+
+.screen-effect.active {
+    animation: flash .45s ease;
+}
+
+.secret-banner {
+    position: fixed;
+    left: 50%;
+    top: 110px;
+    z-index: 9999;
+
+    padding: 14px 22px;
+    border-radius: 999px;
+
+    background: rgba(101,163,13,.22);
+    border: 1px solid rgba(163,230,53,.45);
+
+    color: white;
+    font-family: Orbitron, sans-serif;
+    font-weight: 900;
+
+    transform: translateX(-50%) translateY(-40px);
+    opacity: 0;
+
+    transition: .35s;
+}
+
+.secret-banner.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.firefly-swarm {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.firefly {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+    background: var(--tlou-yellow);
+    box-shadow: 0 0 18px var(--tlou-yellow);
+
+    animation: fireflyFloat 2.6s ease forwards;
+}
+
+/* Mode */
+.tlou-page.healed .infection-layer {
+    opacity: 0 !important;
+}
+
+.tlou-page.clicker-mode .tlou-hero {
+    animation: clickerShake .20s infinite;
+}
+
+/* Animations */
+@keyframes fogMove {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(-5%, -3%) scale(1.1); }
+}
+
+@keyframes rootsMove {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 180px 120px, 120px 80px; }
+}
+
+@keyframes sporePulse {
+    0%, 100% { transform: scale(1) rotate(-2deg); }
+    50% { transform: scale(1.06) rotate(2deg); }
+}
+
+@keyframes sporeMove {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 180px 120px, 120px 80px; }
+}
+
+@keyframes infectionBar {
+    from { height: 35%; }
+    to { height: 95%; }
+}
+
+@keyframes clickerShake {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+@keyframes flash {
+    0% { opacity: 0; }
+    20% { opacity: .95; }
+    100% { opacity: 0; }
+}
+
+@keyframes fireflyFloat {
+    from { transform: translateY(30px) scale(.6); opacity: 0; }
+    20% { opacity: 1; }
+    to { transform: translateY(-140px) translateX(80px) scale(1.2); opacity: 0; }
+}
+
+@media(max-width: 900px) {
+    .tlou-topbar,
+    .tlou-navbar,
+    .survival-navbar,
+    .dash-top,
+    .dash-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tlou-hero-content,
+    .tlou-card-grid,
+    .tlou-dashboard-area,
+    .tlou-login-area,
+    .tlou-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .survival-navbar strong {
+        margin-right: 0;
+    }
+}

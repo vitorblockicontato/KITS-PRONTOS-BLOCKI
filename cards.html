@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>
+   Laboratório de Cards
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <link href="labs.css" rel="stylesheet"/>
+<meta content="Laboratório visual Interface Kits com preview em tempo real e código copiável." name="description"/></head>
+<body class="lab-page">
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="logo" href="index.html">
+     Interface
+     <span>
+      Kits
+     </span>
+</a>
+<nav class="nav">
+<a href="index.html">
+      Início
+     </a>
+<a href="kits.html">
+      Kits
+     </a>
+<a href="botoes.html">
+      Botões
+     </a>
+<a href="navbar.html">
+      Navbar
+     </a>
+<a href="hero.html">
+      Hero
+     </a>
+<a class="active" href="cards.html">
+      Cards
+     </a>
+<a href="inputs.html">
+      Inputs
+     </a>
+<a href="login-cadastro.html">
+      Login
+     </a>
+<a href="footer.html">
+      Footer
+     </a>
+<a href="sidebar.html">
+      Sidebar
+     </a>
+<a href="form.html">
+      Form
+     </a>
+<a href="dashboard.html">
+      Dashboard
+     </a>
+<a href="sites-prontos.html">
+      Sites
+     </a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" type="button">☰</button></div>
+</header>
+<main class="container">
+<a class="back" href="index.html">
+    ← Voltar
+   </a>
+<section class="page-title">
+<span class="pill">
+     Laboratório
+    </span>
+<h1>
+     Cards
+    </h1>
+<p>
+     Altere imagem, badge, preço, tags, layout, glass, hover e animação.
+    </p>
+<div class="lab-highlights"><span>Preview ao vivo</span><span>Código copiável</span><span>Layout responsivo</span></div></section>
+<section class="lab">
+<aside class="panel">
+<div class="group">
+<h3>
+       Aleatório
+      </h3>
+<button class="btn primary" id="randomCard">
+       Criar aleatório
+      </button>
+</div>
+<div class="group">
+<h3>
+       Conteúdo
+      </h3>
+<div class="control">
+<label>
+        Imagem
+       </label>
+<select id="cImage">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Badge
+       </label>
+<input id="cBadge" value="Premium"/>
+</div>
+<div class="control">
+<label>
+        Título
+       </label>
+<textarea id="cTitle">Card moderno para projetos reais</textarea>
+</div>
+<div class="control">
+<label>
+        Descrição
+       </label>
+<textarea id="cDesc">Use em lojas, portfólios, blogs, dashboards e landing pages.</textarea>
+</div>
+<div class="control">
+<label>
+        Preço
+       </label>
+<input id="cPrice" value="R$ 129"/>
+</div>
+<div class="control">
+<label>
+        Botão
+       </label>
+<input id="cBtn" value="Ver detalhes"/>
+</div>
+<div class="control">
+<label>
+        Tags
+       </label>
+<input id="cTags" value="UI, Premium, Novo"/>
+</div>
+</div>
+<div class="group">
+<h3>
+       Aparência
+      </h3>
+<div class="control">
+<label>
+        Fundo
+       </label>
+<input id="cBg" type="color" value="#ffffff"/>
+</div>
+<div class="control">
+<label>
+        Texto
+       </label>
+<input id="cText" type="color" value="#111827"/>
+</div>
+<div class="control">
+<label>
+        Destaque
+       </label>
+<input id="cAccent" type="color" value="#7c3aed"/>
+</div>
+<div class="control">
+<label>
+        Borda
+       </label>
+<input id="cBorder" max="8" min="0" type="range" value="1"/>
+</div>
+<div class="control">
+<label>
+        Radius
+       </label>
+<input id="cRadius" max="50" min="0" type="range" value="26"/>
+</div>
+<div class="control">
+<label>
+        Sombra
+       </label>
+<input id="cShadow" max="100" min="0" type="range" value="50"/>
+</div>
+<div class="control">
+<label>
+        Layout
+       </label>
+<select id="cLayout">
+<option value="vertical">
+         Vertical
+        </option>
+<option value="horizontal">
+         Horizontal
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Efeito glass
+       </label>
+<select id="cGlass">
+<option value="no">
+         Não
+        </option>
+<option value="yes">
+         Sim
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Hover
+       </label>
+<select id="cHover">
+<option value="lift">
+         Levantar
+        </option>
+<option value="scale">
+         Aumentar
+        </option>
+<option value="glow">
+         Glow
+        </option>
+<option value="rotate">
+         Inclinar
+        </option>
+<option value="none">
+         Nenhum
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Animação
+       </label>
+<select id="cAnim">
+<option value="none">
+         Nenhuma
+        </option>
+<option value="fade">
+         Fade
+        </option>
+<option value="float">
+         Float
+        </option>
+<option value="pop">
+         Pop
+        </option>
+</select>
+</div>
+</div>
+</aside>
+<section>
+<div class="preview">
+<h2>
+       Preview
+      </h2>
+<br/>
+<div class="stage" id="cardPreview">
+</div>
+</div>
+<div class="codebox">
+<button class="copy" onclick="copyCode('cCode',this)">
+       Copiar código
+      </button>
+<pre id="cCode"></pre>
+</div>
+</section>
+</section>
+</main>
+<script src="main.js">
+</script>
+<script src="lab-cards.js">
+</script>
+</body>
+</html>

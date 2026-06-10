@@ -1,0 +1,701 @@
+/* ==========================
+   ANIME EASTER EGG KITS
+   Cada anime tem mecânica diferente
+========================== */
+
+.anime-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 8%, color-mix(in srgb, var(--accent) 25%, transparent), transparent 28%),
+        radial-gradient(circle at 82% 10%, color-mix(in srgb, var(--secondary) 20%, transparent), transparent 28%),
+        #070714;
+}
+
+.anime-hero {
+    position: relative;
+    min-height: 660px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.anime-bg-effect {
+    position: absolute;
+    inset: 0;
+    opacity: .28;
+    pointer-events: none;
+}
+
+.anime-hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr .7fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.anime-label {
+    display: inline-flex;
+    padding: 10px 15px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+    color: color-mix(in srgb, var(--secondary) 80%, white);
+    font-weight: 950;
+}
+
+.anime-copy h1 {
+    margin: 18px 0;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(60px, 10vw, 130px);
+    line-height: .82;
+    color: white;
+    text-shadow:
+        5px 5px 0 var(--accent),
+        10px 10px 0 color-mix(in srgb, var(--secondary) 42%, transparent);
+}
+
+.anime-copy p {
+    max-width: 720px;
+    color: #dbeafe;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.anime-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.main-easter-btn,
+.ghost-easter-btn {
+    min-height: 48px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    font-weight: 950;
+    cursor: pointer;
+    color: white;
+    transition: .3s;
+}
+
+.main-easter-btn {
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    box-shadow: 0 0 34px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.ghost-easter-btn {
+    border: 1px solid rgba(255,255,255,.24);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+}
+
+.anime-art-stage {
+    position: relative;
+    min-height: 340px;
+    display: grid;
+    place-items: center;
+}
+
+.anime-main-symbol {
+    width: min(270px, 100%);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 80px;
+    font-family: 'Bangers', cursive;
+    color: white;
+    background:
+        radial-gradient(circle at 35% 30%, white, transparent 12%),
+        radial-gradient(circle, var(--secondary), var(--accent), transparent 70%);
+    box-shadow:
+        0 0 55px color-mix(in srgb, var(--accent) 60%, transparent),
+        0 0 120px color-mix(in srgb, var(--secondary) 35%, transparent);
+    animation: floatSymbol 3s ease-in-out infinite;
+}
+
+.anime-ring {
+    position: absolute;
+    inset: 20px;
+    border: 2px solid color-mix(in srgb, var(--secondary) 65%, transparent);
+    border-radius: 50%;
+    animation: spin 8s linear infinite;
+}
+
+.anime-extra-one,
+.anime-extra-two {
+    position: absolute;
+    pointer-events: none;
+}
+
+.kit-section {
+    padding: 70px 0;
+}
+
+.kit-title {
+    margin-bottom: 24px;
+}
+
+.kit-title span {
+    color: var(--secondary);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.kit-title h2 {
+    margin-top: 10px;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: .9;
+}
+
+.anime-kit-navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(16px);
+}
+
+.anime-kit-navbar strong {
+    margin-right: auto;
+    color: var(--secondary);
+}
+
+.anime-kit-navbar a {
+    color: white;
+    font-weight: 900;
+    position: relative;
+}
+
+.anime-kit-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    width: 0;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--secondary);
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.anime-kit-navbar a:hover::after {
+    width: 100%;
+}
+
+.anime-kit-navbar button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    color: white;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    font-weight: 950;
+}
+
+.kit-components-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr;
+    gap: 18px;
+}
+
+.anime-special-card,
+.anime-login-box,
+.anime-dashboard-box,
+.anime-kit-footer {
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    border-radius: 26px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.13);
+    backdrop-filter: blur(16px);
+}
+
+.card-symbol {
+    font-size: 42px;
+    margin-bottom: 14px;
+}
+
+.anime-special-card small {
+    color: var(--secondary);
+    font-weight: 950;
+    text-transform: uppercase;
+}
+
+.anime-special-card h3,
+.anime-login-box h3,
+.anime-dashboard-box h3 {
+    margin: 12px 0;
+    font-size: 28px;
+}
+
+.anime-special-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.main-easter-btn.small {
+    min-height: 40px;
+    padding: 0 16px;
+    margin-top: 16px;
+}
+
+.anime-login-box input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 13px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    background: rgba(255,255,255,.07);
+    color: white;
+}
+
+.anime-login-box button {
+    width: 100%;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 14px;
+    padding: 13px;
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    color: white;
+    font-weight: 950;
+}
+
+.dash-head,
+.anime-kit-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.dash-head span,
+.anime-kit-footer strong {
+    color: var(--secondary);
+    font-weight: 950;
+}
+
+.dash-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.dash-mini-grid div {
+    padding: 15px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.08);
+}
+
+.dash-mini-grid strong {
+    display: block;
+    color: var(--secondary);
+    font-size: 26px;
+}
+
+.dash-mini-grid span {
+    color: #cbd5e1;
+}
+
+.anime-chart {
+    height: 120px;
+    display: flex;
+    align-items: end;
+    gap: 8px;
+}
+
+.anime-chart span {
+    flex: 1;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(180deg, var(--secondary), transparent);
+}
+
+.anime-chart span:nth-child(1){height:42%}
+.anime-chart span:nth-child(2){height:78%}
+.anime-chart span:nth-child(3){height:56%}
+.anime-chart span:nth-child(4){height:94%}
+.anime-chart span:nth-child(5){height:66%}
+
+.anime-kit-footer {
+    margin-top: 18px;
+}
+
+/* ONE PIECE - botão que estica */
+.op-kit .anime-bg-effect {
+    background:
+        radial-gradient(circle, rgba(250,204,21,.35) 1px, transparent 2px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.14) 0 1px, transparent 1px 42px);
+    background-size: 28px 28px, auto;
+    animation: drift 10s linear infinite;
+}
+
+.op-kit .main-easter-btn:hover {
+    transform: scaleX(1.45) scaleY(.86);
+    border-radius: 999px 42px 999px 42px;
+}
+
+.op-kit .anime-main-symbol {
+    clip-path: polygon(50% 0, 68% 20%, 100% 28%, 72% 52%, 82% 100%, 50% 74%, 18% 100%, 28% 52%, 0 28%, 32% 20%);
+}
+
+.op-kit .anime-extra-one {
+    width: 160px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--secondary);
+    animation: rubberArm 2.2s ease-in-out infinite;
+}
+
+/* JUJUTSU - domínio/rachaduras */
+.jjk-kit .anime-bg-effect {
+    background:
+        linear-gradient(35deg, transparent 48%, rgba(255,255,255,.30) 49%, transparent 51%),
+        linear-gradient(120deg, transparent 48%, rgba(34,211,238,.24) 49%, transparent 51%);
+    background-size: 90px 90px;
+}
+
+.jjk-kit .main-easter-btn:hover {
+    box-shadow: 0 0 0 12px rgba(124,58,237,.15), 0 0 70px rgba(124,58,237,.55);
+    letter-spacing: .12em;
+}
+
+.jjk-kit .anime-ring {
+    border-style: dashed;
+    box-shadow: inset 0 0 35px rgba(124,58,237,.24);
+}
+
+/* FRIEREN - runas/grimório */
+.frieren-kit .anime-bg-effect {
+    background:
+        radial-gradient(circle, rgba(255,255,255,.35) 1px, transparent 2px),
+        conic-gradient(from 0deg, transparent, rgba(196,181,253,.34), transparent);
+    animation: spin 14s linear infinite;
+}
+
+.frieren-kit .main-easter-btn:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.2);
+}
+
+.frieren-kit .anime-main-symbol {
+    font-family: 'Cinzel', serif;
+}
+
+/* OSHI - palco e estrelas */
+.oshi-kit .anime-bg-effect {
+    background:
+        radial-gradient(circle at 20% 20%, white 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 40%, var(--secondary) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 80%, var(--accent) 0 2px, transparent 3px);
+    background-size: 90px 90px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.oshi-kit .anime-hero::before,
+.oshi-kit .anime-hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: linear-gradient(20deg, transparent, rgba(255,255,255,.16), transparent);
+    transform-origin: top;
+}
+
+.oshi-kit .anime-hero::before { left: 18%; transform: rotate(18deg); }
+.oshi-kit .anime-hero::after { right: 18%; transform: rotate(-18deg); }
+
+/* BLEACH - cortes */
+.bleach-kit .anime-bg-effect {
+    background:
+        linear-gradient(125deg, transparent 35%, rgba(255,255,255,.38) 36%, transparent 38%),
+        linear-gradient(145deg, transparent 55%, rgba(56,189,248,.30) 56%, transparent 58%);
+    background-size: 120px 120px;
+}
+
+.bleach-kit .main-easter-btn:hover {
+    transform: translateX(8px);
+    box-shadow: -18px 0 0 rgba(255,255,255,.20), 0 0 45px rgba(56,189,248,.35);
+}
+
+/* KAIJU - scanner */
+.kaiju-kit .anime-bg-effect {
+    background:
+        linear-gradient(rgba(6,247,255,.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,247,255,.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.kaiju-kit .anime-art-stage::after {
+    content: "THREAT SCAN";
+    position: absolute;
+    inset: 30px;
+    display: grid;
+    place-items: end center;
+    color: var(--secondary);
+    font-family: 'Orbitron', sans-serif;
+    border: 2px solid var(--secondary);
+    animation: scanPulse 1.4s linear infinite;
+}
+
+/* DANDADAN - glitch */
+.dandadan-kit .anime-hero,
+.dandadan-kit .main-easter-btn:hover {
+    animation: glitchBox 2.3s infinite;
+}
+
+.dandadan-kit .anime-bg-effect {
+    background:
+        repeating-linear-gradient(90deg, rgba(255,43,214,.24) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(0deg, rgba(6,247,255,.20) 0 2px, transparent 2px 18px);
+}
+
+/* GHOST IN THE SHELL - matrix/holograma */
+.ghost-kit .anime-bg-effect {
+    background:
+        linear-gradient(rgba(6,247,255,.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,247,255,.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.ghost-kit .anime-main-symbol {
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 26px;
+}
+
+.ghost-kit .main-easter-btn:hover {
+    filter: hue-rotate(45deg);
+    box-shadow: 0 0 60px rgba(6,247,255,.45);
+}
+
+/* RE ZERO - loop temporal */
+.rezero-kit .anime-bg-effect {
+    background:
+        conic-gradient(from 0deg, rgba(255,255,255,.26), transparent 25%, rgba(124,58,237,.24)),
+        radial-gradient(circle, transparent 0 35%, rgba(255,255,255,.28) 36% 37%, transparent 38%);
+    animation: spin 5s linear infinite reverse;
+}
+
+.rezero-kit .anime-ring {
+    border-style: dashed;
+    animation-duration: 3s;
+}
+
+.rezero-kit .main-easter-btn:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+@keyframes drift { from { background-position: 0 0; } to { background-position: 160px 80px; } }
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@keyframes floatSymbol { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-16px) rotate(2deg); } }
+@keyframes sparkle { 0%,100% { opacity:.18; } 50% { opacity:.50; } }
+@keyframes rubberArm { 0%,100% { transform: scaleX(.7); } 50% { transform: scaleX(1.8); } }
+@keyframes scanPulse { 0%,100% { opacity:.55; } 50% { opacity:1; transform: scale(1.04); } }
+@keyframes glitchBox { 0%,92%,100% { transform: translate(0); } 94% { transform: translate(3px,-2px); } 96% { transform: translate(-2px,2px); } }
+
+@media(max-width: 900px) {
+    .anime-hero-grid,
+    .kit-components-grid,
+    .dash-mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .anime-kit-navbar,
+    .anime-kit-footer,
+    .dash-head {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .anime-kit-navbar strong {
+        margin-right: 0;
+    }
+}
+
+/* ==========================
+   BLEACH / SOUL SLASH
+   Usando o CSS antigo do projeto
+   Agora o botão corta corretamente ao clicar
+========================== */
+
+.bleach-kit .main-easter-btn {
+    position: relative;
+    overflow: hidden;
+
+    min-width: 220px;
+    height: 52px;
+
+    color: transparent;
+    isolation: isolate;
+
+    background: linear-gradient(135deg, #ffffff, #38BDF8);
+    box-shadow:
+        0 0 25px rgba(56, 189, 248, .28),
+        0 0 45px rgba(255, 255, 255, .12);
+}
+
+/* metade de cima */
+.bleach-kit .main-easter-btn::before {
+    content: "Corte espiritual";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding-bottom: 2px;
+
+    color: #0F172A;
+    background: linear-gradient(135deg, #ffffff, #38BDF8);
+
+    border-radius: 999px 999px 0 0;
+
+    z-index: 2;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease,
+        filter .35s ease;
+}
+
+/* metade de baixo */
+.bleach-kit .main-easter-btn::after {
+    content: "Corte espiritual";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 2px;
+
+    color: #0F172A;
+    background: linear-gradient(135deg, #ffffff, #38BDF8);
+
+    border-radius: 0 0 999px 999px;
+
+    z-index: 2;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease,
+        filter .35s ease;
+}
+
+/* linha do golpe */
+.bleach-kit .main-easter-btn span,
+.bleach-kit .main-easter-btn .slash-line {
+    display: none;
+}
+
+.bleach-kit .main-easter-btn:hover {
+    transform: translateX(0);
+    box-shadow:
+        0 0 28px rgba(56, 189, 248, .48),
+        0 0 60px rgba(255, 255, 255, .22);
+}
+
+/* brilho atravessando */
+.bleach-kit .main-easter-btn:hover {
+    background:
+        linear-gradient(135deg, #ffffff, #38BDF8);
+}
+
+.bleach-kit .main-easter-btn:active::before {
+    transform: translateY(-18px) translateX(-12px) rotate(-5deg);
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, .75));
+}
+
+.bleach-kit .main-easter-btn:active::after {
+    transform: translateY(18px) translateX(12px) rotate(5deg);
+    filter: drop-shadow(0 0 14px rgba(56, 189, 248, .85));
+}
+
+/* traço de corte */
+.bleach-kit .main-easter-btn:active {
+    background:
+        linear-gradient(
+            100deg,
+            transparent 0%,
+            transparent 45%,
+            rgba(255, 255, 255, .95) 48%,
+            rgba(56, 189, 248, .95) 50%,
+            rgba(255, 255, 255, .95) 52%,
+            transparent 55%,
+            transparent 100%
+        ),
+        linear-gradient(135deg, #ffffff, #38BDF8);
+
+    animation: soulSlashShake .22s ease;
+}
+
+/* linha cortando o hero */
+.bleach-kit .anime-copy::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+
+    width: min(520px, 80vw);
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, .95),
+        rgba(56, 189, 248, .95),
+        transparent
+    );
+
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+}
+
+.bleach-kit .anime-copy:has(.main-easter-btn:active)::after {
+    opacity: 1;
+    transform: scaleX(1);
+    transition:
+        transform .25s ease,
+        opacity .2s ease;
+}
+
+@keyframes soulSlashShake {
+    0% {
+        transform: translateX(0);
+    }
+
+    35% {
+        transform: translateX(6px);
+    }
+
+    70% {
+        transform: translateX(-4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>
+   Laboratório de Botões
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <link href="labs.css" rel="stylesheet"/>
+<meta content="Laboratório visual Interface Kits com preview em tempo real e código copiável." name="description"/></head>
+<body class="lab-page">
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="logo" href="index.html">
+     Interface
+     <span>
+      Kits
+     </span>
+</a>
+<nav class="nav">
+<a href="index.html">
+      Início
+     </a>
+<a href="kits.html">
+      Kits
+     </a>
+<a class="active" href="botoes.html">
+      Botões
+     </a>
+<a href="navbar.html">
+      Navbar
+     </a>
+<a href="hero.html">
+      Hero
+     </a>
+<a href="cards.html">
+      Cards
+     </a>
+<a href="inputs.html">
+      Inputs
+     </a>
+<a href="login-cadastro.html">
+      Login
+     </a>
+<a href="footer.html">
+      Footer
+     </a>
+<a href="sidebar.html">
+      Sidebar
+     </a>
+<a href="form.html">
+      Form
+     </a>
+<a href="dashboard.html">
+      Dashboard
+     </a>
+<a href="sites-prontos.html">
+      Sites
+     </a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" type="button">☰</button></div>
+</header>
+<main class="container">
+<a class="back" href="index.html">
+    ← Voltar
+   </a>
+<section class="page-title">
+<span class="pill">
+     Laboratório
+    </span>
+<h1>
+     Botões
+    </h1>
+<p>
+     Altere texto, cores, borda, sombra, ícone, hover, loading e animação.
+    </p>
+<div class="lab-highlights"><span>Preview ao vivo</span><span>Código copiável</span><span>Layout responsivo</span></div></section>
+<section class="lab">
+<aside class="panel">
+<div class="group">
+<h3>
+       Aleatório
+      </h3>
+<button class="btn primary" id="randomButton">
+       Criar aleatório
+      </button>
+</div>
+<div class="group">
+<h3>
+       Conteúdo
+      </h3>
+<div class="control">
+<label>
+        Texto
+       </label>
+<input id="bText" value="Comprar agora"/>
+</div>
+<div class="control">
+<label>
+        Ícone
+       </label>
+<input id="bIcon" value="🛒"/>
+</div>
+<div class="control">
+<label>
+        Loading
+       </label>
+<select id="bLoading">
+<option value="no">
+         Não
+        </option>
+<option value="yes">
+         Sim
+        </option>
+</select>
+</div>
+</div>
+<div class="group">
+<h3>
+       Aparência
+      </h3>
+<div class="control">
+<label>
+        Cor principal
+       </label>
+<input id="bBg" type="color" value="#7c3aed"/>
+</div>
+<div class="control">
+<label>
+        Cor secundária
+       </label>
+<input id="bBg2" type="color" value="#06b6d4"/>
+</div>
+<div class="control">
+<label>
+        Cor do texto
+       </label>
+<input id="bColor" type="color" value="#ffffff"/>
+</div>
+<div class="control">
+<label>
+        Estilo
+       </label>
+<select id="bStyle">
+<option value="filled">
+         Preenchido
+        </option>
+<option value="outline">
+         Contorno
+        </option>
+<option value="gradient">
+         Gradiente
+        </option>
+<option value="glass">
+         Glass
+        </option>
+<option value="neon">
+         Neon
+        </option>
+<option value="brutal">
+         Brutalista
+        </option>
+</select>
+</div>
+</div>
+<div class="group">
+<h3>
+       Medidas e efeitos
+      </h3>
+<div class="control">
+<label>
+        Borda
+       </label>
+<input id="bBorder" max="8" min="0" type="range" value="0"/>
+</div>
+<div class="control">
+<label>
+        Radius
+       </label>
+<input id="bRadius" max="60" min="0" type="range" value="16"/>
+</div>
+<div class="control">
+<label>
+        Sombra
+       </label>
+<input id="bShadow" max="100" min="0" type="range" value="40"/>
+</div>
+<div class="control">
+<label>
+        Padding
+       </label>
+<input id="bPad" max="30" min="8" type="range" value="14"/>
+</div>
+<div class="control">
+<label>
+        Fonte
+       </label>
+<input id="bFont" max="28" min="12" type="range" value="16"/>
+</div>
+<div class="control">
+<label>
+        Hover
+       </label>
+<select id="bHover">
+<option value="lift">
+         Levantar
+        </option>
+<option value="scale">
+         Aumentar
+        </option>
+<option value="glow">
+         Glow
+        </option>
+<option value="rotate">
+         Inclinar
+        </option>
+<option value="none">
+         Nenhum
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Animação
+       </label>
+<select id="bAnim">
+<option value="none">
+         Nenhuma
+        </option>
+<option value="pulse">
+         Pulse
+        </option>
+<option value="shine">
+         Shine
+        </option>
+<option value="float">
+         Float
+        </option>
+</select>
+</div>
+</div>
+</aside>
+<section>
+<div class="preview">
+<h2>
+       Preview
+      </h2>
+<br/>
+<div class="stage" id="btnPreview">
+</div>
+</div>
+<div class="codebox">
+<button class="copy" onclick="copyCode('bCode',this)">
+       Copiar código
+      </button>
+<pre id="bCode"></pre>
+</div>
+</section>
+</section>
+</main>
+<script src="main.js">
+</script>
+<script src="lab-botoes.js">
+</script>
+</body>
+</html>

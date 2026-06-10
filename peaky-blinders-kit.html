@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Shelby Empire UI | Interface Kits</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cinzel:wght@500;700;900&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="peaky-blinders-kit.css">
+</head>
+
+<body class="peaky-page">
+    <div class="screen-effect" id="screenEffect"></div>
+    <div class="secret-banner" id="secretBanner">BY ORDER OF THE PEAKY BLINDERS</div>
+    <div class="horse-runner" id="horseRunner">🏇 BET WON +£5000</div>
+    <div class="money-rain" id="moneyRain"></div>
+
+    <header class="peaky-topbar">
+        <a class="peaky-logo" href="index.html" id="pocketWatch">
+            <span>🕰️</span>
+            <strong>Shelby Empire UI</strong>
+        </a>
+
+        <nav class="peaky-navbar">
+            <a href="#" data-nav="smoke">Smoke</a>
+            <a href="#" data-nav="contracts">Contracts</a>
+            <a href="#" data-nav="bets">Bets</a>
+            <a href="#" data-nav="territory">Territory</a>
+            <a href="#" data-nav="razor">Razor Cap</a>
+            <button id="orderBtn">By Order</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="peaky-hero">
+            <div class="smoke-bg"></div>
+            <div class="paper-money"></div>
+            <div class="gold-light"></div>
+
+            <div class="peaky-hero-content">
+                <div>
+                    <span class="peaky-label">🎩 Birmingham • Empire • Contracts</span>
+
+                    <h1>By Order Of The UI.</h1>
+
+                    <p>
+                        Kit inspirado em Peaky Blinders com fumaça, escritório sombrio,
+                        contratos, apostas, lâmina escondida, whisky e easter eggs dos Shelby.
+                    </p>
+
+                    <div class="peaky-actions">
+                        <button class="order-action" id="byOrderBtn">By Order</button>
+                        <button class="office-action" id="officeBtn">Tommy's Office</button>
+                        <button class="horse-action" id="horseBtn">Horse Bet</button>
+                    </div>
+                </div>
+
+                <div class="shelby-stage">
+                    <div class="whisky-glass">
+                        <span class="ice"></span>
+                        <span class="whisky"></span>
+                    </div>
+
+                    <button class="chair-btn" id="chairBtn">Tommy's Chair</button>
+
+                    <div class="pocket-watch">
+                        <span>🕰️</span>
+                        <strong>1920</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="peaky-section">
+            <div class="peaky-title">
+                <span>Navbar</span>
+                <h2>Fumaça, lâmina e ordens Shelby</h2>
+            </div>
+
+            <nav class="shelby-navbar">
+                <strong>🎩 Shelby Company</strong>
+                <a href="#" data-shelby="smoke">Fumaça</a>
+                <a href="#" data-shelby="blade">Lâmina</a>
+                <a href="#" data-shelby="contract">Contrato</a>
+                <a href="#" data-shelby="office">Escritório</a>
+                <button id="shelbyBtn">Assinar ordem</button>
+            </nav>
+        </section>
+
+        <section class="peaky-section">
+            <div class="peaky-title">
+                <span>Cards</span>
+                <h2>Contratos, apostas e império</h2>
+            </div>
+
+            <div class="peaky-card-grid">
+                <article class="peaky-card contract-card" id="contractCard">
+                    <span>Contract</span>
+                    <h3>Secret Agreement</h3>
+                    <p>Clique para carimbar o contrato como CONFIDENTIAL.</p>
+                    <button>Carimbar</button>
+                </article>
+
+                <article class="peaky-card bet-card" id="betCard">
+                    <span>Betting</span>
+                    <h3>Horse Race</h3>
+                    <p>Clique para iniciar uma aposta e ver o cavalo atravessar a tela.</p>
+                    <button>Apostar</button>
+                </article>
+
+                <article class="peaky-card razor-card" id="razorCard">
+                    <span>Razor Cap</span>
+                    <h3>Hidden Blade</h3>
+                    <p>Clique para cortar o card com uma lâmina metálica.</p>
+                    <button>Cortar</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="peaky-section peaky-dashboard-area">
+            <div>
+                <div class="peaky-title">
+                    <span>Dashboard</span>
+                    <h2>Painel do império Shelby</h2>
+                </div>
+
+                <p class="peaky-muted">
+                    Métricas de territórios, lucro, influência, contratos e apostas vencidas.
+                </p>
+            </div>
+
+            <div class="peaky-dashboard">
+                <div class="dash-top">
+                    <strong>Shelby Empire</strong>
+                    <span id="dashStatus">CONTROLLED</span>
+                </div>
+
+                <div class="dash-stats">
+                    <div><strong id="territoryMetric">07</strong><span>Territórios</span></div>
+                    <div><strong id="profitMetric">£45K</strong><span>Lucro</span></div>
+                    <div><strong id="influenceMetric">88%</strong><span>Influência</span></div>
+                </div>
+
+                <div class="empire-map">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="peaky-section peaky-login-area">
+            <form class="peaky-login" onsubmit="event.preventDefault()">
+                <h2>Acesso Shelby</h2>
+                <p>Login com visual de contrato clandestino de Birmingham.</p>
+
+                <input placeholder="Nome da família">
+                <input placeholder="Código do negócio" type="password">
+
+                <button>Entrar no escritório</button>
+            </form>
+
+            <aside class="peaky-easter-box">
+                <h3>Easter eggs</h3>
+                <p>Digite <strong>TOMMY</strong> para o modo escritório sombrio.</p>
+                <p>Digite <strong>ARTHUR</strong> para impacto vermelho nos cards.</p>
+                <p>Digite <strong>HORSE</strong> para a corrida atravessar a tela.</p>
+                <p>Digite <strong>BYORDER</strong> para a frase Shelby aparecer.</p>
+            </aside>
+        </section>
+
+        <footer class="peaky-footer">
+            <div>
+                <h3>Shelby Empire UI</h3>
+                <p>Kit Peaky Blinders com fumaça, contratos, apostas, whisky, lâmina e escritório Tommy.</p>
+            </div>
+
+            <div>
+                <h4>Componentes</h4>
+                <a href="#">Navbar</a>
+                <a href="#">Hero</a>
+                <a href="#">Cards</a>
+            </div>
+
+            <div>
+                <h4>Segredos</h4>
+                <a href="#">Tommy</a>
+                <a href="#">Arthur</a>
+                <a href="#">Horse</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="peaky-blinders-kit.js"></script>
+</body>
+</html>

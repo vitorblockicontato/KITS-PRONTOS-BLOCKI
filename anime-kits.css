@@ -1,0 +1,1510 @@
+:root {
+    --anime-pink: #ff4fd8;
+    --anime-blue: #00e5ff;
+    --anime-yellow: #ffe45e;
+    --anime-purple: #7c3aed;
+    --anime-red: #ff2f4f;
+    --anime-black: #070714;
+}
+
+.anime-main-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 0 70px;
+    background:
+        radial-gradient(circle at 16% 25%, rgba(255, 79, 216, .28), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(0, 229, 255, .25), transparent 26%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.045) 0 2px, transparent 2px 16px),
+        #070714;
+}
+
+.anime-main-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.22) 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity: .25;
+    pointer-events: none;
+}
+
+.anime-main-content {
+    position: relative;
+    z-index: 1;
+}
+
+.anime-pill {
+    display: inline-flex;
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 79, 216, .45);
+    background: rgba(255, 79, 216, .12);
+    color: #ffd6f6;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+}
+
+.anime-main-hero h1 {
+    max-width: 1000px;
+    margin: 18px 0;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(56px, 9vw, 118px);
+    line-height: .86;
+    letter-spacing: .03em;
+    color: white;
+    text-shadow:
+        5px 5px 0 var(--anime-pink),
+        10px 10px 0 rgba(0, 229, 255, .55),
+        0 0 28px rgba(255, 79, 216, .35);
+}
+
+.anime-main-hero p {
+    max-width: 780px;
+    color: #dbeafe;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.anime-toolbar {
+    position: sticky;
+    top: 76px;
+    z-index: 15;
+    padding: 14px 0 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, #080b14 70%, rgba(8, 11, 20, .25));
+}
+
+.anime-filter {
+    border: 2px solid rgba(255,255,255,.16);
+    background: rgba(255,255,255,.07);
+    color: white;
+    border-radius: 999px;
+    padding: 11px 15px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.anime-filter:hover,
+.anime-filter.active {
+    background: linear-gradient(135deg, var(--anime-pink), var(--anime-blue));
+    color: white;
+    transform: translateY(-2px);
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding-bottom: 70px;
+}
+
+.anime-kit {
+    position: relative;
+    padding: 18px;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,.13);
+    background:
+        radial-gradient(circle at 15% 0, rgba(255, 79, 216, .13), transparent 30%),
+        radial-gradient(circle at 92% 14%, rgba(0, 229, 255, .13), transparent 28%),
+        rgba(255,255,255,.055);
+    box-shadow: 0 26px 80px rgba(0,0,0,.30);
+    backdrop-filter: blur(18px);
+}
+
+.anime-kit.wide {
+    grid-column: span 2;
+}
+
+.anime-kit.full {
+    grid-column: 1 / -1;
+}
+
+.anime-preview {
+    min-height: 250px;
+    margin: 14px 0;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.12);
+    background:
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.025)),
+        #090b13;
+}
+
+.anime-kit pre {
+    display: none;
+}
+
+/* FUNDOS */
+.aura-bg {
+    background:
+        radial-gradient(circle at center, rgba(255, 228, 94, .32), transparent 22%),
+        radial-gradient(circle at 35% 35%, rgba(255, 47, 79, .28), transparent 24%),
+        repeating-conic-gradient(from 0deg, rgba(255,255,255,.08) 0deg 5deg, transparent 5deg 16deg),
+        #12080b;
+}
+
+.cyber-bg {
+    background:
+        linear-gradient(rgba(0,229,255,.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,79,216,.08) 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, rgba(255, 79, 216, .28), transparent 26%),
+        #050816;
+    background-size: 34px 34px, 34px 34px, auto, auto;
+}
+
+.sakura-bg {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 180, 217, .36), transparent 18%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, .22), transparent 20%),
+        linear-gradient(135deg, #3b1027, #111827);
+}
+
+.manga-bg {
+    background:
+        radial-gradient(circle, rgba(0,0,0,.18) 1px, transparent 2px),
+        #f8fafc;
+    background-size: 10px 10px;
+}
+
+.mecha-bg {
+    background:
+        linear-gradient(rgba(0,229,255,.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,.10) 1px, transparent 1px),
+        radial-gradient(circle at center, rgba(0,229,255,.20), transparent 28%),
+        #020617;
+    background-size: 32px 32px, 32px 32px, auto, auto;
+}
+
+/* BOTÕES */
+.aura-button {
+    position: relative;
+    padding: 18px 36px;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffe45e, #ff2f4f, #7c3aed);
+    color: white;
+    font-weight: 950;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow:
+        0 0 25px rgba(255, 228, 94, .45),
+        0 0 65px rgba(255, 47, 79, .30);
+    animation: auraPulse 1.7s infinite;
+}
+
+.aura-button::before,
+.aura-button::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: inherit;
+    border: 2px solid rgba(255, 228, 94, .55);
+    animation: auraRing 1.6s infinite;
+}
+
+.aura-button::after {
+    animation-delay: .55s;
+    border-color: rgba(255, 79, 216, .55);
+}
+
+.manga-button {
+    padding: 16px 30px;
+    border: 4px solid #111;
+    background: #fff;
+    color: #111;
+    font-family: 'Bangers', cursive;
+    font-size: 34px;
+    letter-spacing: .06em;
+    cursor: pointer;
+    box-shadow: 8px 8px 0 #111;
+    transform: rotate(-3deg);
+}
+
+.manga-button:hover {
+    transform: rotate(2deg) scale(1.08);
+}
+
+/* NAVBARS */
+.cyber-anime-nav,
+.sakura-nav {
+    width: min(900px, 100%);
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 18px 24px;
+    border-radius: 22px;
+}
+
+.cyber-anime-nav {
+    background: rgba(3, 7, 18, .80);
+    border: 1px solid rgba(0, 229, 255, .35);
+    box-shadow: 0 0 40px rgba(0, 229, 255, .14);
+    backdrop-filter: blur(18px);
+}
+
+.cyber-anime-nav strong {
+    margin-right: auto;
+    color: var(--anime-blue);
+    font-family: 'Zen Dots', sans-serif;
+}
+
+.cyber-anime-nav a,
+.sakura-nav a {
+    color: white;
+    font-weight: 900;
+}
+
+.cyber-anime-nav button,
+.sakura-nav button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 18px;
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+}
+
+.cyber-anime-nav button {
+    background: linear-gradient(135deg, var(--anime-blue), var(--anime-pink));
+}
+
+.sakura-nav {
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.24);
+    backdrop-filter: blur(18px);
+}
+
+.sakura-nav strong {
+    margin-right: auto;
+    color: #ffd6f6;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+}
+
+.sakura-nav div {
+    display: flex;
+    gap: 18px;
+}
+
+.sakura-nav button {
+    background: #ff78bd;
+}
+
+/* HERO */
+.shonen-hero-demo {
+    position: relative;
+    width: 100%;
+    min-height: 460px;
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: 28px;
+    align-items: center;
+    padding: 44px;
+    overflow: hidden;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 73% 45%, rgba(255, 228, 94, .45), transparent 23%),
+        radial-gradient(circle at 78% 45%, rgba(255, 47, 79, .32), transparent 34%),
+        linear-gradient(135deg, #140909, #050816);
+}
+
+.speed-lines {
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-conic-gradient(from 45deg, rgba(255,255,255,.16) 0deg 2deg, transparent 2deg 8deg);
+    opacity: .18;
+    animation: speedMove 1.2s linear infinite;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-copy span {
+    color: var(--anime-yellow);
+    font-weight: 950;
+    text-transform: uppercase;
+}
+
+.hero-copy h2 {
+    max-width: 620px;
+    margin: 12px 0;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: .86;
+    text-shadow: 4px 4px 0 var(--anime-red);
+}
+
+.hero-copy p {
+    max-width: 520px;
+    color: #dbeafe;
+    line-height: 1.6;
+}
+
+.hero-copy button {
+    margin-top: 22px;
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--anime-yellow);
+    color: #111;
+    font-weight: 950;
+}
+
+.anime-character-card {
+    position: relative;
+    z-index: 2;
+    width: min(280px, 100%);
+    aspect-ratio: 1;
+    margin: auto;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 35%, #ffe7bf 0 28%, transparent 29%),
+        radial-gradient(circle at 36% 35%, #111 0 4%, transparent 5%),
+        radial-gradient(circle at 64% 35%, #111 0 4%, transparent 5%),
+        radial-gradient(circle at 50% 72%, #ff2f4f 0 38%, transparent 39%),
+        linear-gradient(135deg, #ffe45e, #ff2f4f);
+    box-shadow:
+        0 0 45px rgba(255, 228, 94, .45),
+        0 0 90px rgba(255, 47, 79, .30);
+    animation: floatAnime 3s ease-in-out infinite;
+}
+
+/* CARDS */
+.sakura-card,
+.manga-panel-card {
+    width: 290px;
+    min-height: 320px;
+    padding: 20px;
+    border-radius: 24px;
+}
+
+.sakura-card {
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.24);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 60px rgba(255, 79, 216, .18);
+}
+
+.sakura-cover {
+    height: 150px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    background:
+        radial-gradient(circle at 30% 30%, #fff, transparent 18%),
+        radial-gradient(circle at 70% 20%, #ffb4d9, transparent 20%),
+        linear-gradient(135deg, #ff78bd, #7c3aed);
+}
+
+.sakura-card span {
+    color: #ffd6f6;
+    font-weight: 900;
+}
+
+.sakura-card h3 {
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+.sakura-card p {
+    color: #fce7f3;
+}
+
+.manga-panel-card {
+    background: white;
+    color: #111;
+    border: 5px solid #111;
+    box-shadow: 10px 10px 0 #111;
+    transform: rotate(-2deg);
+}
+
+.manga-panel-card * {
+    color: #111;
+}
+
+.manga-panel-card small {
+    font-weight: 950;
+}
+
+.manga-panel-card h3 {
+    margin: 18px 0;
+    font-family: 'Bangers', cursive;
+    font-size: 46px;
+    line-height: .9;
+}
+
+/* LOGIN */
+.anime-login {
+    width: min(430px, 100%);
+    padding: 30px;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at top right, rgba(255,79,216,.25), transparent 32%),
+        rgba(5, 8, 22, .84);
+    border: 1px solid rgba(0,229,255,.24);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 26px 80px rgba(0,0,0,.42);
+}
+
+.anime-login h3 {
+    margin-bottom: 18px;
+    font-family: 'Zen Dots', sans-serif;
+    color: var(--anime-blue);
+}
+
+.anime-login input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    background: rgba(255,255,255,.07);
+    color: white;
+    outline: 0;
+}
+
+.anime-login button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--anime-blue), var(--anime-pink));
+    color: white;
+    font-weight: 950;
+}
+
+/* DASHBOARD */
+.mecha-dashboard {
+    width: min(780px, 100%);
+    padding: 26px;
+    border-radius: 28px;
+    border: 1px solid rgba(0, 229, 255, .35);
+    background: rgba(2, 6, 23, .76);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 50px rgba(0, 229, 255, .16);
+}
+
+.mecha-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.mecha-top h3 {
+    color: var(--anime-blue);
+    font-family: 'Zen Dots', sans-serif;
+}
+
+.mecha-top span {
+    color: #38e18b;
+    font-weight: 950;
+}
+
+.mecha-grid {
+    margin: 24px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.mecha-grid div {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(0,229,255,.18);
+}
+
+.mecha-grid strong {
+    display: block;
+    color: var(--anime-blue);
+    font-size: 30px;
+}
+
+.mecha-grid span {
+    color: #b9c2d2;
+}
+
+.mecha-radar {
+    position: relative;
+    height: 220px;
+    border-radius: 50%;
+    width: 220px;
+    margin: auto;
+    border: 1px solid rgba(0,229,255,.45);
+    background:
+        radial-gradient(circle, transparent 0 25%, rgba(0,229,255,.08) 26% 27%, transparent 28% 52%, rgba(0,229,255,.08) 53% 54%, transparent 55%),
+        conic-gradient(from 0deg, rgba(0,229,255,.4), transparent 24%);
+    animation: radarSpin 3s linear infinite;
+}
+
+/* FOOTER */
+.manga-footer {
+    width: min(760px, 100%);
+    padding: 34px;
+    text-align: center;
+    background: white;
+    color: #111;
+    border: 5px solid #111;
+    box-shadow: 10px 10px 0 #111;
+}
+
+.manga-footer * {
+    color: #111;
+}
+
+.manga-footer h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 44px;
+}
+
+.manga-footer div {
+    margin: 18px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* SITE COMPLETO */
+.anime-site {
+    width: 100%;
+    min-height: 760px;
+    overflow: hidden;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(255,79,216,.28), transparent 30%),
+        radial-gradient(circle at 20% 40%, rgba(0,229,255,.20), transparent 28%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 2px, transparent 2px 16px),
+        #070714;
+}
+
+.anime-site nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 24px 34px;
+    background: rgba(255,255,255,.07);
+    backdrop-filter: blur(14px);
+}
+
+.anime-site nav strong {
+    margin-right: auto;
+    color: var(--anime-pink);
+    font-family: 'Zen Dots', sans-serif;
+}
+
+.anime-site nav a {
+    color: white;
+    font-weight: 900;
+}
+
+.anime-site nav button,
+.anime-site header button {
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 19px;
+    background: linear-gradient(135deg, var(--anime-pink), var(--anime-blue));
+    color: white;
+    font-weight: 950;
+}
+
+.anime-site header {
+    padding: 84px 34px 58px;
+    text-align: center;
+}
+
+.anime-site header span {
+    color: var(--anime-yellow);
+    font-weight: 950;
+    text-transform: uppercase;
+}
+
+.anime-site header h2 {
+    max-width: 980px;
+    margin: 14px auto;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(54px, 8vw, 108px);
+    line-height: .84;
+    text-shadow: 5px 5px 0 var(--anime-pink);
+}
+
+.anime-site header p {
+    max-width: 640px;
+    margin: 0 auto 24px;
+    color: #dbeafe;
+}
+
+.anime-site-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 0 34px 34px;
+}
+
+.anime-site-grid article {
+    min-height: 220px;
+    display: grid;
+    place-items: end start;
+    padding: 24px;
+    border-radius: 24px;
+    background:
+        linear-gradient(180deg, transparent, rgba(0,0,0,.72)),
+        radial-gradient(circle at top, rgba(255,79,216,.30), transparent 40%),
+        #111;
+    font-family: 'Bangers', cursive;
+    font-size: 38px;
+    letter-spacing: .05em;
+}
+
+/* ANIMAÇÕES */
+@keyframes auraPulse {
+    0%, 100% { filter: brightness(1); transform: scale(1); }
+    50% { filter: brightness(1.25); transform: scale(1.04); }
+}
+
+@keyframes auraRing {
+    0% { transform: scale(.88); opacity: 1; }
+    100% { transform: scale(1.42); opacity: 0; }
+}
+
+@keyframes speedMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-60px); }
+}
+
+@keyframes floatAnime {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-14px) rotate(2deg); }
+}
+
+@keyframes radarSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+    .anime-grid,
+    .anime-kit.wide,
+    .anime-kit.full {
+        grid-template-columns: 1fr;
+        grid-column: auto;
+    }
+
+    .cyber-anime-nav,
+    .sakura-nav,
+    .anime-site nav,
+    .shonen-hero-demo {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cyber-anime-nav strong,
+    .sakura-nav strong,
+    .anime-site nav strong {
+        margin-right: 0;
+    }
+
+    .mecha-grid,
+    .anime-site-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================
+   MELHORIAS E COPY BUTTONS
+========================= */
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.btn.ghost {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    color: white;
+}
+
+.kit-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.kit-head h3 {
+    margin: 0 0 5px;
+    color: #ffffff;
+    font-size: 21px;
+}
+
+.kit-head span {
+    color: #9fb0cc;
+    font-size: 12px;
+    font-weight: 950;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.copy-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.small-btn {
+    border: 0;
+    border-radius: 14px;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, var(--anime-pink), var(--anime-blue));
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.small-btn.secondary {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+}
+
+.small-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.15);
+}
+
+.clean-preview {
+    padding: 0;
+    overflow: hidden;
+}
+
+/* melhor card sakura */
+.sakura-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.sakura-card::after {
+    content: "";
+    position: absolute;
+    inset: auto -25% -45% auto;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.16);
+}
+
+.sakura-card button,
+.manga-panel-card button {
+    width: 100%;
+    margin-top: 16px;
+    border: 0;
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-weight: 950;
+    cursor: pointer;
+}
+
+.sakura-card button {
+    background: linear-gradient(135deg, #ff78bd, #7c3aed);
+    color: white;
+}
+
+.manga-panel-card button {
+    background: #111;
+    color: white;
+    box-shadow: 5px 5px 0 #ff2f4f;
+}
+
+/* login/cadastro melhorados */
+.anime-login {
+    text-align: left;
+}
+
+.login-icon {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--anime-blue), var(--anime-pink));
+    box-shadow: 0 0 35px rgba(0, 229, 255, .25);
+}
+
+.anime-login label {
+    display: block;
+    margin-top: 12px;
+    color: #dbeafe;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.anime-login a {
+    display: block;
+    margin-top: 14px;
+    color: var(--anime-blue);
+    text-align: center;
+    font-weight: 900;
+}
+
+.sakura-register {
+    width: min(820px, 100%);
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    overflow: hidden;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 28px 80px rgba(255, 79, 216, .18);
+}
+
+.register-side {
+    padding: 34px;
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,.25), transparent 40%),
+        linear-gradient(135deg, rgba(255,79,216,.7), rgba(124,58,237,.55));
+}
+
+.register-side span {
+    display: inline-grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: white;
+    color: #7c3aed;
+    font-weight: 950;
+}
+
+.register-side h3 {
+    font-size: 34px;
+    line-height: 1;
+}
+
+.register-fields {
+    padding: 34px;
+    display: grid;
+    gap: 14px;
+    background: rgba(3, 7, 18, .68);
+}
+
+.register-fields input {
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 16px;
+    padding: 16px;
+    background: rgba(255,255,255,.08);
+    color: white;
+    outline: 0;
+}
+
+.register-fields button {
+    border: 0;
+    border-radius: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff78bd, #00e5ff);
+    color: white;
+    font-weight: 950;
+}
+
+/* dashboard melhorado */
+.mecha-dashboard {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 22px;
+}
+
+.mecha-sidebar {
+    padding: 20px;
+    border-radius: 22px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(0,229,255,.18);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mecha-sidebar strong {
+    margin-bottom: 10px;
+    color: var(--anime-blue);
+    font-family: 'Zen Dots', sans-serif;
+    font-size: 28px;
+}
+
+.mecha-sidebar a {
+    padding: 13px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.06);
+    color: white;
+    font-weight: 900;
+}
+
+.mecha-content {
+    min-width: 0;
+}
+
+.mecha-bottom {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 18px;
+    align-items: center;
+}
+
+.mecha-bars {
+    height: 220px;
+    display: flex;
+    align-items: end;
+    gap: 14px;
+    padding: 22px;
+    border-radius: 22px;
+    background: rgba(0,229,255,.07);
+    border: 1px solid rgba(0,229,255,.18);
+}
+
+.mecha-bars span {
+    flex: 1;
+    border-radius: 18px 18px 0 0;
+    background: linear-gradient(180deg, var(--anime-blue), transparent);
+}
+
+.mecha-bars span:nth-child(1) { height: 42%; }
+.mecha-bars span:nth-child(2) { height: 88%; }
+.mecha-bars span:nth-child(3) { height: 64%; }
+.mecha-bars span:nth-child(4) { height: 76%; }
+
+/* footers melhorados */
+.manga-footer {
+    display: grid;
+    gap: 18px;
+}
+
+.manga-footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.manga-footer nav a {
+    padding: 10px 14px;
+    border: 3px solid #111;
+    background: #fff;
+    box-shadow: 4px 4px 0 #111;
+}
+
+.cyber-footer {
+    width: min(860px, 100%);
+    display: grid;
+    grid-template-columns: .7fr 1fr 1.2fr;
+    align-items: center;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 28px;
+    background: rgba(3, 7, 18, .80);
+    border: 1px solid rgba(0,229,255,.28);
+    backdrop-filter: blur(18px);
+}
+
+.cyber-footer strong {
+    color: var(--anime-blue);
+    font-family: 'Zen Dots', sans-serif;
+    font-size: 24px;
+}
+
+.cyber-footer div {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.cyber-footer a {
+    color: white;
+    font-weight: 900;
+}
+
+.cyber-footer form {
+    display: flex;
+    gap: 10px;
+}
+
+.cyber-footer input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 999px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,.08);
+    color: white;
+    outline: 0;
+}
+
+.cyber-footer button {
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, var(--anime-blue), var(--anime-pink));
+    color: white;
+    font-weight: 950;
+}
+
+/* site completo melhorado */
+.anime-site {
+    min-height: auto;
+}
+
+.anime-site nav {
+    position: relative;
+    z-index: 2;
+}
+
+.anime-site-grid article {
+    min-height: 250px;
+    align-content: end;
+    gap: 8px;
+}
+
+.anime-site-grid span {
+    color: var(--anime-yellow);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 950;
+}
+
+.anime-site-grid strong {
+    font-family: 'Bangers', cursive;
+    font-size: 42px;
+}
+
+.anime-site footer {
+    margin: 0 34px 34px;
+    padding: 24px;
+    border-radius: 22px;
+    background: rgba(255,255,255,.08);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .copy-actions {
+        flex-direction: column;
+    }
+
+    .sakura-register,
+    .mecha-dashboard,
+    .mecha-bottom,
+    .cyber-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .cyber-footer form {
+        flex-direction: column;
+    }
+
+    .mecha-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+}
+
+
+/* =========================
+   KITS INSPIRADOS EM ANIMES ESPECÍFICOS
+   Sem imagens oficiais: apenas estética, cores e estrutura.
+========================= */
+.ocean-bg {
+    background:
+        radial-gradient(circle at 18% 28%, rgba(251, 191, 36, .28), transparent 22%),
+        radial-gradient(circle at 84% 18%, rgba(14, 165, 233, .34), transparent 26%),
+        linear-gradient(135deg, #082f49, #0f172a 60%, #451a03);
+}
+
+.kaiju-bg {
+    background:
+        linear-gradient(rgba(20, 184, 166, .12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 184, 166, .12) 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, rgba(34, 211, 238, .22), transparent 26%),
+        radial-gradient(circle at 20% 80%, rgba(239, 68, 68, .24), transparent 26%),
+        #020617;
+    background-size: 34px 34px, 34px 34px, auto, auto, auto;
+}
+
+.striker-bg {
+    background:
+        repeating-linear-gradient(115deg, rgba(255,255,255,.08) 0 2px, transparent 2px 18px),
+        radial-gradient(circle at 70% 30%, rgba(59, 130, 246, .42), transparent 28%),
+        linear-gradient(135deg, #020617, #0f172a 55%, #1d4ed8);
+}
+
+.breath-bg {
+    background:
+        radial-gradient(circle at 18% 30%, rgba(56, 189, 248, .27), transparent 24%),
+        radial-gradient(circle at 78% 28%, rgba(248, 113, 113, .24), transparent 24%),
+        conic-gradient(from 90deg at 50% 50%, rgba(14, 165, 233, .18), transparent, rgba(239, 68, 68, .18), transparent),
+        #0f172a;
+}
+
+.ninja-bg {
+    background:
+        radial-gradient(circle at 18% 24%, rgba(251, 113, 133, .20), transparent 24%),
+        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, .18), transparent 22%),
+        linear-gradient(135deg, #1c1917, #450a0a 55%, #020617);
+}
+
+.pirate-hero {
+    width: 100%;
+    min-height: 620px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    padding: 28px;
+    color: #fff7ed;
+    background:
+        radial-gradient(circle at 76% 62%, rgba(251, 191, 36, .22), transparent 24%),
+        linear-gradient(180deg, rgba(14,165,233,.15), transparent 46%),
+        linear-gradient(135deg, #0c4a6e, #082f49 52%, #431407);
+}
+
+.pirate-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .17;
+    background:
+        radial-gradient(circle, transparent 0 55%, #facc15 56% 58%, transparent 59%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,.22) 0 1px, transparent 1px 20px);
+    pointer-events: none;
+}
+
+.pirate-hero nav,
+.striker-site nav,
+.ninja-nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    border-radius: 22px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.20);
+    backdrop-filter: blur(14px);
+}
+
+.pirate-hero nav strong,
+.striker-site nav strong,
+.ninja-nav strong {
+    margin-right: auto;
+    font-weight: 950;
+    letter-spacing: .08em;
+}
+
+.pirate-hero a,
+.striker-site a,
+.ninja-nav a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.pirate-hero button,
+.striker-site button,
+.ninja-nav button,
+.breath-form button,
+.striker-card button {
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 19px;
+    font-weight: 950;
+    cursor: pointer;
+}
+
+.pirate-hero button { background: #facc15; color: #431407; }
+
+.pirate-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    padding: 76px 0 0;
+}
+
+.pirate-content span,
+.striker-site header span,
+.breath-form span {
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-weight: 950;
+}
+
+.pirate-content span { color: #fde68a; }
+
+.pirate-content h2,
+.striker-site h2 {
+    margin: 14px 0;
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: .88;
+    letter-spacing: -0.07em;
+}
+
+.pirate-content p,
+.striker-site p {
+    max-width: 620px;
+    color: #e0f2fe;
+    line-height: 1.65;
+}
+
+.wanted-card {
+    position: absolute;
+    right: 38px;
+    bottom: 38px;
+    z-index: 2;
+    width: min(260px, 45%);
+    min-height: 310px;
+    display: grid;
+    place-items: center;
+    gap: 8px;
+    padding: 22px;
+    text-align: center;
+    color: #431407;
+    background:
+        radial-gradient(circle at 50% 24%, rgba(67,20,7,.20), transparent 18%),
+        #f5deb3;
+    border: 6px solid #7c2d12;
+    box-shadow: 12px 12px 0 rgba(0,0,0,.35);
+    transform: rotate(4deg);
+}
+
+.wanted-card small { font-family: 'Bangers', cursive; font-size: 40px; }
+.wanted-card strong { font-size: 28px; }
+.wanted-card span { font-weight: 950; }
+
+.kaiju-dashboard {
+    width: min(860px, 100%);
+    padding: 28px;
+    border-radius: 28px;
+    color: white;
+    background: rgba(2, 6, 23, .82);
+    border: 1px solid rgba(45, 212, 191, .34);
+    box-shadow: 0 0 55px rgba(20, 184, 166, .14);
+}
+
+.kaiju-dashboard header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.kaiju-dashboard small { color: #2dd4bf; font-weight: 950; letter-spacing: .14em; }
+.kaiju-dashboard h3 { font-size: 30px; color: #ccfbf1; }
+.kaiju-dashboard header > span { color: #fecaca; font-weight: 950; }
+
+.kaiju-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.kaiju-metrics article {
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.075);
+    border: 1px solid rgba(45, 212, 191, .16);
+}
+
+.kaiju-metrics strong {
+    display: block;
+    color: #5eead4;
+    font-size: 34px;
+}
+
+.kaiju-map {
+    position: relative;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 20px;
+    background:
+        linear-gradient(rgba(45,212,191,.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45,212,191,.13) 1px, transparent 1px),
+        rgba(20,184,166,.08);
+    background-size: 28px 28px;
+}
+
+.kaiju-map i {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ef4444;
+    box-shadow: 0 0 0 12px rgba(239,68,68,.15), 0 0 35px rgba(239,68,68,.45);
+}
+
+.kaiju-map i:nth-child(1) { left: 22%; top: 30%; }
+.kaiju-map i:nth-child(2) { left: 58%; top: 54%; }
+.kaiju-map i:nth-child(3) { left: 78%; top: 22%; }
+
+.striker-card {
+    position: relative;
+    width: min(330px, 100%);
+    min-height: 380px;
+    padding: 28px;
+    overflow: hidden;
+    border-radius: 28px;
+    color: white;
+    background:
+        radial-gradient(circle at 75% 20%, rgba(96, 165, 250, .46), transparent 28%),
+        linear-gradient(135deg, #020617, #1d4ed8);
+    border: 1px solid rgba(147,197,253,.35);
+    box-shadow: 0 30px 80px rgba(37,99,235,.30);
+}
+
+.striker-number {
+    position: absolute;
+    right: -12px;
+    top: -26px;
+    font-size: 130px;
+    font-weight: 950;
+    color: rgba(255,255,255,.10);
+}
+
+.striker-card small { color: #93c5fd; font-weight: 950; letter-spacing: .18em; }
+.striker-card h3 { margin: 88px 0 12px; font-size: 34px; }
+.striker-card p { color: #dbeafe; line-height: 1.55; }
+.striker-card button { margin-top: 20px; background: white; color: #1d4ed8; }
+
+.breath-form {
+    width: min(430px, 100%);
+    padding: 30px;
+    border-radius: 28px;
+    color: white;
+    background: rgba(15, 23, 42, .82);
+    border: 1px solid rgba(125, 211, 252, .28);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 30px 80px rgba(14,165,233,.16);
+}
+
+.breath-form span { color: #7dd3fc; }
+.breath-form h3 { margin: 8px 0 18px; font-size: 30px; }
+.breath-form input,
+.breath-form select {
+    width: 100%;
+    margin: 8px 0;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 16px;
+    color: white;
+    background: rgba(255,255,255,.08);
+    outline: 0;
+}
+
+.breath-form option { color: #111827; }
+.breath-form button { width: 100%; margin-top: 12px; background: linear-gradient(135deg, #38bdf8, #ef4444); color: white; }
+
+.ninja-nav {
+    width: min(900px, 100%);
+    color: #fff7ed;
+    border-color: rgba(251, 191, 36, .22);
+}
+
+.ninja-nav strong { color: #fbbf24; }
+.ninja-nav button { background: #fbbf24; color: #450a0a; }
+
+.striker-site {
+    width: 100%;
+    min-height: 760px;
+    overflow: hidden;
+    border-radius: 28px;
+    color: white;
+    background:
+        radial-gradient(circle at 72% 20%, rgba(59,130,246,.34), transparent 26%),
+        repeating-linear-gradient(120deg, rgba(255,255,255,.06) 0 2px, transparent 2px 18px),
+        #020617;
+}
+
+.striker-site nav {
+    border-radius: 0;
+    background: rgba(2,6,23,.64);
+    border-width: 0 0 1px 0;
+}
+
+.striker-site nav strong { color: #60a5fa; }
+.striker-site button { background: #2563eb; color: white; }
+
+.striker-site header {
+    padding: 86px 34px 52px;
+    text-align: center;
+}
+
+.striker-site header span { color: #93c5fd; }
+.striker-site h2 { max-width: 900px; margin-left: auto; margin-right: auto; }
+.striker-site p { margin: 0 auto 24px; }
+
+.striker-site-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 0 34px 34px;
+}
+
+.striker-site-grid article {
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 26px;
+    border-radius: 24px;
+    background: rgba(37, 99, 235, .20);
+    border: 1px solid rgba(147,197,253,.22);
+}
+
+.striker-site-grid strong { font-size: 58px; color: #93c5fd; }
+.striker-site-grid span { font-weight: 950; }
+
+@media (max-width: 900px) {
+    .pirate-hero nav,
+    .striker-site nav,
+    .ninja-nav,
+    .kaiju-dashboard header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pirate-hero nav strong,
+    .striker-site nav strong,
+    .ninja-nav strong {
+        margin-right: 0;
+    }
+
+    .wanted-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 34px;
+        transform: rotate(0);
+    }
+
+    .kaiju-metrics,
+    .striker-site-grid {
+        grid-template-columns: 1fr;
+    }
+}

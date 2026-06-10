@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>
+   Laboratório de Login/Cadastro
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <link href="labs.css" rel="stylesheet"/>
+<meta content="Laboratório visual Interface Kits com preview em tempo real e código copiável." name="description"/></head>
+<body class="lab-page">
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="logo" href="index.html">
+     Interface
+     <span>
+      Kits
+     </span>
+</a>
+<nav class="nav">
+<a href="index.html">
+      Início
+     </a>
+<a href="kits.html">
+      Kits
+     </a>
+<a href="botoes.html">
+      Botões
+     </a>
+<a href="navbar.html">
+      Navbar
+     </a>
+<a href="hero.html">
+      Hero
+     </a>
+<a href="cards.html">
+      Cards
+     </a>
+<a href="inputs.html">
+      Inputs
+     </a>
+<a class="active" href="login-cadastro.html">
+      Login
+     </a>
+<a href="footer.html">
+      Footer
+     </a>
+<a href="sidebar.html">
+      Sidebar
+     </a>
+<a href="form.html">
+      Form
+     </a>
+<a href="dashboard.html">
+      Dashboard
+     </a>
+<a href="sites-prontos.html">
+      Sites
+     </a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" type="button">☰</button></div>
+</header>
+<main class="container">
+<a class="back" href="index.html">
+    ← Voltar
+   </a>
+<section class="page-title">
+<span class="pill">
+     Laboratório
+    </span>
+<h1>
+     Login/Cadastro
+    </h1>
+<p>
+     Crie telas de autenticação com campos, abas, social login, termos, glass, imagem lateral e animações.
+    </p>
+<div class="lab-highlights"><span>Preview ao vivo</span><span>Código copiável</span><span>Layout responsivo</span></div></section>
+<section class="lab">
+<aside class="panel">
+<div class="group">
+<h3>
+       Aleatório
+      </h3>
+<button class="btn primary" id="randomAuth">
+       Criar aleatório
+      </button>
+</div>
+<div class="group">
+<h3>
+       Conteúdo
+      </h3>
+<div class="control">
+<label>
+        Logo
+       </label>
+<input id="aLogo" value="Interface Kits"/>
+</div>
+<div class="control">
+<label>
+        Título
+       </label>
+<input id="aTitle" value="Entre na sua conta"/>
+</div>
+<div class="control">
+<label>
+        Subtítulo
+       </label>
+<input id="aSub" value="Acesse seus componentes favoritos."/>
+</div>
+<div class="control">
+<label>
+        Botão
+       </label>
+<input id="aBtn" value="Entrar agora"/>
+</div>
+</div>
+<div class="group">
+<h3>
+       Campos e recursos
+      </h3>
+<div class="control">
+<label>
+        Modo
+       </label>
+<select id="aMode">
+<option value="login">
+         Login
+        </option>
+<option value="cadastro">
+         Cadastro
+        </option>
+<option value="tabs">
+         Login + Cadastro em abas
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Social login
+       </label>
+<select id="aSocial">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Lembrar senha
+       </label>
+<select id="aRemember">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Termos
+       </label>
+<select id="aTerms">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Imagem lateral
+       </label>
+<select id="aVisual">
+<option value="yes">
+         Sim
+        </option>
+<option value="no">
+         Não
+        </option>
+</select>
+</div>
+</div>
+<div class="group">
+<h3>
+       Aparência
+      </h3>
+<div class="control">
+<label>
+        Fundo
+       </label>
+<input id="aBg" type="color" value="#0f172a"/>
+</div>
+<div class="control">
+<label>
+        Card
+       </label>
+<input id="aCard" type="color" value="#111827"/>
+</div>
+<div class="control">
+<label>
+        Texto
+       </label>
+<input id="aText" type="color" value="#ffffff"/>
+</div>
+<div class="control">
+<label>
+        Destaque
+       </label>
+<input id="aAccent" type="color" value="#7c3aed"/>
+</div>
+<div class="control">
+<label>
+        Radius
+       </label>
+<input id="aRadius" max="42" min="0" type="range" value="28"/>
+</div>
+<div class="control">
+<label>
+        Estilo
+       </label>
+<select id="aStyle">
+<option value="solid">
+         Sólido
+        </option>
+<option value="glass">
+         Glass
+        </option>
+<option value="gradient">
+         Gradiente
+        </option>
+</select>
+</div>
+<div class="control">
+<label>
+        Animação
+       </label>
+<select id="aAnim">
+<option value="none">
+         Nenhuma
+        </option>
+<option value="fade">
+         Fade
+        </option>
+<option value="slide">
+         Slide
+        </option>
+<option value="pop">
+         Pop
+        </option>
+</select>
+</div>
+</div>
+</aside>
+<section>
+<div class="preview">
+<h2>
+       Preview
+      </h2>
+<br/>
+<div class="stage full" id="authPreview">
+</div>
+</div>
+<div class="codebox">
+<button class="copy" onclick="copyCode('aCode',this)">
+       Copiar código
+      </button>
+<pre id="aCode"></pre>
+</div>
+</section>
+</section>
+</main>
+<script src="main.js">
+</script>
+<script src="lab-login-cadastro.js">
+</script>
+</body>
+</html>

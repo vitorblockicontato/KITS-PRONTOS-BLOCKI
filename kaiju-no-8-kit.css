@@ -1,0 +1,530 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    color: white;
+    background: #020617;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+.kit-hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-texture,
+.hero-symbol {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.kit-hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr .72fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.kit-label {
+    display: inline-flex;
+    padding: 10px 15px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    font-weight: 950;
+}
+
+.kit-copy h1 {
+    margin: 20px 0;
+    max-width: 850px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(66px,10vw,136px);
+    line-height: .82;
+    letter-spacing: .03em;
+}
+
+.kit-copy p {
+    max-width: 700px;
+    color: #dbeafe;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.kit-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.main-btn,
+.second-btn,
+.third-btn {
+    min-height: 52px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.second-btn,
+.third-btn {
+    border: 1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+}
+
+.kit-visual {
+    position: relative;
+    min-height: 370px;
+    display: grid;
+    place-items: center;
+}
+
+.main-orb {
+    position: relative;
+    z-index: 2;
+    width: min(280px,90%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: floatOrb 3s ease-in-out infinite;
+}
+
+.ring-one,
+.ring-two {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.25);
+    animation: spin 8s linear infinite;
+}
+
+.ring-one {
+    inset: 18px;
+}
+
+.ring-two {
+    inset: 70px;
+    animation-direction: reverse;
+}
+
+.visual-label {
+    position: absolute;
+    bottom: 18px;
+    font-family: Orbitron, sans-serif;
+    color: rgba(255,255,255,.7);
+}
+
+.kit-section {
+    padding: 70px 0;
+}
+
+.kit-title {
+    margin-bottom: 24px;
+}
+
+.kit-title span {
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.kit-title h2 {
+    font-size: clamp(34px,5vw,64px);
+    line-height: .9;
+    margin: 10px 0 0;
+}
+
+.kit-navbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 20px 26px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(18px);
+}
+
+.kit-navbar strong {
+    margin-right: auto;
+}
+
+.kit-navbar a {
+    position: relative;
+    color: white;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.kit-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    border-radius: 999px;
+    transform: translateX(-50%);
+    transition: .3s;
+}
+
+.kit-navbar a:hover::after {
+    width: 120%;
+}
+
+.kit-navbar button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+}
+
+.kit-card-grid,
+.login-area {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.kit-card,
+.kit-login,
+.easter-box,
+.kit-dashboard {
+    position: relative;
+    overflow: hidden;
+    padding: 28px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 80px rgba(0,0,0,.28);
+}
+
+.kit-card {
+    cursor: pointer;
+    transition: .3s;
+}
+
+.kit-card span {
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+}
+
+.kit-card h3 {
+    font-size: 30px;
+    margin: 14px 0 10px;
+}
+
+.kit-card p,
+.muted-text,
+.kit-login p,
+.easter-box p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.kit-card button,
+.kit-login button {
+    margin-top: 18px;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+}
+
+.dashboard-area {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 18px;
+    align-items: center;
+}
+
+.dash-top,
+.dash-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.dash-stats {
+    margin: 24px 0;
+}
+
+.dash-stats div {
+    flex: 1;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.08);
+}
+
+.dash-stats strong {
+    display: block;
+    font-size: 30px;
+}
+
+.dash-chart {
+    height: 150px;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.06);
+}
+
+.dash-chart span {
+    flex: 1;
+    border-radius: 999px 999px 0 0;
+    animation: barMove .9s ease-in-out infinite alternate;
+}
+
+.dash-chart span:nth-child(1) { height: 42%; }
+.dash-chart span:nth-child(2) { height: 82%; animation-delay: .1s; }
+.dash-chart span:nth-child(3) { height: 58%; animation-delay: .3s; }
+.dash-chart span:nth-child(4) { height: 94%; animation-delay: .2s; }
+.dash-chart span:nth-child(5) { height: 72%; animation-delay: .4s; }
+
+.login-area {
+    grid-template-columns: 1fr 1fr;
+}
+
+.kit-login input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 14px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    background: rgba(255,255,255,.08);
+    color: white;
+}
+
+.kit-footer {
+    margin-top: 60px;
+    padding: 46px 0;
+    background: #020617;
+    border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(2,1fr);
+    gap: 30px;
+}
+
+.kit-footer a,
+.kit-footer p {
+    display: block;
+    margin-top: 10px;
+    color: #cbd5e1;
+}
+
+.screen-effect {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.screen-effect.active {
+    animation: flash .45s ease;
+}
+
+.secret-banner {
+    position: fixed;
+    left: 50%;
+    top: 110px;
+    z-index: 9999;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.3);
+    transform: translateX(-50%) translateY(-40px);
+    opacity: 0;
+    transition: .35s;
+    font-weight: 950;
+}
+
+.secret-banner.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@keyframes floatOrb {
+    0%,100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-18px) rotate(2deg); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes barMove {
+    from { filter: brightness(.8); }
+    to { filter: brightness(1.4); }
+}
+
+@keyframes flash {
+    0% { opacity: 0; }
+    20% { opacity: .9; }
+    100% { opacity: 0; }
+}
+
+@media(max-width:900px) {
+    .kit-hero-grid,
+    .kit-card-grid,
+    .dashboard-area,
+    .login-area,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kit-navbar,
+    .dash-top,
+    .dash-stats {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .kit-navbar strong {
+        margin-right: 0;
+    }
+}
+
+.kaiju-page {
+    background: #020617;
+}
+
+.kaiju-page .kit-hero {
+    background:
+        radial-gradient(circle at 70% 45%, rgba(34,197,94,.28), transparent 28%),
+        linear-gradient(135deg,#020617,#111827);
+}
+
+.kaiju-page .hero-texture {
+    opacity: .35;
+    background:
+        linear-gradient(rgba(34,197,94,.16) 1px, transparent 1px),
+        linear-gradient(90deg,rgba(34,197,94,.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.kaiju-page .main-btn,
+.kaiju-page .kit-navbar button,
+.kaiju-page .kit-card button,
+.kaiju-page .kit-login button {
+    background: linear-gradient(135deg,#22C55E,#EF4444);
+}
+
+.kaiju-page .main-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 12px rgba(34,197,94,.12), 0 0 60px rgba(239,68,68,.4);
+}
+
+.kaiju-page .main-orb {
+    background:
+        radial-gradient(circle at 35% 30%,white,transparent 12%),
+        radial-gradient(circle,#EF4444,#22C55E,transparent 70%);
+    box-shadow: 0 0 70px rgba(34,197,94,.4);
+}
+
+.kaiju-page .kit-title span,
+.kaiju-page .kit-card span,
+.kaiju-page .dash-stats strong,
+.kaiju-page .kit-navbar strong {
+    color: #22C55E;
+}
+
+.kaiju-page .kit-navbar a::after,
+.kaiju-page .dash-chart span {
+    background: linear-gradient(180deg,#22C55E,#EF4444,transparent);
+}
+
+.kaiju-page .special-navbar {
+    background:
+        linear-gradient(90deg, rgba(34,197,94,.12), rgba(239,68,68,.10)),
+        rgba(255,255,255,.08);
+    border-color: rgba(34,197,94,.35);
+}
+
+.kaiju-page .special-navbar a:hover::before {
+    content: "SCANNING...";
+    position: absolute;
+    top: -24px;
+    left: 0;
+    color: #22C55E;
+    font-size: 11px;
+    font-family: Orbitron, sans-serif;
+}
+
+.kaiju-page.kaiju-mode {
+    filter: brightness(1.15);
+}
+
+.kaiju-page.kaiju-mode .kit-hero {
+    animation: kaijuShake .35s infinite;
+}
+
+.kaiju-page.alert-mode .screen-effect {
+    background: rgba(239,68,68,.65);
+}
+
+.kaiju-page .card-one.cracked::after {
+    content: "KAIJU EYE";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at center, rgba(239,68,68,.65), transparent 18%),
+        linear-gradient(35deg, transparent 45%, rgba(255,255,255,.25) 46%, transparent 48%);
+    color: white;
+    font-family: Orbitron, sans-serif;
+    font-weight: 900;
+}
+
+.kaiju-page .card-two.hud {
+    box-shadow: 0 0 50px rgba(37,99,235,.55);
+    background:
+        linear-gradient(rgba(37,99,235,.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,.14) 1px, transparent 1px),
+        rgba(255,255,255,.08);
+    background-size: 22px 22px;
+}
+
+.kaiju-page .card-three.transformed {
+    background: radial-gradient(circle, rgba(34,197,94,.34), rgba(2,6,23,.95));
+    transform: scale(1.04);
+}
+
+@keyframes kaijuShake {
+    0%,100% { transform: translate(0); }
+    50% { transform: translate(3px,-2px); }
+}

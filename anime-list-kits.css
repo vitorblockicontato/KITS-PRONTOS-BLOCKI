@@ -1,0 +1,200 @@
+/* ==========================
+   ANIME LIST KITS
+========================== */
+
+.anime-list-hero {
+    padding: 88px 0 50px;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(255,79,216,.22), transparent 28%),
+        radial-gradient(circle at 84% 18%, rgba(6,247,255,.20), transparent 28%),
+        #070714;
+}
+
+.anime-list-hero h1 {
+    max-width: 950px;
+    margin: 18px 0;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(54px, 9vw, 108px);
+    line-height: .86;
+    color: white;
+    text-shadow: 5px 5px 0 #ff4fd8, 10px 10px 0 rgba(6,247,255,.40);
+}
+
+.anime-list-hero p {
+    max-width: 760px;
+    color: #dbeafe;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.anime-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding: 50px 0 80px;
+}
+
+.anime-list-card {
+    overflow: hidden;
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at 20% 0, color-mix(in srgb, var(--a1) 30%, transparent), transparent 34%),
+        rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 30px 90px rgba(0,0,0,.30);
+    transition: .3s;
+}
+
+.anime-list-card:hover {
+    transform: translateY(-8px);
+    border-color: color-mix(in srgb, var(--a2) 60%, transparent);
+}
+
+.anime-list-cover {
+    position: relative;
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle, color-mix(in srgb, var(--a2) 35%, transparent), transparent 32%),
+        linear-gradient(135deg, var(--a1), #020617);
+}
+
+.anime-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 64px;
+    filter: drop-shadow(0 0 22px color-mix(in srgb, var(--a2) 70%, transparent));
+}
+
+.anime-effect {
+    position: absolute;
+    inset: 0;
+    opacity: .28;
+}
+
+.voyage .anime-effect {
+    background:
+        radial-gradient(circle, rgba(250,204,21,.35) 1px, transparent 2px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.18) 0 1px, transparent 1px 42px);
+    background-size: 28px 28px, auto;
+    animation: drift 10s linear infinite;
+}
+
+.cursed .anime-effect {
+    background:
+        linear-gradient(35deg, transparent 48%, rgba(255,255,255,.30) 49%, transparent 51%),
+        linear-gradient(120deg, transparent 48%, rgba(34,211,238,.24) 49%, transparent 51%);
+    background-size: 90px 90px;
+}
+
+.runes .anime-effect {
+    background:
+        radial-gradient(circle, rgba(255,255,255,.35) 1px, transparent 2px),
+        conic-gradient(from 0deg, transparent, rgba(196,181,253,.34), transparent);
+    animation: spin 10s linear infinite;
+}
+
+.idol .anime-effect {
+    background:
+        radial-gradient(circle at 20% 20%, white 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 40%, #38bdf8 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 80%, #ff4fd8 0 2px, transparent 3px);
+    background-size: 90px 90px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.slash .anime-effect {
+    background:
+        linear-gradient(125deg, transparent 35%, rgba(255,255,255,.38) 36%, transparent 38%),
+        linear-gradient(145deg, transparent 55%, rgba(56,189,248,.30) 56%, transparent 58%);
+    background-size: 120px 120px;
+}
+
+.kaiju .anime-effect,
+.cyber .anime-effect {
+    background:
+        linear-gradient(rgba(6,247,255,.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,247,255,.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.chaos .anime-list-cover {
+    animation: glitchBox 2.5s infinite;
+}
+
+.chaos .anime-effect {
+    background:
+        repeating-linear-gradient(90deg, rgba(255,43,214,.24) 0 2px, transparent 2px 12px),
+        repeating-linear-gradient(0deg, rgba(6,247,255,.20) 0 2px, transparent 2px 18px);
+}
+
+.time .anime-effect {
+    background:
+        conic-gradient(from 0deg, rgba(255,255,255,.26), transparent 25%, rgba(124,58,237,.24)),
+        radial-gradient(circle, transparent 0 35%, rgba(255,255,255,.28) 36% 37%, transparent 38%);
+    animation: spin 5s linear infinite reverse;
+}
+
+.anime-list-info {
+    padding: 24px;
+}
+
+.anime-list-info span {
+    color: var(--a2);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 12px;
+}
+
+.anime-list-info h2 {
+    margin: 12px 0;
+    font-size: 30px;
+    line-height: .95;
+}
+
+.anime-list-info p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.anime-list-info a {
+    color: white;
+    font-weight: 950;
+}
+
+@keyframes drift {
+    from { background-position: 0 0; }
+    to { background-position: 160px 80px; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: .18; }
+    50% { opacity: .48; }
+}
+
+@keyframes glitchBox {
+    0%, 92%, 100% { transform: translate(0); }
+    94% { transform: translate(3px,-2px); }
+    96% { transform: translate(-2px,2px); }
+}
+
+@media(max-width: 980px) {
+    .anime-list-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 650px) {
+    .anime-list-grid {
+        grid-template-columns: 1fr;
+    }
+}

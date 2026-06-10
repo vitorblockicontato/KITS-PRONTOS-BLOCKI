@@ -1,0 +1,346 @@
+/* ==========================
+   PÁGINAS INDIVIDUAIS DOS ANIMES
+========================== */
+
+.anime-kit-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 8%, color-mix(in srgb, var(--a1) 25%, transparent), transparent 28%),
+        radial-gradient(circle at 82% 10%, color-mix(in srgb, var(--a2) 22%, transparent), transparent 28%),
+        #070714;
+}
+
+.ak-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 660px;
+    display: flex;
+    align-items: center;
+}
+
+.ak-texture {
+    position: absolute;
+    inset: 0;
+    opacity: .26;
+    pointer-events: none;
+}
+
+.ak-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr .65fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.ak-content h1 {
+    margin: 18px 0;
+    font-family: 'Bangers', cursive;
+    font-size: clamp(60px, 10vw, 132px);
+    line-height: .82;
+    color: white;
+    text-shadow:
+        5px 5px 0 var(--a1),
+        10px 10px 0 color-mix(in srgb, var(--a2) 45%, transparent);
+}
+
+.ak-content p {
+    max-width: 700px;
+    color: #dbeafe;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.ak-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+.ak-btn,
+.ak-btn-alt {
+    min-height: 48px;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 999px;
+    color: white;
+    font-weight: 950;
+    cursor: pointer;
+}
+
+.ak-btn {
+    background: linear-gradient(135deg, var(--a1), var(--a2));
+    box-shadow: 0 0 34px color-mix(in srgb, var(--a1) 45%, transparent);
+}
+
+.ak-btn-alt {
+    border: 1px solid rgba(255,255,255,.22);
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+}
+
+.ak-symbol-wrap {
+    position: relative;
+    min-height: 340px;
+    display: grid;
+    place-items: center;
+}
+
+.ak-symbol {
+    width: min(270px, 100%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 35% 30%, white, transparent 12%),
+        radial-gradient(circle, var(--a2), var(--a1), transparent 70%);
+    box-shadow:
+        0 0 55px color-mix(in srgb, var(--a1) 60%, transparent),
+        0 0 120px color-mix(in srgb, var(--a2) 35%, transparent);
+    animation: float 3s ease-in-out infinite;
+}
+
+.ak-ring {
+    position: absolute;
+    inset: 20px;
+    border: 2px solid color-mix(in srgb, var(--a2) 60%, transparent);
+    border-radius: 50%;
+    animation: spin 8s linear infinite;
+}
+
+.ak-section {
+    padding: 70px 0;
+}
+
+.ak-title {
+    margin-bottom: 24px;
+}
+
+.ak-title span {
+    color: var(--a2);
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+}
+
+.ak-title h2 {
+    margin-top: 10px;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: .9;
+}
+
+.ak-navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 22px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(16px);
+}
+
+.ak-navbar strong {
+    margin-right: auto;
+    color: var(--a2);
+}
+
+.ak-navbar a {
+    color: white;
+    font-weight: 900;
+}
+
+.ak-navbar button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 16px;
+    color: white;
+    background: linear-gradient(135deg, var(--a1), var(--a2));
+    font-weight: 950;
+}
+
+.ak-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.ak-card,
+.ak-login,
+.ak-dashboard,
+.ak-footer {
+    padding: 24px;
+    border-radius: 26px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.13);
+    backdrop-filter: blur(16px);
+}
+
+.ak-card small {
+    color: var(--a2);
+    font-weight: 950;
+}
+
+.ak-card h3,
+.ak-login h3 {
+    margin: 12px 0;
+    font-size: 28px;
+}
+
+.ak-login input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 13px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 14px;
+    background: rgba(255,255,255,.07);
+    color: white;
+}
+
+.ak-login button {
+    width: 100%;
+    margin-top: 12px;
+    border: 0;
+    border-radius: 14px;
+    padding: 13px;
+    background: linear-gradient(135deg, var(--a1), var(--a2));
+    color: white;
+    font-weight: 950;
+}
+
+.ak-dashboard {
+    grid-column: span 2;
+}
+
+.ak-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.ak-metrics div {
+    padding: 16px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.08);
+}
+
+.ak-metrics strong {
+    display: block;
+    color: var(--a2);
+    font-size: 28px;
+}
+
+.ak-bars {
+    height: 140px;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.ak-bars span {
+    flex: 1;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(180deg, var(--a2), transparent);
+}
+
+.ak-bars span:nth-child(1){height:42%}
+.ak-bars span:nth-child(2){height:78%}
+.ak-bars span:nth-child(3){height:56%}
+.ak-bars span:nth-child(4){height:94%}
+
+.ak-footer {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.ak-footer strong {
+    color: var(--a2);
+}
+
+/* Efeitos específicos */
+.page-voyage .ak-texture {
+    background:
+        radial-gradient(circle, rgba(250,204,21,.35) 1px, transparent 2px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,.14) 0 1px, transparent 1px 42px);
+    background-size: 28px 28px, auto;
+    animation: drift 10s linear infinite;
+}
+
+.page-cursed .ak-texture {
+    background:
+        linear-gradient(35deg, transparent 48%, rgba(255,255,255,.30) 49%, transparent 51%),
+        linear-gradient(120deg, transparent 48%, rgba(34,211,238,.24) 49%, transparent 51%);
+    background-size: 90px 90px;
+}
+
+.page-runes .ak-texture {
+    background:
+        radial-gradient(circle, rgba(255,255,255,.35) 1px, transparent 2px),
+        conic-gradient(from 0deg, transparent, rgba(196,181,253,.34), transparent);
+    animation: spin 12s linear infinite;
+}
+
+.page-idol .ak-texture {
+    background:
+        radial-gradient(circle at 20% 20%, white 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 40%, var(--a2) 0 2px, transparent 3px),
+        radial-gradient(circle at 40% 80%, var(--a1) 0 2px, transparent 3px);
+    background-size: 90px 90px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.page-slash .ak-texture {
+    background:
+        linear-gradient(125deg, transparent 35%, rgba(255,255,255,.38) 36%, transparent 38%),
+        linear-gradient(145deg, transparent 55%, rgba(56,189,248,.30) 56%, transparent 58%);
+    background-size: 120px 120px;
+}
+
+.page-kaiju .ak-texture,
+.page-cyber .ak-texture {
+    background:
+        linear-gradient(rgba(6,247,255,.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(6,247,255,.16) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.page-chaos .ak-hero {
+    animation: glitchBox 2.5s infinite;
+}
+
+.page-time .ak-ring {
+    border-style: dashed;
+    animation-duration: 3s;
+}
+
+@keyframes drift { from{background-position:0 0} to{background-position:160px 80px} }
+@keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+@keyframes float { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-16px) rotate(2deg)} }
+@keyframes sparkle { 0%,100%{opacity:.18} 50%{opacity:.48} }
+@keyframes glitchBox { 0%,92%,100%{transform:translate(0)} 94%{transform:translate(3px,-2px)} 96%{transform:translate(-2px,2px)} }
+
+@media(max-width:900px) {
+    .ak-content,
+    .ak-grid,
+    .ak-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .ak-dashboard {
+        grid-column: auto;
+    }
+
+    .ak-navbar,
+    .ak-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ak-navbar strong {
+        margin-right: 0;
+    }
+}

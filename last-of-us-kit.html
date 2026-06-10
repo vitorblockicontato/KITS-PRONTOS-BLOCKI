@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Infection Zone UI | Interface Kits</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="last-of-us-kit.css">
+</head>
+
+<body class="tlou-page">
+    <div class="infection-layer" id="infectionLayer"></div>
+    <div class="screen-effect" id="screenEffect"></div>
+    <div class="secret-banner" id="secretBanner">INFECTION SPREADING</div>
+    <div class="firefly-swarm" id="fireflySwarm"></div>
+
+    <header class="tlou-topbar">
+        <a class="tlou-logo" href="index.html">
+            <span>🍄</span>
+            <strong>Infection Zone UI</strong>
+        </a>
+
+        <nav class="tlou-navbar">
+            <a href="#" data-nav="quarantine">Quarantine</a>
+            <a href="#" data-nav="fireflies">Fireflies</a>
+            <a href="#" data-nav="clicker">Clicker</a>
+            <a href="#" data-nav="supplies">Supplies</a>
+            <a href="#" data-nav="infection">Infection</a>
+            <button id="navInfectBtn">Spread</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tlou-hero">
+            <div class="abandoned-bg"></div>
+            <div class="spore-fog"></div>
+            <div class="fungus-roots"></div>
+
+            <div class="tlou-hero-content">
+                <div>
+                    <span class="tlou-label">🍄 Infection • Survival • Fireflies</span>
+
+                    <h1>Survive The Infection.</h1>
+
+                    <p>
+                        Kit inspirado em The Last of Us com fungos, esporos, zona de quarentena,
+                        Fireflies, Clickers e um efeito especial de infecção tomando a tela.
+                    </p>
+
+                    <div class="tlou-actions">
+                        <button class="infect-btn" id="infectBtn">Infect Screen</button>
+                        <button class="firefly-btn" id="fireflyBtn">Fireflies</button>
+                        <button class="cure-btn" id="cureBtn">Use Antidote</button>
+                    </div>
+                </div>
+
+                <div class="infection-stage">
+                    <div class="spore-core" id="sporeCore">
+                        <span>CORDYCEPS</span>
+                    </div>
+
+                    <div class="gas-mask">
+                        <span>☣</span>
+                        <strong>ZONE</strong>
+                    </div>
+
+                    <div class="infection-meter">
+                        <strong id="infectionMeter">18%</strong>
+                        <span>INFECTION LEVEL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tlou-section">
+            <div class="tlou-title">
+                <span>Navbar</span>
+                <h2>Menu infectado com esporos e sinais Firefly</h2>
+            </div>
+
+            <nav class="survival-navbar">
+                <strong>☣ Quarantine Zone</strong>
+                <a href="#" data-zone="spores">Esporos</a>
+                <a href="#" data-zone="fireflies">Vaga-lumes</a>
+                <a href="#" data-zone="clicker">Clicker</a>
+                <a href="#" data-zone="safehouse">Safehouse</a>
+                <button id="zoneBtn">Ativar contágio</button>
+            </nav>
+        </section>
+
+        <section class="tlou-section">
+            <div class="tlou-title">
+                <span>Cards</span>
+                <h2>Clicker, Fireflies e suprimentos</h2>
+            </div>
+
+            <div class="tlou-card-grid">
+                <article class="tlou-card clicker-card" id="clickerCard">
+                    <span>Clicker</span>
+                    <h3>Sound Alert</h3>
+                    <p>Clique para ativar o alerta de Clicker e espalhar fungos pelo card.</p>
+                    <button>Ativar clicker</button>
+                </article>
+
+                <article class="tlou-card firefly-card" id="fireflyCard">
+                    <span>Fireflies</span>
+                    <h3>Look For The Light</h3>
+                    <p>Clique para liberar vaga-lumes brilhantes pela interface.</p>
+                    <button>Acender luz</button>
+                </article>
+
+                <article class="tlou-card supplies-card" id="suppliesCard">
+                    <span>Supplies</span>
+                    <h3>Crafting Kit</h3>
+                    <p>Clique para coletar suprimentos e melhorar a chance de sobrevivência.</p>
+                    <button>Coletar</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="tlou-section tlou-dashboard-area">
+            <div>
+                <div class="tlou-title">
+                    <span>Dashboard</span>
+                    <h2>Painel de sobrevivência</h2>
+                </div>
+
+                <p class="tlou-muted">
+                    Controle o nível de infecção, suprimentos, sinal Firefly e status da zona.
+                </p>
+            </div>
+
+            <div class="tlou-dashboard">
+                <div class="dash-top">
+                    <strong>Quarantine Monitor</strong>
+                    <span id="dashStatus">STABLE</span>
+                </div>
+
+                <div class="dash-stats">
+                    <div><strong id="infectionMetric">18%</strong><span>Infecção</span></div>
+                    <div><strong id="suppliesMetric">24</strong><span>Suprimentos</span></div>
+                    <div><strong id="signalMetric">LOW</strong><span>Firefly</span></div>
+                </div>
+
+                <div class="infection-bars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="tlou-section tlou-login-area">
+            <form class="tlou-login" onsubmit="event.preventDefault()">
+                <h2>Acesso à zona</h2>
+                <p>Login com visual de área contaminada e sobrevivência.</p>
+
+                <input placeholder="Nome do sobrevivente">
+                <input placeholder="Código da quarentena" type="password">
+
+                <button>Entrar na zona</button>
+            </form>
+
+            <aside class="tlou-easter-box">
+                <h3>Easter eggs</h3>
+                <p>Digite <strong>ELLIE</strong> para ativar Fireflies.</p>
+                <p>Digite <strong>CLICKER</strong> para aumentar a infecção.</p>
+                <p>Digite <strong>CORDYCEPS</strong> para infectar a tela.</p>
+                <p>Digite <strong>JOEL</strong> para reduzir a infecção.</p>
+            </aside>
+        </section>
+
+        <footer class="tlou-footer">
+            <div>
+                <h3>Infection Zone UI</h3>
+                <p>Kit The Last of Us com fungos, infecção na tela, Fireflies e Clickers.</p>
+            </div>
+
+            <div>
+                <h4>Componentes</h4>
+                <a href="#">Navbar</a>
+                <a href="#">Hero</a>
+                <a href="#">Cards</a>
+            </div>
+
+            <div>
+                <h4>Segredos</h4>
+                <a href="#">Ellie</a>
+                <a href="#">Clicker</a>
+                <a href="#">Cordyceps</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="last-of-us-kit.js"></script>
+</body>
+</html>

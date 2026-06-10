@@ -1,0 +1,8 @@
+
+const body=document.body,banner=document.getElementById('secretBanner'),fx=document.getElementById('screenEffect'),main=document.getElementById('mainBtn'),second=document.getElementById('secondBtn'),third=document.getElementById('thirdBtn'),navBtn=document.getElementById('navSecretBtn');
+function show(t){banner.textContent=t;banner.classList.add('active');setTimeout(()=>banner.classList.remove('active'),1800)}
+function slash(){body.classList.add('slash');fx.classList.add('active');show('SOUL SLASH');setTimeout(()=>{body.classList.remove('slash');fx.classList.remove('active')},500)}
+main.onclick=slash;second.onclick=()=>{document.querySelector('.card-one').classList.toggle('soul');show('BANKAI')};third.onclick=()=>{document.querySelector('.card-three').classList.toggle('getsuga');slash()};navBtn.onclick=slash;
+document.querySelectorAll('[data-nav-egg]').forEach(a=>a.onclick=e=>{e.preventDefault();slash();a.style.transform='translateX(10px)';setTimeout(()=>a.style.transform='',500)});
+document.querySelector('.card-one').onclick=()=>{document.querySelector('.card-one').classList.toggle('soul');show('BANKAI')};document.querySelector('.card-two').onclick=()=>{document.querySelector('.card-two').classList.toggle('mask');show('HOLLOW MASK')};document.querySelector('.card-three').onclick=()=>{document.querySelector('.card-three').classList.toggle('getsuga');slash()};
+let typed='';document.addEventListener('keydown',e=>{typed=(typed+e.key.toLowerCase()).slice(-12);if(typed.includes('bankai')){document.querySelector('.card-one').classList.add('soul');show('BANKAI')}if(typed.includes('getsuga'))slash()})

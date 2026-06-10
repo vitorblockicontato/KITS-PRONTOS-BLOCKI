@@ -1,0 +1,8 @@
+
+const body=document.body,banner=document.getElementById('secretBanner'),fx=document.getElementById('screenEffect'),main=document.getElementById('mainBtn'),second=document.getElementById('secondBtn'),third=document.getElementById('thirdBtn'),navBtn=document.getElementById('navSecretBtn');
+function show(t){banner.textContent=t;banner.classList.add('active');setTimeout(()=>banner.classList.remove('active'),1800)}
+function domain(){body.classList.add('domain');fx.classList.add('active');show('DOMAIN EXPANSION');setTimeout(()=>{body.classList.remove('domain');fx.classList.remove('active')},1200)}
+main.onclick=domain;second.onclick=()=>{fx.style.background='#000';fx.classList.add('active');show('BLACK FLASH');setTimeout(()=>fx.classList.remove('active'),420)};third.onclick=()=>{document.querySelector('.card-three').classList.toggle('purple');show('HOLLOW PURPLE')};navBtn.onclick=domain;
+document.querySelectorAll('[data-nav-egg]').forEach(a=>a.onclick=e=>{e.preventDefault();show('CURSED ENERGY TRACE');a.style.textShadow='0 0 20px #7C3AED';setTimeout(()=>a.style.textShadow='',700)});
+document.querySelector('.card-one').onclick=()=>{document.querySelector('.card-one').classList.toggle('infinity');show('INFINITY ACTIVE')};document.querySelector('.card-two').onclick=()=>{document.querySelector('.card-two').classList.toggle('sukuna');show('SUKUNA MARKS')};document.querySelector('.card-three').onclick=()=>{document.querySelector('.card-three').classList.toggle('purple');show('HOLLOW PURPLE')};
+let typed='';document.addEventListener('keydown',e=>{typed=(typed+e.key.toLowerCase()).slice(-20);if(typed.includes('domain expansion'))domain();if(typed.includes('sukuna')){document.querySelector('.card-two').classList.add('sukuna');show('RYOMEN SUKUNA')}})

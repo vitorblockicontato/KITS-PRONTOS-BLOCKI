@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ancient Rune UI | Interface Kits</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Bebas+Neue&family=Orbitron:wght@500;700;900&family=Cinzel:wght@500;700;900&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="frieren-navbar-easter.css">
+</head>
+<body class="frieren-page">
+<div class="screen-effect" id="screenEffect"></div>
+<div class="secret-banner" id="secretBanner">SECRET MODE ACTIVATED</div>
+<header class="topbar anime-topbar">
+<div class="container topbar-inner">
+<a class="logo anime-logo" href="index.html" id="animeLogo">Interface <span>Kits</span></a>
+<nav class="nav kit-main-nav">
+<a href="index.html">Início</a>
+<a href="anime-list-kits.html">Animes</a>
+<a class="active" href="frieren-kit.html">Frieren</a>
+<a href="kits.html">Kits</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="kit-hero">
+<div class="hero-texture"></div><div class="hero-symbol" id="heroSymbol"></div>
+<div class="container kit-hero-grid">
+<div class="kit-copy">
+<span class="kit-label">🔮 Ancient Magic • Time Journey</span>
+<h1>Ancient Rune UI</h1>
+<p>Kit Frieren com grimório, runas, estrelas, Mimic, Zoltraak e dia/noite.</p>
+<div class="kit-actions">
+<button class="main-btn" id="mainBtn">Lançar feitiço</button>
+<button class="second-btn" id="secondBtn">Dia/Noite</button>
+<button class="third-btn" id="thirdBtn">Mimic</button>
+</div>
+</div>
+<div class="kit-visual"><div class="main-orb"></div><div class="ring-one"></div><div class="ring-two"></div><div class="visual-label">SYSTEM</div></div>
+</div>
+</section>
+<section class="container kit-section">
+<div class="kit-title"><span>Navbar especial</span><h2>Menu com easter eggs do anime</h2></div>
+<nav class="kit-navbar special-navbar">
+<strong>✦ FRIEREN ARCHIVE</strong>
+<a href="#" data-nav-egg="one">Magias</a>
+<a href="#" data-nav-egg="two">Ruínas</a>
+<a href="#" data-nav-egg="three">Jornada</a>
+<a href="#" data-nav-egg="four">Mana</a>
+<button id="navSecretBtn">Estrelas</button>
+</nav>
+</section>
+<section class="container kit-section">
+<div class="kit-title"><span>Cards</span><h2>Componentes clicáveis do tema</h2></div>
+<div class="kit-card-grid">
+<article class="kit-card card-one" data-card="one"><span>Grimório</span><h3>Página Arcana</h3><p>Clique para abrir o grimório.</p><button type="button">Ativar</button></article>
+<article class="kit-card card-two" data-card="two"><span>Estrelas</span><h3>Feitiço Estelar</h3><p>Clique para ativar estrelas.</p><button type="button">Ver efeito</button></article>
+<article class="kit-card card-three" data-card="three"><span>Baú</span><h3>Mimic?</h3><p>Clique para revelar se é tesouro ou Mimic.</p><button type="button">Executar</button></article>
+</div>
+</section>
+<section class="container kit-section dashboard-area">
+<div><div class="kit-title"><span>Dashboard</span><h2>Painel temático</h2></div><p class="muted-text">Digite ZOLTRAAK ou FERN. Clique nos cards e navbar.</p></div>
+<div class="kit-dashboard"><div class="dash-top"><strong>Ancient Rune UI</strong><span id="dashStatus">ONLINE</span></div>
+<div class="dash-stats">
+<div><strong id="metricOne">1000+</strong><span>Anos</span></div>
+<div><strong id="metricTwo">480</strong><span>Magias</span></div>
+<div><strong id="metricThree">37</strong><span>Ruínas</span></div>
+</div>
+<div class="dash-chart"><span></span><span></span><span></span><span></span><span></span></div></div>
+</section>
+<section class="container kit-section login-area">
+<form class="kit-login" onsubmit="event.preventDefault()"><h2>Acesso</h2><p>Login adaptado ao universo do kit.</p><input placeholder="Nome do mago"><input placeholder="Código arcano" type="password"><button>Entrar</button></form>
+<aside class="easter-box"><h3>Easter eggs</h3><p>Digite ZOLTRAAK ou FERN. Clique nos cards e navbar.</p><p>Os cards e a navbar agora ativam efeitos próprios.</p></aside>
+</section>
+<footer class="kit-footer"><div class="container footer-grid"><div><h3>Ancient Rune UI</h3><p>Kit Frieren com grimório, runas, estrelas, Mimic, Zoltraak e dia/noite.</p></div><div><h4>Componentes</h4><a href="#">Navbar</a><a href="#">Hero</a><a href="#">Cards</a></div><div><h4>Segredos</h4><a href="#">Modo secreto</a><a href="#">Easter egg</a><a href="#">Dashboard</a></div></div></footer>
+</main>
+<script src="frieren-navbar-easter.js"></script>
+</body>
+</html>

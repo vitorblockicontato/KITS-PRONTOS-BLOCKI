@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>
+   Footer Builder
+  </title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+  <link href="labs.css" rel="stylesheet"/>
+<meta content="Laboratório visual Interface Kits com preview em tempo real e código copiável." name="description"/></head>
+<body class="lab-page">
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="logo" href="index.html">
+     Interface
+     <span>
+      Kits
+     </span>
+</a>
+<nav class="nav">
+<a href="index.html">
+      Início
+     </a>
+<a href="kits.html">
+      Kits
+     </a>
+<a href="botoes.html">
+      Botões
+     </a>
+<a href="navbar.html">
+      Navbar
+     </a>
+<a href="hero.html">
+      Hero
+     </a>
+<a href="cards.html">
+      Cards
+     </a>
+<a href="inputs.html">
+      Inputs
+     </a>
+<a href="login-cadastro.html">
+      Login
+     </a>
+<a class="active" href="footer.html">
+      Footer
+     </a>
+<a href="sidebar.html">
+      Sidebar
+     </a>
+<a href="form.html">
+      Form
+     </a>
+<a href="dashboard.html">
+      Dashboard
+     </a>
+<a href="sites-prontos.html">
+      Sites
+     </a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" type="button">☰</button></div>
+</header>
+<main class="container">
+<a class="back" href="index.html">
+    ← Voltar
+   </a>
+<section class="page-title">
+<span class="pill">
+     Builder
+    </span>
+<h1>
+     Footer Builder
+    </h1>
+<p>
+     Rodapés editáveis com colunas, newsletter, redes sociais e layout responsivo.
+    </p>
+<div class="lab-highlights"><span>Preview ao vivo</span><span>Código copiável</span><span>Layout responsivo</span></div></section>
+<section class="lab">
+<aside class="panel">
+<div class="group">
+<h3>
+       Aleatório
+      </h3>
+<button class="btn primary" id="randomFooter">
+       Criar aleatório
+      </button>
+</div>
+<div class="group">
+<h3>
+       Conteúdo e estilo
+      </h3>
+<div class="control">
+<label>
+        Marca
+       </label>
+<input id="fBrand" value="Interface Kits"/>
+</div>
+<div class="control">
+<label>
+        Descrição
+       </label>
+<textarea id="fDesc">Crie componentes modernos e copie o código pronto.</textarea>
+</div>
+<div class="control">
+<label>
+        Colunas
+       </label>
+<input id="fCols" value="Produtos, Empresa, Suporte"/>
+</div>
+<div class="control">
+<label>
+        Links
+       </label>
+<textarea id="fLinks">Kits, Laboratórios, Preços, Blog</textarea>
+</div>
+<div class="control">
+<label>
+        Newsletter
+       </label>
+<input id="fNews" value="Receba novidades"/>
+</div>
+<div class="control">
+<label>
+        Cor fundo
+       </label>
+<input id="fBg" type="color" value="#0f172a"/>
+</div>
+<div class="control">
+<label>
+        Cor destaque
+       </label>
+<input id="fAccent" type="color" value="#7c3aed"/>
+</div>
+</div>
+<div class="group">
+<h3>
+       Layout
+      </h3>
+<div class="control">
+<label>
+        Radius
+       </label>
+<input id="radius" max="40" min="0" type="range" value="24"/>
+</div>
+<div class="control">
+<label>
+        Sombra
+       </label>
+<input id="shadow" max="80" min="0" type="range" value="40"/>
+</div>
+<div class="control">
+<label>
+        Animação
+       </label>
+<select id="anim">
+<option value="fade">
+         Fade
+        </option>
+<option value="slide">
+         Slide
+        </option>
+<option value="float">
+         Float
+        </option>
+<option value="pulse">
+         Pulse
+        </option>
+</select>
+</div>
+</div>
+</aside>
+<section>
+<div class="preview builder-preview">
+<h2>
+       Preview
+      </h2>
+<br/>
+<div class="stage wide-stage" id="footerPreview">
+</div>
+</div>
+<div class="codebox">
+<button class="copy" onclick="copyCode('fCode',this)">
+       Copiar código
+      </button>
+<pre id="fCode"></pre>
+</div>
+</section>
+</section>
+</main>
+<script src="main.js">
+</script>
+<script src="lab-footer.js">
+</script>
+</body>
+</html>

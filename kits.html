@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Kits | Interface Kits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Orbitron:wght@500;700;900&family=Cinzel:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mega-kits.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="logo" href="index.html">Interface <span>Kits</span></a>
+        <nav class="nav">
+            <a href="index.html">Início</a>
+            <a href="kits.html">Kits</a>
+            <a class="active" href="mega-kits.html">Mega Kits</a>
+            <a href="sites-prontos.html">Sites</a>
+        </nav>
+    </header>
+
+    <a class="back-home" href="index.html">← Voltar para o index</a>
+
+    <main>
+        <section class="mega-hero">
+            <span class="pill">Código real para copiar</span>
+            <h1>Componentes prontos, bonitos e com HTML + CSS copiável de verdade.</h1>
+            <p>Todos os previews usam o mesmo código que será copiado. O CSS de cada componente está dentro do arquivo <b>mega-kits.css</b>, separado por blocos.</p>
+            <div class="hero-actions">
+                <a href="#kitsRoot" class="primary-action">Explorar kits</a>
+                <button id="copyAllCss">Copiar CSS completo</button>
+            </div>
+        </section>
+
+        <section class="toolbar">
+            <div class="filters" id="filters"></div>
+            <input id="searchInput" class="search-input" placeholder="Pesquisar: login, card, dashboard, site...">
+        </section>
+
+        <section class="kits-grid" id="kitsRoot"></section>
+    </main>
+
+    <div class="toast" id="toast">Copiado!</div>
+
+    <script src="mega-kits.js"></script>
+</body>
+</html>
