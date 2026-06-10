@@ -1,198 +1,220 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Interface Kits Labs</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="index-menu.css">
 </head>
+
 <body>
-    <header class="topbar index-topbar">
-        <div class="container topbar-inner">
-            <a class="logo" href="index.html">Interface <span>Kits</span></a>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <!-- Navbar -->
+    <header class="navbar">
 
-            <nav class="nav index-nav" id="mainNav">
-                <a class="active" href="index.html">Início</a>
-
-                <div class="nav-item has-submenu">
-                    <a href="kits.html">Kits</a>
-                    <div class="submenu">
-                        <a href="kits.html">Kits prontos</a>
-                        <a href="mega-kits.html">Mega kits</a>
-                        <a href="anime-kits.html">Anime kits</a>
-                        <a href="anime-premium.html">Anime premium</a>
-                        <a href="cinema-kits.html">Cinema kits</a>
-                    </div>
-                </div>
-
-                <div class="nav-item has-submenu">
-                    <a href="botoes.html">Laboratórios</a>
-                    <div class="submenu mega-submenu">
-                        <a href="botoes.html">Botões</a>
-                        <a href="navbar.html">Navbar</a>
-                        <a href="hero.html">Hero</a>
-                        <a href="cards.html">Cards</a>
-                        <a href="inputs.html">Inputs</a>
-                        <a href="login-cadastro.html">Login/Cadastro</a>
-                        <a href="footer.html">Footer</a>
-                        <a href="sidebar.html">Sidebar</a>
-                        <a href="form.html">Form</a>
-                        <a href="dashboard.html">Dashboard</a>
-                    </div>
-                </div>
-
-                <div class="nav-item has-submenu">
-                    <a href="sites-prontos.html">Sites</a>
-                    <div class="submenu">
-                        <a href="sites-prontos.html">Sites prontos</a>
-                        <a href="cinema-kits.html">Cinema</a>
-                        <a href="anime-premium.html">Anime</a>
-                    </div>
-                </div>
-
-                <a href="#atalhos">Atalhos</a>
-            </nav>
+        <div class="logo">
+            <a href="index.html">
+                Interface Kits
+            </a>
         </div>
+
+        <nav class="menu">
+
+            <ul>
+
+                <li class="dropdown">
+                    <a href="#">
+                        Kits
+                    </a>
+
+                    <ul class="submenu">
+                        <li><a href="kits.html">Todos os Kits</a></li>
+                        <li><a href="sites-prontos.html">Sites Prontos</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">
+                        Laboratórios
+                    </a>
+
+                    <ul class="submenu">
+                        <li><a href="navbar.html">Navbar</a></li>
+                        <li><a href="hero.html">Hero</a></li>
+                        <li><a href="cards.html">Cards</a></li>
+                        <li><a href="botoes.html">Botões</a></li>
+                        <li><a href="inputs.html">Inputs</a></li>
+                        <li><a href="login-cadastro.html">Login</a></li>
+                        <li><a href="footer.html">Footer</a></li>
+                        <li><a href="sidebar.html">Sidebar</a></li>
+                        <li><a href="forms.html">Forms</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#">
+                        Sites
+                    </a>
+
+                    <ul class="submenu">
+                        <li><a href="sites-prontos.html">Ver Sites</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#atalhos">
+                        Atalhos
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
     </header>
 
-    <main>
-        <section class="index-hero">
-            <div class="container index-hero-grid">
-                <div class="index-hero-content">
-                    <span class="pill">Projeto atualizado</span>
-                    <h1>Interface Kits Labs</h1>
-                    <p>
-                        Central organizada para acessar laboratórios, kits prontos, sites completos,
-                        páginas temáticas e componentes copiáveis.
-                    </p>
+    <!-- Hero -->
+    <section class="hero">
 
-                    <div class="actions hero-actions">
-                        <a class="btn primary" href="#atalhos">Ver opções</a>
-                        <a class="btn" href="kits.html">Abrir kits</a>
-                    </div>
-                </div>
+        <div class="hero-content">
 
-                <div class="index-hero-card">
-                    <span>10+</span>
-                    <h2>Laboratórios</h2>
-                    <p>Botões, navbars, heroes, cards, inputs, login, footer, sidebar, forms e dashboards.</p>
-                    <div class="hero-mini-grid">
-                        <i>HTML</i>
-                        <i>CSS</i>
-                        <i>JS</i>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <span class="badge">
+                Projeto atualizado
+            </span>
 
-        <section class="container index-section" id="atalhos">
-            <div class="section-head">
-                <span class="pill">Menu rápido</span>
-                <h2>Escolha o que deseja criar</h2>
-                <p>Os cards abaixo levam direto para cada área do projeto.</p>
+            <h1>
+                Interface Kits Labs
+            </h1>
+
+            <p>
+                Central organizada para acessar laboratórios, kits prontos,
+                sites completos, páginas temáticas e componentes copiáveis.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#atalhos" class="btn-primary">
+                    Ver opções
+                </a>
+
+                <a href="kits.html" class="btn-secondary">
+                    Abrir kits
+                </a>
+
             </div>
 
-            <div class="index-cards">
-                <a class="index-card featured" href="kits.html">
-                    <span>Kits</span>
-                    <h3>Kits prontos</h3>
-                    <p>Componentes e seções prontas para copiar e usar.</p>
-                </a>
+        </div>
 
-                <a class="index-card" href="botoes.html">
-                    <span>Lab</span>
-                    <h3>Botões</h3>
-                    <p>Crie botões com gradiente, glass, neon, hover e animações.</p>
-                </a>
+        <div class="hero-card">
 
-                <a class="index-card" href="navbar.html">
-                    <span>Lab</span>
-                    <h3>Navbar</h3>
-                    <p>Menus com links, submenus, busca, carrinho, login e mobile.</p>
-                </a>
+            <span class="number">
+                10+
+            </span>
 
-                <a class="index-card" href="hero.html">
-                    <span>Lab</span>
-                    <h3>Hero</h3>
-                    <p>Seções principais com CTA, visual, textura e cards flutuantes.</p>
-                </a>
+            <h2>
+                Laboratórios
+            </h2>
 
-                <a class="index-card" href="cards.html">
-                    <span>Lab</span>
-                    <h3>Cards</h3>
-                    <p>Cards para produtos, serviços, blogs, dashboards e portfólios.</p>
-                </a>
+            <p>
+                Botões, navbars, heros, cards, inputs, login, footer,
+                sidebar, forms e dashboards.
+            </p>
 
-                <a class="index-card" href="inputs.html">
-                    <span>Lab</span>
-                    <h3>Inputs</h3>
-                    <p>Campos modernos com ícones, validação, foco, glass e estados.</p>
-                </a>
+        </div>
 
-                <a class="index-card" href="login-cadastro.html">
-                    <span>Lab</span>
-                    <h3>Login/Cadastro</h3>
-                    <p>Telas de autenticação com abas, social login e imagem lateral.</p>
-                </a>
+    </section>
 
-                <a class="index-card" href="footer.html">
-                    <span>Builder</span>
-                    <h3>Footer</h3>
-                    <p>Rodapés com colunas, newsletter, links e redes sociais.</p>
-                </a>
+    <!-- Menu rápido -->
+    <section id="atalhos" class="atalhos">
 
-                <a class="index-card" href="sidebar.html">
-                    <span>Builder</span>
-                    <h3>Sidebar</h3>
-                    <p>Menus laterais para dashboard, loja, admin e SaaS.</p>
-                </a>
+        <span class="section-tag">
+            Menu rápido
+        </span>
 
-                <a class="index-card" href="form.html">
-                    <span>Builder</span>
-                    <h3>Forms</h3>
-                    <p>Formulários de contato, orçamento, checkout e feedback.</p>
-                </a>
+        <h2>
+            Escolha o que deseja criar
+        </h2>
 
-                <a class="index-card" href="dashboard.html">
-                    <span>Builder</span>
-                    <h3>Dashboard</h3>
-                    <p>Painéis com métricas, tabelas, gráficos visuais e atividades.</p>
-                </a>
+        <p>
+            Os cards abaixo levam direto para cada área do projeto.
+        </p>
 
-                <a class="index-card featured" href="sites-prontos.html">
-                    <span>Sites</span>
-                    <h3>Sites prontos</h3>
-                    <p>Templates completos com estrutura, preview e código copiável.</p>
-                </a>
-            </div>
-        </section>
+        <div class="grid-cards">
 
-        <section class="container index-section">
-            <div class="section-head">
-                <span class="pill">Coleções</span>
-                <h2>Temas especiais</h2>
-                <p>Acesse as páginas extras do projeto.</p>
-            </div>
+            <a href="navbar.html" class="card">
+                <h3>Navbar Builder</h3>
+                <p>Criar menus e navegações.</p>
+            </a>
 
-            <div class="collection-grid">
-                <a href="anime-kits.html">Anime Kits</a>
-                <a href="anime-premium.html">Anime Premium</a>
-                <a href="cinema-kits.html">Cinema Kits</a>
-                <a href="mega-kits.html">Mega Kits</a>
-            </div>
-        </section>
-    </main>
+            <a href="hero.html" class="card">
+                <h3>Hero Builder</h3>
+                <p>Criar seções hero.</p>
+            </a>
 
-    <script src="main.js"></script>
+            <a href="cards.html" class="card">
+                <h3>Cards Builder</h3>
+                <p>Criar componentes de cards.</p>
+            </a>
+
+            <a href="botoes.html" class="card">
+                <h3>Botões Builder</h3>
+                <p>Criar botões personalizados.</p>
+            </a>
+
+            <a href="inputs.html" class="card">
+                <h3>Inputs Builder</h3>
+                <p>Campos de formulário.</p>
+            </a>
+
+            <a href="login-cadastro.html" class="card">
+                <h3>Login Builder</h3>
+                <p>Telas de autenticação.</p>
+            </a>
+
+            <a href="footer.html" class="card">
+                <h3>Footer Builder</h3>
+                <p>Rodapés completos.</p>
+            </a>
+
+            <a href="sidebar.html" class="card">
+                <h3>Sidebar Builder</h3>
+                <p>Barras laterais modernas.</p>
+            </a>
+
+            <a href="forms.html" class="card">
+                <h3>Forms Builder</h3>
+                <p>Formulários completos.</p>
+            </a>
+
+            <a href="dashboard.html" class="card">
+                <h3>Dashboard Builder</h3>
+                <p>Painéis administrativos.</p>
+            </a>
+
+            <a href="sites-prontos.html" class="card destaque">
+                <h3>Sites Prontos</h3>
+                <p>Layouts completos para copiar.</p>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- JS -->
     <script src="index-menu.js"></script>
+
 </body>
+
 </html>
